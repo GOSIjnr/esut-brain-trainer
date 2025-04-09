@@ -20,6 +20,8 @@ public partial class Core : Node
 		EventBus = GetNode<EventBus>("%EventBus");
 		SceneManager = GetNode<SceneManager>("%SceneManager");
 		ToastManager = GetNode<ToastManager>("%ToastManager");
+		Data = GetNode<Data>("%Data");
+		SaveManager = GetNode<SaveManager>("%SaveManager");
 
 		SetupDebugMode();
 		SubscribeToEvents();

@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dqta5cu6wxn60"]
+[gd_scene load_steps=11 format=3 uid="uid://dqta5cu6wxn60"]
 
 [ext_resource type="Script" uid="uid://f6pifntyvdca" path="res://common/scenes/core/scripts/Core.cs" id="1_ku2wf"]
 [ext_resource type="Script" uid="uid://bc0l2cmdu67q3" path="res://common/scenes/crash_handler/scripts/CrashHandlerManager.cs" id="2_b57yf"]
@@ -8,6 +8,8 @@
 [ext_resource type="Script" uid="uid://dgrm71yf643cc" path="res://common/scenes/toast/scripts/ToastManager.cs" id="5_sj4ve"]
 [ext_resource type="PackedScene" uid="uid://b5bxiic22ucri" path="res://common/scenes/defualt_loading_screen/DefualtLoadingScreen.tscn" id="6_8cgh0"]
 [ext_resource type="PackedScene" uid="uid://37kjmr5xsoum" path="res://common/scenes/toast/toast_scene.tscn" id="8_kcsr7"]
+[ext_resource type="Script" uid="uid://1ra4ww02h1ck" path="res://common/scripts/SaveManager.cs" id="9_4x8p1"]
+[ext_resource type="Script" uid="uid://dkow13046bto8" path="res://common/scripts/Data.cs" id="10_a0el1"]
 
 [node name="Core" type="Node"]
 process_mode = 3
@@ -36,3 +38,13 @@ unique_name_in_owner = true
 script = ExtResource("5_sj4ve")
 _toastTemplate = ExtResource("8_kcsr7")
 metadata/_custom_type_script = "uid://dgrm71yf643cc"
+
+[node name="SaveManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("9_4x8p1")
+metadata/_custom_type_script = "uid://1ra4ww02h1ck"
+
+[node name="Data" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("10_a0el1")
+metadata/_custom_type_script = "uid://dkow13046bto8"

@@ -1,11 +1,48 @@
-[gd_scene load_steps=2 format=3 uid="uid://bnqtkei33osav"]
+[gd_scene load_steps=5 format=3 uid="uid://bnqtkei33osav"]
 
 [ext_resource type="Script" uid="uid://d4ctswlx7itc" path="res://main/scenes/start_up/scripts/StartUp.cs" id="1_xm347"]
+[ext_resource type="Shader" uid="uid://4phoypsnwqxq" path="res://common/shaders/canvas_chromatic.gdshader" id="2_bjmqg"]
+[ext_resource type="Texture2D" uid="uid://dntb04cb75k4r" path="res://common/textures/app_icon.png" id="3_yqiir"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_yqiir"]
+shader = ExtResource("2_bjmqg")
+shader_parameter/r_displacement = Vector2(-1.835, 1.255)
+shader_parameter/g_displacement = Vector2(-0.36, 2.815)
+shader_parameter/b_displacement = Vector2(-2.205, 0.1)
 
 [node name="StartUp" type="CanvasLayer"]
 script = ExtResource("1_xm347")
 
+[node name="TextureRect2" type="TextureRect" parent="."]
+offset_left = 259.0
+offset_top = 883.0
+offset_right = 451.0
+offset_bottom = 1075.0
+texture = ExtResource("3_yqiir")
+
+[node name="TextureRect4" type="TextureRect" parent="."]
+offset_left = 344.0
+offset_top = 544.0
+offset_right = 536.0
+offset_bottom = 736.0
+texture = ExtResource("3_yqiir")
+
+[node name="TextureRect3" type="TextureRect" parent="."]
+offset_left = 659.0
+offset_top = 842.0
+offset_right = 851.0
+offset_bottom = 1034.0
+texture = ExtResource("3_yqiir")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 650.0
+offset_top = 497.0
+offset_right = 842.0
+offset_bottom = 689.0
+texture = ExtResource("3_yqiir")
+
 [node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_yqiir")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0

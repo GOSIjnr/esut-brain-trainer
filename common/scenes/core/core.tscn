@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://dqta5cu6wxn60"]
+
+[ext_resource type="Script" uid="uid://f6pifntyvdca" path="res://common/scenes/core/scripts/Core.cs" id="1_ku2wf"]
+[ext_resource type="Script" uid="uid://bc0l2cmdu67q3" path="res://common/scenes/crash_handler/scripts/CrashHandlerManager.cs" id="2_b57yf"]
+[ext_resource type="PackedScene" uid="uid://dl4etp5kyo01l" path="res://common/scenes/crash_handler/crash_handler_scene.tscn" id="3_0t0b8"]
+[ext_resource type="Script" uid="uid://cxwe0gehqyao1" path="res://common/scripts/EventBus.cs" id="3_8f36b"]
+[ext_resource type="Script" uid="uid://c5la252cbhp8j" path="res://common/scripts/SceneManager.cs" id="4_vxbv5"]
+[ext_resource type="Script" uid="uid://dgrm71yf643cc" path="res://common/scenes/toast/scripts/ToastManager.cs" id="5_sj4ve"]
+[ext_resource type="PackedScene" uid="uid://b5bxiic22ucri" path="res://common/scenes/defualt_loading_screen/DefualtLoadingScreen.tscn" id="6_8cgh0"]
+[ext_resource type="PackedScene" uid="uid://37kjmr5xsoum" path="res://common/scenes/toast/toast_scene.tscn" id="8_kcsr7"]
+
+[node name="Core" type="Node"]
+process_mode = 3
+script = ExtResource("1_ku2wf")
+metadata/_custom_type_script = "uid://f6pifntyvdca"
+
+[node name="CrashHandlerManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("2_b57yf")
+_crashScene = ExtResource("3_0t0b8")
+metadata/_custom_type_script = "uid://bc0l2cmdu67q3"
+
+[node name="EventBus" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("3_8f36b")
+metadata/_custom_type_script = "uid://cxwe0gehqyao1"
+
+[node name="SceneManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("4_vxbv5")
+_defaultLoadingPackedScene = ExtResource("6_8cgh0")
+metadata/_custom_type_script = "uid://c5la252cbhp8j"
+
+[node name="ToastManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_sj4ve")
+_toastTemplate = ExtResource("8_kcsr7")
+metadata/_custom_type_script = "uid://dgrm71yf643cc"

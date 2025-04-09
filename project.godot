@@ -13,6 +13,7 @@ config_version=5
 config/name="ESUT Brain trainer"
 config/version="1.0.0"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+config/icon="uid://dntb04cb75k4r"
 
 [autoload]
 
@@ -32,6 +33,10 @@ project/assembly_name="ESUT Brain trainer"
 folder_colors={
 "res://common/": "gray"
 }
+
+[gui]
+
+theme/custom="uid://dq4vxtwdfue5"
 
 [layer_names]
 

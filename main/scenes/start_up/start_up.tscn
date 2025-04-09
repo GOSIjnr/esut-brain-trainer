@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bnqtkei33osav"]
+
+[ext_resource type="Script" uid="uid://d4ctswlx7itc" path="res://main/scenes/start_up/scripts/StartUp.cs" id="1_xm347"]
+
+[node name="StartUp" type="CanvasLayer"]
+script = ExtResource("1_xm347")
+
+[node name="Panel" type="Panel" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"PanelNormal"

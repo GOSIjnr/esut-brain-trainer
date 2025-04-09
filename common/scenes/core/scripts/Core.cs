@@ -1,4 +1,5 @@
 using Godot;
+using GOSIjnr;
 
 [GlobalClass]
 public partial class Core : Node
@@ -7,6 +8,8 @@ public partial class Core : Node
 	public EventBus EventBus { get; private set; }
 	public SceneManager SceneManager { get; private set; }
 	public ToastManager ToastManager { get; private set; }
+	public Data Data { get; private set; }
+	public SaveManager SaveManager { get; private set; }
 
 	public static Core Instance { get; private set; }
 

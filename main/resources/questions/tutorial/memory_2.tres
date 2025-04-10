@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_h7fmb")
 QuestionType = 4
-QuestionOptions = [SubResource("Resource_4gg1y"), SubResource("Resource_h7fmb"), SubResource("Resource_nwny6"), SubResource("Resource_t6tjj")]
+QuestionOptions = Array[ExtResource("1_4gg1y")]([SubResource("Resource_4gg1y"), SubResource("Resource_h7fmb"), SubResource("Resource_nwny6"), SubResource("Resource_t6tjj")])
 QuestionText = "Rate your ability to recall details of conversations"

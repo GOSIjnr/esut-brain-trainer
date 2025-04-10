@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_30goo")
 QuestionType = 1
-QuestionOptions = [SubResource("Resource_ury6q"), SubResource("Resource_30goo"), SubResource("Resource_i1q6e"), SubResource("Resource_bkyoa")]
+QuestionOptions = Array[ExtResource("1_ury6q")]([SubResource("Resource_ury6q"), SubResource("Resource_30goo"), SubResource("Resource_i1q6e"), SubResource("Resource_bkyoa")])
 QuestionText = "How often do you use filler words (like \"um\", \"uh\", \"you know\") when speaking?"

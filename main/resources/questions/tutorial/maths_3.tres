@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_snmmx")
 QuestionType = 3
-QuestionOptions = [SubResource("Resource_uc7a3"), SubResource("Resource_snmmx"), SubResource("Resource_r5xx6"), SubResource("Resource_rhhww")]
+QuestionOptions = Array[ExtResource("1_uc7a3")]([SubResource("Resource_uc7a3"), SubResource("Resource_snmmx"), SubResource("Resource_r5xx6"), SubResource("Resource_rhhww")])
 QuestionText = "81 / 9 = [img]uid://cc0bwohu7tv04[/img]"

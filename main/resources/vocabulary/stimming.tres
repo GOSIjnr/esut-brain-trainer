@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://bjivykf05hoyb"]
+
+[ext_resource type="Script" uid="uid://cbip2o2djr6gu" path="res://common/scripts/Vocabulary.cs" id="1_3k0xt"]
+
+[resource]
+script = ExtResource("1_3k0xt")
+Word = "Stimming"
+Meaning = "Reapeating of body movement as a way of calming or self-stimulating"
+metadata/_custom_type_script = "uid://b43p151qpuary"

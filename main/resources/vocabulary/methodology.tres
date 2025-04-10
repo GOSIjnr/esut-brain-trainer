@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://c67pj35t36td5"]
+
+[ext_resource type="Script" uid="uid://cbip2o2djr6gu" path="res://common/scripts/Vocabulary.cs" id="1_rac5o"]
+
+[resource]
+script = ExtResource("1_rac5o")
+Word = "Methodology"
+Meaning = "The branch of philosophy that analyses the principles and procedures of inquiry in a particular discipline"
+metadata/_custom_type_script = "uid://b43p151qpuary"

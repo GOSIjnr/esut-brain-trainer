@@ -18,5 +18,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_xj1eu")
 QuestionType = 0
-QuestionOptions = [SubResource("Resource_6wwfk"), SubResource("Resource_so6tv")]
+QuestionOptions = Array[ExtResource("1_d081u")]([SubResource("Resource_6wwfk"), SubResource("Resource_so6tv")])
 QuestionText = "Which of the following sentences is grammatically correct?"

@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_g0slw")
 QuestionType = 0
-QuestionOptions = [SubResource("Resource_s5j5p"), SubResource("Resource_g0slw"), SubResource("Resource_2nei6"), SubResource("Resource_0w2ah")]
+QuestionOptions = Array[ExtResource("1_s5j5p")]([SubResource("Resource_s5j5p"), SubResource("Resource_g0slw"), SubResource("Resource_2nei6"), SubResource("Resource_0w2ah")])
 QuestionText = "Choose the most appropriate transition word to complete the sentence:
 
 She loves reading novels; [img]uid://cc0bwohu7tv04[/img], she enjoys writing short stories."

@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_ytjtk")
 QuestionType = 4
-QuestionOptions = [SubResource("Resource_vuwlj"), SubResource("Resource_ytjtk"), SubResource("Resource_srufn"), SubResource("Resource_yvkhk")]
+QuestionOptions = Array[ExtResource("1_vuwlj")]([SubResource("Resource_vuwlj"), SubResource("Resource_ytjtk"), SubResource("Resource_srufn"), SubResource("Resource_yvkhk")])
 QuestionText = "How well can you remember names?"

@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_jxqgo")
 QuestionType = 3
-QuestionOptions = [SubResource("Resource_4fd82"), SubResource("Resource_jxqgo"), SubResource("Resource_sty73"), SubResource("Resource_paenx")]
+QuestionOptions = Array[ExtResource("1_4fd82")]([SubResource("Resource_4fd82"), SubResource("Resource_jxqgo"), SubResource("Resource_sty73"), SubResource("Resource_paenx")])
 QuestionText = "What is the value of the expression 5²?"

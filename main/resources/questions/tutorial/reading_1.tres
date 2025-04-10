@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("1_sr13p")
 QuestionType = 2
-QuestionOptions = [SubResource("Resource_6gjj2"), SubResource("Resource_7qum4")]
+QuestionOptions = Array[ExtResource("1_ibxww")]([SubResource("Resource_6gjj2"), SubResource("Resource_7qum4")])
 QuestionText = "What is the main idea of the passage?
 
 [b]Passage: [/b][i]\"Birds build nests to protect their eggs. Different birds use various materials like twigs, leaves, and feathers to make their nests.\"[/i]"

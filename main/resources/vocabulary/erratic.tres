@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://de5b0shnrg58m"]
+
+[ext_resource type="Script" uid="uid://cbip2o2djr6gu" path="res://common/scripts/Vocabulary.cs" id="1_s423q"]
+
+[resource]
+script = ExtResource("1_s423q")
+Word = "Erratic"
+Meaning = "Liable to sudden unpredictable change"
+metadata/_custom_type_script = "uid://b43p151qpuary"

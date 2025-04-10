@@ -18,5 +18,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_x4npv")
 QuestionType = 0
-QuestionOptions = [SubResource("Resource_obu3r"), SubResource("Resource_x4npv")]
+QuestionOptions = Array[ExtResource("1_obu3r")]([SubResource("Resource_obu3r"), SubResource("Resource_x4npv")])
 QuestionText = "Which sentence uses punctuation correctly?"

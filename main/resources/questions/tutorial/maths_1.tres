@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_ex655")
 QuestionType = 3
-QuestionOptions = [SubResource("Resource_lo548"), SubResource("Resource_ex655"), SubResource("Resource_k8vju"), SubResource("Resource_4g4sh")]
+QuestionOptions = Array[ExtResource("1_lo548")]([SubResource("Resource_lo548"), SubResource("Resource_ex655"), SubResource("Resource_k8vju"), SubResource("Resource_4g4sh")])
 QuestionText = "7 + 8  = [img]uid://cc0bwohu7tv04[/img]"

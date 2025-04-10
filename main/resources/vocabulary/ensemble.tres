@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://b7fj3qmf1xkst"]
+
+[ext_resource type="Script" uid="uid://cbip2o2djr6gu" path="res://common/scripts/Vocabulary.cs" id="1_8ylem"]
+
+[resource]
+script = ExtResource("1_8ylem")
+Word = "Ensemble"
+Meaning = "A group of musicians playing or singing together"
+metadata/_custom_type_script = "uid://b43p151qpuary"

@@ -30,5 +30,5 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_1axjj")
 QuestionType = 3
-QuestionOptions = [SubResource("Resource_34e85"), SubResource("Resource_1axjj"), SubResource("Resource_rcs77"), SubResource("Resource_18uuk")]
+QuestionOptions = Array[ExtResource("1_34e85")]([SubResource("Resource_34e85"), SubResource("Resource_1axjj"), SubResource("Resource_rcs77"), SubResource("Resource_18uuk")])
 QuestionText = "If a rectangle has a length of 10 units and a width of 4 units, what is its area?"

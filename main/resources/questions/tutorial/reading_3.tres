@@ -18,7 +18,7 @@ metadata/_custom_type_script = "uid://clxr5bdh303ac"
 [resource]
 script = ExtResource("2_04lxr")
 QuestionType = 2
-QuestionOptions = [SubResource("Resource_7sho4"), SubResource("Resource_04lxr")]
+QuestionOptions = Array[ExtResource("1_7sho4")]([SubResource("Resource_7sho4"), SubResource("Resource_04lxr")])
 QuestionText = "What can be inferred about bees from the passage?
 
 [b]Passage: [/b][i]\"Bees are important pollinators. They help in the reproduction of many plants by transferring pollen from one flower to another.\"[/i]"

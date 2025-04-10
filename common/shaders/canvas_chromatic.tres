@@ -1,4 +1,4 @@
-[gd_resource type="VisualShader" load_steps=19 format=3 uid="uid://di77lthaq2vxc"]
+[gd_resource type="VisualShader" load_steps=22 format=3 uid="uid://di77lthaq2vxc"]
 
 [sub_resource type="VisualShaderNodeTexture" id="VisualShaderNodeTexture_che57"]
 output_port_for_preview = 0
@@ -6,6 +6,7 @@ source = 5
 
 [sub_resource type="VisualShaderNodeVectorCompose" id="VisualShaderNodeVectorCompose_46pk5"]
 output_port_for_preview = 0
+default_input_values = [0, 0.0, 1, 0.0, 2, 0.0, 3, 1.0]
 
 [sub_resource type="VisualShaderNodeInput" id="VisualShaderNodeInput_che57"]
 input_name = "screen_uv"
@@ -51,6 +52,12 @@ default_value = Vector2(1, 0)
 
 [sub_resource type="VisualShaderNodeFloatConstant" id="VisualShaderNodeFloatConstant_2kq8q"]
 
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_che57"]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_46pk5"]
+
+[sub_resource type="VisualShaderNodeVectorDecompose" id="VisualShaderNodeVectorDecompose_x2y2l"]
+
 [sub_resource type="VisualShaderNodeVec2Parameter" id="VisualShaderNodeVec2Parameter_46pk5"]
 linked_parent_graph_frame = 7
 parameter_name = "BlueDisplacement"
@@ -70,7 +77,7 @@ texture_filter = 4
 texture_source = 1
 
 [sub_resource type="VisualShaderNodeFrame" id="VisualShaderNodeFrame_che57"]
-size = Vector2(300, 920)
+size = Vector2(202.25, 772)
 title = "Parameters"
 attached_nodes = PackedInt32Array(6, 3, 2, 4)
 
@@ -123,6 +130,12 @@ void fragment() {
 	n_out8p0 = textureLod(ScreenTexture, n_out13p0, n_out20p0);
 
 
+// VectorDecompose:21
+	float n_out21p0 = vec3(n_out8p0.xyz).x;
+	float n_out21p1 = vec3(n_out8p0.xyz).y;
+	float n_out21p2 = vec3(n_out8p0.xyz).z;
+
+
 // Vector2Parameter:4
 	vec2 n_out4p0 = GreenDisplacement;
 
@@ -138,6 +151,12 @@ void fragment() {
 	vec4 n_out9p0;
 // Texture2D:9
 	n_out9p0 = textureLod(ScreenTexture, n_out14p0, n_out20p0);
+
+
+// VectorDecompose:22
+	float n_out22p0 = vec3(n_out9p0.xyz).x;
+	float n_out22p1 = vec3(n_out9p0.xyz).y;
+	float n_out22p2 = vec3(n_out9p0.xyz).z;
 
 
 // Vector2Parameter:3
@@ -157,8 +176,14 @@ void fragment() {
 	n_out10p0 = textureLod(ScreenTexture, n_out15p0, n_out20p0);
 
 
+// VectorDecompose:23
+	float n_out23p0 = vec3(n_out10p0.xyz).x;
+	float n_out23p1 = vec3(n_out10p0.xyz).y;
+	float n_out23p2 = vec3(n_out10p0.xyz).z;
+
+
 // VectorCompose:11
-	vec3 n_out11p0 = vec3(n_out8p0.x, n_out9p0.x, n_out10p0.x);
+	vec3 n_out11p0 = vec3(n_out21p0, n_out22p1, n_out23p2);
 
 
 // Output:0
@@ -167,10 +192,8 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(384.21, 194.724)
 mode = 1
 flags/light_only = false
-preview_params/BlueDisplacement = "Vector2(-1, 0)"
 nodes/fragment/0/position = Vector2(1800, 400)
 nodes/fragment/2/node = SubResource("VisualShaderNodeVec2Parameter_che57")
 nodes/fragment/2/position = Vector2(-80, 540)
@@ -208,4 +231,10 @@ nodes/fragment/19/node = SubResource("VisualShaderNodeVectorOp_40qkj")
 nodes/fragment/19/position = Vector2(560, 680)
 nodes/fragment/20/node = SubResource("VisualShaderNodeFloatConstant_2kq8q")
 nodes/fragment/20/position = Vector2(740, 780)
-nodes/fragment/connections = PackedInt32Array(6, 0, 8, 2, 6, 0, 9, 2, 6, 0, 10, 2, 11, 0, 0, 0, 9, 0, 11, 1, 8, 0, 11, 0, 12, 0, 14, 0, 12, 0, 15, 0, 13, 0, 8, 0, 14, 0, 9, 0, 15, 0, 10, 0, 10, 0, 11, 2, 19, 0, 15, 1, 18, 0, 14, 1, 16, 0, 17, 0, 16, 0, 18, 0, 16, 0, 19, 0, 4, 0, 18, 1, 3, 0, 19, 1, 20, 0, 8, 1, 20, 0, 10, 1, 20, 0, 9, 1, 12, 0, 13, 0, 17, 0, 13, 1, 2, 0, 17, 1)
+nodes/fragment/21/node = SubResource("VisualShaderNodeVectorDecompose_che57")
+nodes/fragment/21/position = Vector2(1249.2, 164.124)
+nodes/fragment/22/node = SubResource("VisualShaderNodeVectorDecompose_46pk5")
+nodes/fragment/22/position = Vector2(1240, 400)
+nodes/fragment/23/node = SubResource("VisualShaderNodeVectorDecompose_x2y2l")
+nodes/fragment/23/position = Vector2(1280, 680)
+nodes/fragment/connections = PackedInt32Array(6, 0, 8, 2, 6, 0, 9, 2, 6, 0, 10, 2, 11, 0, 0, 0, 12, 0, 14, 0, 12, 0, 15, 0, 13, 0, 8, 0, 14, 0, 9, 0, 15, 0, 10, 0, 19, 0, 15, 1, 18, 0, 14, 1, 16, 0, 17, 0, 16, 0, 18, 0, 16, 0, 19, 0, 4, 0, 18, 1, 3, 0, 19, 1, 20, 0, 8, 1, 20, 0, 10, 1, 20, 0, 9, 1, 12, 0, 13, 0, 17, 0, 13, 1, 2, 0, 17, 1, 8, 0, 21, 0, 10, 0, 23, 0, 9, 0, 22, 0, 21, 0, 11, 0, 22, 1, 11, 1, 23, 2, 11, 2)

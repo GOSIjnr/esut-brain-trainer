@@ -29,7 +29,7 @@ public partial class BlackBoard : Node
 		_eventBus?.Publish($"OnDataChanged{key.ToPascalCase()}", data);
 	}
 
-	public T GetData<T>(string key)
+	public T GetData<[MustBeVariant] T>(string key)
 	{
 		if (string.IsNullOrEmpty(key))
 		{
@@ -39,12 +39,11 @@ public partial class BlackBoard : Node
 
 		if (_dataStorage.TryGetValue(key, out Variant data))
 		{
-			if (data.Obj is T result)
+			try
 			{
-				Logger.Log($"Successfully retrieved data for key: {key}", Logger.LogLevel.Debug);
-				return result;
+				return data.As<T>();
 			}
-			else
+			catch
 			{
 				Logger.Log($"Error casting data for key '{key}': {data.Obj.GetType()} to {typeof(T)}", Logger.LogLevel.Error);
 			}

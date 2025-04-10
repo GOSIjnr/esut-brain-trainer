@@ -4,7 +4,7 @@ using System;
 public partial class TouchInputHandler(Vector2 boundSize) : Node
 {
 	private Rect2 _activeTouchRect;
-	private readonly Vector2 _boundSize = boundSize;
+	private Vector2 _boundSize = boundSize;
 
 	public event Action<Vector2> TouchStarted;
 	public event Action TouchCompleted;

@@ -2,6 +2,8 @@ using Godot;
 using System;
 using System.Collections.Generic;
 
+namespace GOSIjnr;
+
 public static class Utils
 {
 	// Merges the template dictionary into the base dictionary.
@@ -24,6 +26,45 @@ public static class Utils
 		}
 
 		return mergedDictionary;
+	}
+
+	// Provides extension methods for safely retrieving values from a dictionary.
+	// Specifically designed to handle cases where the key may not exist or the value
+	// may not be of the expected type, allowing for a default value to be returned when necessary.
+	public static T GetValueOrDefault<[MustBeVariant] TKey, [MustBeVariant] TValue, [MustBeVariant] T>(this IDictionary<TKey, TValue> dict, TKey key, Func<T> defaultValueProvider, Predicate<T> validator = null)
+	{
+		T storedValue = defaultValueProvider();
+
+		if (dict.TryGetValue(key, out TValue value))
+		{
+			if (value is T directValue)
+			{
+				storedValue = directValue;
+			}
+			else if (value is Variant variant)
+			{
+				try
+				{
+					storedValue = variant.As<T>();
+				}
+				catch
+				{
+					Logger.Log($"Failed to convert variant to type {typeof(T)}: {variant}", Logger.LogLevel.Warning);
+				}
+			}
+
+			if (validator == null || validator(storedValue))
+			{
+				return storedValue;
+			}
+			else if (validator(storedValue) == false)
+			{
+				Logger.Log($"Invalid value range for key '{key}' with default value: {defaultValueProvider()}", Logger.LogLevel.Warning);
+			}
+		}
+
+		Logger.Log($"Failed to retrieve value for key '{key}' with default value: {defaultValueProvider()}", Logger.LogLevel.Warning);
+		return storedValue;
 	}
 
 	// Loads all resources from the specified folder path using the Godot file system.

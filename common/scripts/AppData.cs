@@ -1,10 +1,8 @@
 using Godot;
 using Godot.Collections;
 
-namespace GOSIjnr;
-
 [GlobalClass]
-public partial class Data : Node
+public partial class AppData : Node
 {
 	[Export]
 	public Dictionary<Subjects, Color> SubjectColors { get; private set; } = new()
@@ -17,7 +15,7 @@ public partial class Data : Node
 		{ Subjects.Average, new("#69A0FB") },
 	};
 
-	[Export] public string UserDataSavePath { get; private set; } = "user://user_data.tres";
+	[Export] public string UserDataSavePath { get; private set; } = "user://user_data.save";
 	[Export] public Color AppPrimaryColor { get; private set; } = new("#CB4154");
 
 	[Export]

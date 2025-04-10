@@ -2,8 +2,6 @@ using Godot;
 using System.Linq;
 using Godot.Collections;
 
-namespace GOSIjnr;
-
 [GlobalClass]
 public partial class DailyManager : Node
 {
@@ -15,12 +13,12 @@ public partial class DailyManager : Node
 
 		var userData = saveManager.userData;
 
-		AddDailyData(userData.writing.dailyPoints, userData.writing.CurrentPoints);
-		AddDailyData(userData.speaking.dailyPoints, userData.speaking.CurrentPoints);
-		AddDailyData(userData.reading.dailyPoints, userData.reading.CurrentPoints);
-		AddDailyData(userData.maths.dailyPoints, userData.maths.CurrentPoints);
-		AddDailyData(userData.memory.dailyPoints, userData.memory.CurrentPoints);
-		AddDailyData(userData.average.dailyPoints, userData.average.CurrentPoints);
+		AddDailyData(userData.Writing.dailyPoints, userData.Writing.CurrentPoints);
+		AddDailyData(userData.Speaking.dailyPoints, userData.Speaking.CurrentPoints);
+		AddDailyData(userData.Reading.dailyPoints, userData.Reading.CurrentPoints);
+		AddDailyData(userData.Maths.dailyPoints, userData.Maths.CurrentPoints);
+		AddDailyData(userData.Memory.dailyPoints, userData.Memory.CurrentPoints);
+		AddDailyData(userData.Average.dailyPoints, userData.Average.CurrentPoints);
 	}
 
 	private int DateToTimestamp(string dateString)

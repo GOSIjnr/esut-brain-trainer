@@ -1,4 +1,5 @@
 using Godot;
+using GOSIjnr;
 
 public partial class StartUp : CanvasLayer
 {
@@ -11,12 +12,12 @@ public partial class StartUp : CanvasLayer
 			saveManager.LoadUserData();
 
 			var data = saveManager.userData;
-			var newScores = Utils.MergeDictionaries(data.highScores, Core.Instance.Data.TemplateScores);
-			data.highScores.Clear();
+			var newScores = Utils.MergeDictionaries(data.HighScores, Core.Instance.AppData.TemplateScores);
+			data.HighScores.Clear();
 
 			foreach (var score in newScores)
 			{
-				data.highScores.Add(score.Key, score.Value);
+				data.HighScores.Add(score.Key, score.Value);
 			}
 
 			saveManager.SaveUserData();
@@ -27,7 +28,7 @@ public partial class StartUp : CanvasLayer
 			saveManager.SaveUserData();
 		}
 
-		if (saveManager.userData.isTutorialDone)
+		if (saveManager.userData.IsTutorialDone)
 		{
 			Core.Instance.SceneManager.SwitchScene("MainMenu");
 		}

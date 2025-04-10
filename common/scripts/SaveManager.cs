@@ -1,8 +1,6 @@
 using Godot;
+using GOSIjnr;
 using System.Linq;
-using Godot.Collections;
-
-namespace GOSIjnr;
 
 [GlobalClass]
 public partial class SaveManager : Node
@@ -17,36 +15,45 @@ public partial class SaveManager : Node
 
 	private void CheckUserData()
 	{
-		IsUserSaveDataPresent = FileAccess.FileExists(Core.Instance.Data.UserDataSavePath);
+		IsUserSaveDataPresent = FileAccess.FileExists(Core.Instance.AppData.UserDataSavePath);
 	}
 
 	public void CreateUserData()
 	{
 		userData = new();
 
-		var newScores = Utils.MergeDictionaries(userData.highScores, Core.Instance.Data.TemplateScores);
-		userData.highScores.Clear();
+		var newScores = Utils.MergeDictionaries(userData.HighScores, Core.Instance.AppData.TemplateScores);
+		userData.HighScores.Clear();
 
 		foreach (var score in newScores)
 		{
-			userData.highScores.Add(score.Key, score.Value);
+			userData.HighScores.Add(score.Key, score.Value);
 		}
 	}
 
 	public void LoadUserData()
 	{
-		if (!FileAccess.FileExists(Core.Instance.Data.UserDataSavePath))
+		if (!FileAccess.FileExists(Core.Instance.AppData.UserDataSavePath))
 		{
 			CreateUserData();
 			return;
 		}
 
-		var file = FileAccess.Open(Core.Instance.Data.UserDataSavePath, FileAccess.ModeFlags.Read);
+		var file = FileAccess.Open(Core.Instance.AppData.UserDataSavePath, FileAccess.ModeFlags.Read);
 		var jsonString = file.GetAsText();
 		file.Close();
 
+		Json JSON = new();
+		var error = JSON.Parse(jsonString);
 
-		var jsonData = (Dictionary<string, Variant>)Json.ParseString(jsonString);
+		if (error != Error.Ok)
+		{
+			Logger.Log("Failed to parse JSON data");
+			CreateUserData();
+			return;
+		}
+
+		var jsonData = JSON.Data.AsGodotDictionary<string, Variant>();
 
 		if (jsonData == null)
 		{
@@ -56,25 +63,26 @@ public partial class SaveManager : Node
 		}
 
 		userData = new UserData();
-		userData.ApplyData(jsonData);
+		userData.DeserializeObject(jsonData);
 	}
 
 	public void SaveUserData()
 	{
 		var scores = new System.Collections.Generic.List<float>
 		{
-			userData.writing.CurrentPoints,
-			userData.reading.CurrentPoints,
-			userData.speaking.CurrentPoints,
-			userData.maths.CurrentPoints,
-			userData.memory.CurrentPoints
+			userData.Writing.CurrentPoints,
+			userData.Reading.CurrentPoints,
+			userData.Speaking.CurrentPoints,
+			userData.Maths.CurrentPoints,
+			userData.Memory.CurrentPoints
 		};
 
 		var averageScore = scores.Sum() / scores.Count;
-		userData.average.CurrentPoints = averageScore;
+		userData.Average.CurrentPoints = averageScore;
 
-		var jsonData = Json.Stringify(userData.GetData(), "\t", false);
-		var file = FileAccess.Open(Core.Instance.Data.UserDataSavePath, FileAccess.ModeFlags.Write);
+		var jsonData = Json.Stringify(userData.SerializeObject(), "\t", false);
+		var file = FileAccess.Open(Core.Instance.AppData.UserDataSavePath, FileAccess.ModeFlags.Write);
+
 		file.StoreString(jsonData);
 		file.Close();
 		IsUserSaveDataPresent = true;

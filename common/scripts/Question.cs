@@ -1,7 +1,5 @@
 using Godot;
 
-namespace GOSIjnr;
-
 [GlobalClass]
 public abstract partial class Question : Resource
 {

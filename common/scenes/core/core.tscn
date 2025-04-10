@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://b5bxiic22ucri" path="res://common/scenes/defualt_loading_screen/DefualtLoadingScreen.tscn" id="6_8cgh0"]
 [ext_resource type="PackedScene" uid="uid://37kjmr5xsoum" path="res://common/scenes/toast/toast_scene.tscn" id="8_kcsr7"]
 [ext_resource type="Script" uid="uid://1ra4ww02h1ck" path="res://common/scripts/SaveManager.cs" id="9_4x8p1"]
-[ext_resource type="Script" uid="uid://dkow13046bto8" path="res://common/scripts/Data.cs" id="10_a0el1"]
+[ext_resource type="Script" uid="uid://dkow13046bto8" path="res://common/scripts/AppData.cs" id="10_a0el1"]
 
 [node name="Core" type="Node"]
 process_mode = 3

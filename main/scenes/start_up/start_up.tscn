@@ -6,9 +6,9 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_yqiir"]
 shader = ExtResource("3_41dyc")
-shader_parameter/RedDisplacement = Vector2(4.85, 4.845)
-shader_parameter/GreenDisplacement = Vector2(-9.43, -8.665)
-shader_parameter/BlueDisplacement = Vector2(12.435, -24.82)
+shader_parameter/RedDisplacement = Vector2(1, 0)
+shader_parameter/GreenDisplacement = Vector2(0, 0)
+shader_parameter/BlueDisplacement = Vector2(-1, 0)
 
 [node name="StartUp" type="CanvasLayer"]
 script = ExtResource("1_xm347")

@@ -107,7 +107,7 @@ void fragment() {
 
 }
 "
-graph_offset = Vector2(289.857, 553.754)
+graph_offset = Vector2(8.16089, 192.108)
 mode = 1
 flags/light_only = false
 preview_params/MixPercentage = "0.3"

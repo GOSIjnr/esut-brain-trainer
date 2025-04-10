@@ -1,13 +1,12 @@
 using Godot;
-using System;
 
 public partial class TouchInputHandler(Vector2 boundSize) : Node
 {
 	private Rect2 _activeTouchRect;
 	private Vector2 _boundSize = boundSize;
 
-	public event Action<Vector2> TouchStarted;
-	public event Action TouchCompleted;
+	[Signal] public delegate void TouchStartedEventHandler(Vector2 position);
+	[Signal] public delegate void TouchCompletedEventHandler();
 
 	public void HandleTouchInput(InputEvent @event)
 	{
@@ -16,13 +15,13 @@ public partial class TouchInputHandler(Vector2 boundSize) : Node
 		if (touchInput.IsPressed())
 		{
 			InitializeTouchBoundary(touchInput.Position);
-			TouchStarted?.Invoke(touchInput.Position);
+			EmitSignalTouchStarted(touchInput.Position);
 			return;
 		}
 
 		if (touchInput.IsReleased() && IsTouchReleaseValid(touchInput.Position))
 		{
-			TouchCompleted?.Invoke();
+			EmitSignalTouchCompleted();
 		}
 	}
 

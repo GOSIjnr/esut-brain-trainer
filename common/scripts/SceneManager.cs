@@ -1,5 +1,4 @@
 using Godot;
-using System;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Collections.Generic;
@@ -18,9 +17,9 @@ public partial class SceneManager : Node
 	private Godot.Collections.Array _loadProgressArray = [];
 	private bool _useSubThreads = true;
 
-	public event Action SceneLoadingStarted;
-	public event Action<float> SceneLoadingProgressUpdated;
-	public event Action SceneLoadingCompleted;
+	[Signal] public delegate void SceneLoadingStartedEventHandler();
+	[Signal] public delegate void SceneLoadingProgressUpdatedEventHandler(float progress);
+	[Signal] public delegate void SceneLoadingCompletedEventHandler();
 
 	public override void _EnterTree()
 	{
@@ -124,7 +123,7 @@ public partial class SceneManager : Node
 	private async Task LoadSceneAsync(string scenePath)
 	{
 		Logger.Log($"Starting async load for scene at '{scenePath}'.", Logger.LogLevel.Debug);
-		SceneLoadingStarted?.Invoke();
+		EmitSignalSceneLoadingStarted();
 
 		_loadCancellationTokenSource?.Cancel();
 		_loadCancellationTokenSource = new CancellationTokenSource();
@@ -151,7 +150,7 @@ public partial class SceneManager : Node
 				return;
 			}
 
-			SceneLoadingProgressUpdated?.Invoke((float)_loadProgressArray[0]);
+			EmitSignalSceneLoadingProgressUpdated((float)_loadProgressArray[0]);
 			await ToSignal(GetTree(), SceneTree.SignalName.ProcessFrame);
 		}
 
@@ -160,7 +159,7 @@ public partial class SceneManager : Node
 			Logger.Log($"Scene load for '{scenePath}' did not complete successfully.", Logger.LogLevel.Error);
 		}
 
-		SceneLoadingProgressUpdated?.Invoke((float)_loadProgressArray[0]);
+		EmitSignalSceneLoadingProgressUpdated((float)_loadProgressArray[0]);
 		Logger.Log($"Scene at '{scenePath}' loaded. Changing scene.", Logger.LogLevel.Debug);
 
 		var loadedResource = ResourceLoader.LoadThreadedGet(scenePath);
@@ -173,7 +172,7 @@ public partial class SceneManager : Node
 
 		GetTree().ChangeSceneToPacked(newPackedScene);
 		Logger.Log($"Active scene changed to resource at '{scenePath}'.", Logger.LogLevel.Debug);
-		SceneLoadingCompleted?.Invoke();
+		EmitSignalSceneLoadingCompleted();
 	}
 
 	public void RegisterScene(string id, string path)

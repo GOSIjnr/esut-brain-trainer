@@ -4,7 +4,7 @@ public static class SceneRegistry
 {
 	public static readonly Dictionary<string, string> SceneResourcePaths = new()
 	{
-		{ "TestScene", "uid://q8d74mvnvuys" },
+		{ "StartUp", "uid://bnqtkei33osav" },
 	};
 
 	public static readonly Dictionary<string, string> LoadingSceneResourcePaths = new()

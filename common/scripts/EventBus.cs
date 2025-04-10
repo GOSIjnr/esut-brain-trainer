@@ -16,13 +16,13 @@ public partial class EventBus : Node
 		Low,
 	}
 
-	private class EventListener(Delegate invocation, bool oneTime, EventPriority priority, int priorityOrder)
+	private class EventListener(Delegate listener, bool oneTime, EventPriority priority, int priorityOrder)
 	{
-		public Delegate Invocation { get; } = invocation;
+		public Delegate Listener { get; } = listener;
 		public bool OneTime { get; } = oneTime;
 		public EventPriority Priority { get; } = priority;
 		public int PriorityOrder { get; } = priorityOrder;
-		private readonly WeakReference<object> _targetRef = invocation.Target != null ? new WeakReference<object>(invocation.Target) : null;
+		private readonly WeakReference<object> _targetRef = listener.Target != null ? new WeakReference<object>(listener.Target) : null;
 		public bool IsValid => _targetRef == null || _targetRef.TryGetTarget(out _);
 	}
 
@@ -47,32 +47,32 @@ public partial class EventBus : Node
 			if (!listener.IsValid)
 			{
 				obsoleteListeners.Add(listener);
-				Logger.Log($"Listener for method {listener.Invocation.Method.Name} is invalid and will be removed.", Logger.LogLevel.Debug);
+				Logger.Log($"Listener for method {listener.Listener.Method.Name} is invalid and will be removed.", Logger.LogLevel.Debug);
 				continue;
 			}
 
-			var parametersInfo = listener.Invocation.Method.GetParameters();
-			var listenerTargetType = listener.Invocation.Target?.GetType().Name ?? "Static Method";
+			var parametersInfo = listener.Listener.Method.GetParameters();
+			var listenerTargetType = listener.Listener.Target?.GetType().Name ?? "Static Method";
 
 			if (parametersInfo.Length == 0 && eventPayload == null)
 			{
-				if (listener.Invocation is Action action)
+				if (listener.Listener is Action action)
 				{
-					Logger.Log($"Invoking listener {listenerTargetType}:{listener.Invocation.Method.Name} with no parameters.", Logger.LogLevel.Debug);
+					Logger.Log($"Invoking listener {listenerTargetType}:{listener.Listener.Method.Name} with no parameters.", Logger.LogLevel.Debug);
 					action();
 				}
 			}
 			else if (parametersInfo.Length == 1 && parametersInfo[0].ParameterType.IsInstanceOfType(eventPayload))
 			{
-				if (listener.Invocation is Action<object> actionWithParam)
+				if (listener.Listener is Action<object> actionWithParam)
 				{
-					Logger.Log($"Invoking listener {listenerTargetType}:{listener.Invocation.Method.Name} expecting {parametersInfo[0].ParameterType.Name} with provided payload type {(eventPayload == null ? "null" : eventPayload.GetType().Name)}.", Logger.LogLevel.Debug);
+					Logger.Log($"Invoking listener {listenerTargetType}:{listener.Listener.Method.Name} expecting {parametersInfo[0].ParameterType.Name} with provided payload type {(eventPayload == null ? "null" : eventPayload.GetType().Name)}.", Logger.LogLevel.Debug);
 					actionWithParam(eventPayload);
 				}
 			}
 			else
 			{
-				Logger.Log($"Listener {listenerTargetType}:{listener.Invocation.Method.Name} expected parameter type '{(parametersInfo.Length == 1 ? parametersInfo[0].ParameterType.Name : "none")}', but received payload type '{(eventPayload == null ? "null" : eventPayload.GetType().Name)}'. Invocation skipped.", Logger.LogLevel.Warning);
+				Logger.Log($"Listener {listenerTargetType}:{listener.Listener.Method.Name} expected parameter type '{(parametersInfo.Length == 1 ? parametersInfo[0].ParameterType.Name : "none")}', but received payload type '{(eventPayload == null ? "null" : eventPayload.GetType().Name)}'. Invocation skipped.", Logger.LogLevel.Warning);
 			}
 
 			if (listener.OneTime)
@@ -83,7 +83,7 @@ public partial class EventBus : Node
 
 		foreach (var listener in obsoleteListeners)
 		{
-			string listenerName = $"{listener.Invocation.Target?.GetType().Name ?? "Static Method"}:{listener.Invocation.Method.Name}";
+			string listenerName = $"{listener.Listener.Target?.GetType().Name ?? "Static Method"}:{listener.Listener.Method.Name}";
 			Logger.Log($"Removing obsolete listener {listenerName} from event subscription.", Logger.LogLevel.Debug);
 			listenerList.Remove(listener);
 		}
@@ -107,7 +107,7 @@ public partial class EventBus : Node
 		if (_eventListenersMap.TryGetValue(eventName, out var listenerList))
 		{
 			int countBefore = listenerList.Count;
-			listenerList.RemoveAll(item => Equals(item.Invocation, action) || !item.IsValid);
+			listenerList.RemoveAll(item => Equals(item.Listener, action) || !item.IsValid);
 			int countAfter = listenerList.Count;
 
 			Logger.Log($"Listener {action.Target?.GetType().Name}:{action.Method.Name} removed from event '{eventName}'. Count reduced from {countBefore} to {countAfter}.", Logger.LogLevel.Debug);
@@ -154,7 +154,7 @@ public partial class EventBus : Node
 		}
 
 		listeners.Add(listener);
-		Logger.Log($"Listener {listener.Invocation.Target?.GetType().Name}:{listener.Invocation.Method.Name} added to event '{eventName}'. Total listeners: {listeners.Count}.", Logger.LogLevel.Debug);
+		Logger.Log($"Listener {listener.Listener.Target?.GetType().Name}:{listener.Listener.Method.Name} added to event '{eventName}'. Total listeners: {listeners.Count}.", Logger.LogLevel.Debug);
 	}
 
 	private bool AlreadySubscribed(string eventName, Delegate action)
@@ -167,7 +167,7 @@ public partial class EventBus : Node
 
 		if (_eventListenersMap.TryGetValue(eventName, out var listeners))
 		{
-			bool exists = listeners.Any(listener => listener.Invocation == action);
+			bool exists = listeners.Any(listener => listener.Listener == action);
 
 			if (exists)
 			{
@@ -194,11 +194,11 @@ public partial class EventBus : Node
 		ExecuteListeners(listeners, eventPayload);
 	}
 
-	public void Subscribe(string eventName, Action handler, bool oneTime = false, EventPriority priority = EventPriority.Medium, int order = 0, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
+	public void Subscribe(string eventName, Action listener, bool oneTime = false, EventPriority priority = EventPriority.Medium, int order = 0, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
 	{
-		if (handler == null)
+		if (listener == null)
 		{
-			Logger.Log("Provided handler is null. Subscription aborted.", Logger.LogLevel.Error);
+			Logger.Log("Provided listener is null. Subscription aborted.", Logger.LogLevel.Error);
 			return;
 		}
 
@@ -208,18 +208,18 @@ public partial class EventBus : Node
 			return;
 		}
 
-		if (AlreadySubscribed(eventName, handler)) return;
+		if (AlreadySubscribed(eventName, listener)) return;
 
-		var newListener = new EventListener(handler, oneTime, priority, order);
+		var newListener = new EventListener(listener, oneTime, priority, order);
 		AddNewListener(eventName, newListener);
-		RecordSubscription(eventName, handler, oneTime, callerMethod, callerFile.GetFile(), callerLine);
+		RecordSubscription(eventName, listener, oneTime, callerMethod, callerFile.GetFile(), callerLine);
 	}
 
-	public void Subscribe<T>(string eventName, Action<T> handler, bool oneTime = false, EventPriority priority = EventPriority.Medium, int order = 0, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
+	public void Subscribe<T>(string eventName, Action<T> listener, bool oneTime = false, EventPriority priority = EventPriority.Medium, int order = 0, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
 	{
-		if (handler == null)
+		if (listener == null)
 		{
-			Logger.Log("Provided handler is null. Subscription aborted.", Logger.LogLevel.Error);
+			Logger.Log("Provided listener is null. Subscription aborted.", Logger.LogLevel.Error);
 			return;
 		}
 
@@ -229,18 +229,18 @@ public partial class EventBus : Node
 			return;
 		}
 
-		if (AlreadySubscribed(eventName, handler)) return;
+		if (AlreadySubscribed(eventName, listener)) return;
 
-		var newListener = new EventListener(handler, oneTime, priority, order);
+		var newListener = new EventListener(listener, oneTime, priority, order);
 		AddNewListener(eventName, newListener);
-		RecordSubscription(eventName, handler, oneTime, callerMethod, callerFile.GetFile(), callerLine);
+		RecordSubscription(eventName, listener, oneTime, callerMethod, callerFile.GetFile(), callerLine);
 	}
 
-	public void Unsubscribe(string eventName, Action handler, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
+	public void Unsubscribe(string eventName, Action listener, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
 	{
-		if (handler == null)
+		if (listener == null)
 		{
-			Logger.Log("Provided handler is null. Operation aborted.", Logger.LogLevel.Error);
+			Logger.Log("Provided listener is null. Operation aborted.", Logger.LogLevel.Error);
 			return;
 		}
 
@@ -250,15 +250,15 @@ public partial class EventBus : Node
 			return;
 		}
 
-		RemoveListener(eventName, handler);
-		RecordUnsubscription(eventName, handler, callerMethod, callerFile.GetFile(), callerLine);
+		RemoveListener(eventName, listener);
+		RecordUnsubscription(eventName, listener, callerMethod, callerFile.GetFile(), callerLine);
 	}
 
-	public void Unsubscribe<T>(string eventName, Action<T> handler, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
+	public void Unsubscribe<T>(string eventName, Action<T> listener, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
 	{
-		if (handler == null)
+		if (listener == null)
 		{
-			Logger.Log("Provided handler is null. Operation aborted.", Logger.LogLevel.Error);
+			Logger.Log("Provided listener is null. Operation aborted.", Logger.LogLevel.Error);
 			return;
 		}
 
@@ -268,8 +268,8 @@ public partial class EventBus : Node
 			return;
 		}
 
-		RemoveListener(eventName, handler);
-		RecordUnsubscription(eventName, handler, callerMethod, callerFile.GetFile(), callerLine);
+		RemoveListener(eventName, listener);
+		RecordUnsubscription(eventName, listener, callerMethod, callerFile.GetFile(), callerLine);
 	}
 
 	public void Publish(string eventName, [CallerMemberName] string callerMethod = "", [CallerFilePath] string callerFile = "", [CallerLineNumber] int callerLine = 0)
@@ -313,8 +313,8 @@ public partial class EventBus : Node
 
 			foreach (var listener in kvp.Value)
 			{
-				string methodName = listener.Invocation.Method.Name;
-				string targetName = listener.Invocation.Target?.GetType().Name ?? "Static Method";
+				string methodName = listener.Listener.Method.Name;
+				string targetName = listener.Listener.Target?.GetType().Name ?? "Static Method";
 				string validStatus = listener.IsValid ? "Valid" : "Invalid";
 
 				Logger.Log($"		Listener -> [{validStatus}] Method: {methodName} in {targetName}, Priority: {listener.Priority}, Order: {listener.PriorityOrder}, OneTime: {listener.OneTime}");

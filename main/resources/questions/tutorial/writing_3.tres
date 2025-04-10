@@ -1,0 +1,36 @@
+[gd_resource type="Resource" script_class="TutorialQuestion" load_steps=7 format=3 uid="uid://uopjbdqm1so2"]
+
+[ext_resource type="Script" uid="uid://bsfccr7xbxnsq" path="res://main/scripts/TutorialOption.cs" id="1_s5j5p"]
+[ext_resource type="Script" uid="uid://b1jo4upfpxbc5" path="res://main/scripts/TutorialQuestion.cs" id="2_g0slw"]
+
+[sub_resource type="Resource" id="Resource_s5j5p"]
+script = ExtResource("1_s5j5p")
+OptionText = "however"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_g0slw"]
+script = ExtResource("1_s5j5p")
+OptionText = "therefore"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_2nei6"]
+script = ExtResource("1_s5j5p")
+OptionText = "moreover"
+Points = 333.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_0w2ah"]
+script = ExtResource("1_s5j5p")
+OptionText = "similarly"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[resource]
+script = ExtResource("2_g0slw")
+QuestionType = 0
+QuestionOptions = Array[ExtResource("1_s5j5p")]([SubResource("Resource_s5j5p"), SubResource("Resource_g0slw"), SubResource("Resource_2nei6"), SubResource("Resource_0w2ah")])
+QuestionText = "Choose the most appropriate transition word to complete the sentence:
+
+She loves reading novels; [img]uid://cc0bwohu7tv04[/img], she enjoys writing short stories."

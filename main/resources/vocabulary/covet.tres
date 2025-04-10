@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://dc0hsqb7w6udi"]
+
+[ext_resource type="Script" uid="uid://cbip2o2djr6gu" path="res://common/scripts/Vocabulary.cs" id="1_y3eea"]
+
+[resource]
+script = ExtResource("1_y3eea")
+Word = "Covet"
+Meaning = "Wish, long, or crave for (something, especially the property of another person)"
+metadata/_custom_type_script = "uid://b43p151qpuary"

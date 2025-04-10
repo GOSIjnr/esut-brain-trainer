@@ -20,6 +20,10 @@ config/icon="uid://dntb04cb75k4r"
 
 GlobalCore="*res://common/scenes/core/core.tscn"
 
+[debug]
+
+file_logging/enable_file_logging=true
+
 [display]
 
 window/size/viewport_width=1080

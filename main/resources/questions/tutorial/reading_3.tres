@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TutorialQuestion" load_steps=5 format=3 uid="uid://cup8fnp47dbc5"]
+
+[ext_resource type="Script" uid="uid://bsfccr7xbxnsq" path="res://main/scripts/TutorialOption.cs" id="1_7sho4"]
+[ext_resource type="Script" uid="uid://b1jo4upfpxbc5" path="res://main/scripts/TutorialQuestion.cs" id="2_04lxr"]
+
+[sub_resource type="Resource" id="Resource_7sho4"]
+script = ExtResource("1_7sho4")
+OptionText = "Bees help in plant reproduction."
+Points = 333.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_04lxr"]
+script = ExtResource("1_7sho4")
+OptionText = "Bees are harmful to plants."
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[resource]
+script = ExtResource("2_04lxr")
+QuestionType = 2
+QuestionOptions = Array[ExtResource("1_7sho4")]([SubResource("Resource_7sho4"), SubResource("Resource_04lxr")])
+QuestionText = "What can be inferred about bees from the passage?
+
+[b]Passage: [/b][i]\"Bees are important pollinators. They help in the reproduction of many plants by transferring pollen from one flower to another.\"[/i]"

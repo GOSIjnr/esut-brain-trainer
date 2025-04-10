@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://clpdn6amuw024"]
+
+[ext_resource type="Script" uid="uid://cbip2o2djr6gu" path="res://common/scripts/Vocabulary.cs" id="1_3essb"]
+
+[resource]
+script = ExtResource("1_3essb")
+Word = "Heresy"
+Meaning = "Any opinions or doctrines at variance with the official or orthodox position"
+metadata/_custom_type_script = "uid://b43p151qpuary"

@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="TutorialQuestion" load_steps=7 format=3 uid="uid://cwxlfg6srsvqi"]
+
+[ext_resource type="Script" uid="uid://bsfccr7xbxnsq" path="res://main/scripts/TutorialOption.cs" id="1_uc7a3"]
+[ext_resource type="Script" uid="uid://b1jo4upfpxbc5" path="res://main/scripts/TutorialQuestion.cs" id="2_snmmx"]
+
+[sub_resource type="Resource" id="Resource_uc7a3"]
+script = ExtResource("1_uc7a3")
+OptionText = "7"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_snmmx"]
+script = ExtResource("1_uc7a3")
+OptionText = "8"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_r5xx6"]
+script = ExtResource("1_uc7a3")
+OptionText = "9"
+Points = 200.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_rhhww"]
+script = ExtResource("1_uc7a3")
+OptionText = "10"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[resource]
+script = ExtResource("2_snmmx")
+QuestionType = 3
+QuestionOptions = Array[ExtResource("1_uc7a3")]([SubResource("Resource_uc7a3"), SubResource("Resource_snmmx"), SubResource("Resource_r5xx6"), SubResource("Resource_rhhww")])
+QuestionText = "81 / 9 = [img]uid://cc0bwohu7tv04[/img]"

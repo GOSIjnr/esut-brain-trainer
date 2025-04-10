@@ -11,12 +11,87 @@ config_version=5
 [application]
 
 config/name="ESUT Brain trainer"
-config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+config/version="1.0.0"
+run/main_scene="uid://bnqtkei33osav"
+config/features=PackedStringArray("4.4", "C#", "GL Compatibility")
+config/icon="uid://dntb04cb75k4r"
+
+[autoload]
+
+GlobalCore="*res://common/scenes/core/core.tscn"
+
+[display]
+
+window/size/viewport_width=1080
+window/size/viewport_height=1920
 
 [dotnet]
 
 project/assembly_name="ESUT Brain trainer"
+
+[file_customization]
+
+folder_colors={
+"res://common/": "gray"
+}
+
+[gui]
+
+theme/custom="uid://dq4vxtwdfue5"
+
+[layer_names]
+
+2d_render/layer_1="Background"
+3d_render/layer_1="Background"
+2d_render/layer_2="World"
+3d_render/layer_2="World"
+2d_render/layer_3="Props"
+3d_render/layer_3="Props"
+2d_render/layer_4="Characters"
+3d_render/layer_4="Characters"
+2d_render/layer_5="Effects"
+3d_render/layer_5="Effects"
+2d_render/layer_6="UI"
+3d_render/layer_6="UI"
+2d_render/layer_7="Debug"
+3d_render/layer_7="Debug"
+2d_physics/layer_1="World"
+2d_navigation/layer_1="Ground"
+3d_physics/layer_1="World"
+3d_navigation/layer_1="Ground"
+2d_physics/layer_2="Player"
+2d_navigation/layer_2="Flying"
+3d_physics/layer_2="Player"
+3d_navigation/layer_2="Flying"
+2d_physics/layer_3="Enemies"
+2d_navigation/layer_3="Water"
+3d_physics/layer_3="Enemies"
+3d_navigation/layer_3="Water"
+2d_physics/layer_4="Projectiles"
+2d_navigation/layer_4="Climbable"
+3d_physics/layer_4="Projectiles"
+3d_navigation/layer_4="Climbable"
+2d_physics/layer_5="Objects"
+2d_navigation/layer_5="Restricted"
+3d_physics/layer_5="Objects"
+3d_navigation/layer_5="Restricted"
+2d_physics/layer_6="Triggers"
+2d_navigation/layer_6="Blockers"
+3d_physics/layer_6="Triggers"
+3d_navigation/layer_6="Blockers"
+2d_physics/layer_7="Debug"
+2d_navigation/layer_7="Special"
+3d_physics/layer_7="Debug"
+3d_navigation/layer_7="Special"
+2d_navigation/layer_8="Debug"
+3d_navigation/layer_8="Debug"
+avoidance/layer_1="Player"
+avoidance/layer_2="Enemies"
+avoidance/layer_3="Projectiles"
+avoidance/layer_4="Objects"
+avoidance/layer_5="NPC"
+avoidance/layer_6="Hazards"
+avoidance/layer_7="Debug"
 
 [rendering]
 

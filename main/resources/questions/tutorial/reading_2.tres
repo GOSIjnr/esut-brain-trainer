@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TutorialQuestion" load_steps=5 format=3 uid="uid://hf6i4rfmb86x"]
+
+[ext_resource type="Script" uid="uid://bsfccr7xbxnsq" path="res://main/scripts/TutorialOption.cs" id="1_lnu4o"]
+[ext_resource type="Script" uid="uid://b1jo4upfpxbc5" path="res://main/scripts/TutorialQuestion.cs" id="2_lsr2y"]
+
+[sub_resource type="Resource" id="Resource_lnu4o"]
+script = ExtResource("1_lnu4o")
+OptionText = "Deserts of the World"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_lsr2y"]
+script = ExtResource("1_lnu4o")
+OptionText = "The Amazon Rainforest"
+Points = 333.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[resource]
+script = ExtResource("2_lsr2y")
+QuestionType = 2
+QuestionOptions = [SubResource("Resource_lnu4o"), SubResource("Resource_lsr2y")]
+QuestionText = "What is the best title for the passage?
+
+[b]Passage: [/b][i]\"The Amazon rainforest is home to a diverse range of species. Many plants and animals found there are not found anywhere else in the world.\"[/i]"

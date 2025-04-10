@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="TutorialQuestion" load_steps=7 format=3 uid="uid://ceeyyg10yve7c"]
+
+[ext_resource type="Script" uid="uid://bsfccr7xbxnsq" path="res://main/scripts/TutorialOption.cs" id="1_jr3h4"]
+[ext_resource type="Script" uid="uid://b1jo4upfpxbc5" path="res://main/scripts/TutorialQuestion.cs" id="2_mqur6"]
+
+[sub_resource type="Resource" id="Resource_jr3h4"]
+script = ExtResource("1_jr3h4")
+OptionText = "Very Clearly"
+Points = 500.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_mqur6"]
+script = ExtResource("1_jr3h4")
+OptionText = "Mostly Clear"
+Points = 375.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_v5rxs"]
+script = ExtResource("1_jr3h4")
+OptionText = "Sometimes Unclear"
+Points = 250.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_rflna"]
+script = ExtResource("1_jr3h4")
+OptionText = "Often Unclear"
+Points = 125.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[resource]
+script = ExtResource("2_mqur6")
+QuestionType = 1
+QuestionOptions = [SubResource("Resource_jr3h4"), SubResource("Resource_mqur6"), SubResource("Resource_v5rxs"), SubResource("Resource_rflna")]
+QuestionText = "How clearly do you enunciate your words when speaking?"

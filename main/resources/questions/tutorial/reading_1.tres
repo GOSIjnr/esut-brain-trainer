@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="TutorialQuestion" load_steps=5 format=3 uid="uid://dmj7bjlffhgdg"]
+
+[ext_resource type="Script" uid="uid://bsfccr7xbxnsq" path="res://main/scripts/TutorialOption.cs" id="1_ibxww"]
+[ext_resource type="Script" uid="uid://b1jo4upfpxbc5" path="res://main/scripts/TutorialQuestion.cs" id="1_sr13p"]
+
+[sub_resource type="Resource" id="Resource_6gjj2"]
+script = ExtResource("1_ibxww")
+OptionText = "Birds fly south for the winter"
+Points = 0.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_7qum4"]
+script = ExtResource("1_ibxww")
+OptionText = "Birds build nests to protect their eggs"
+Points = 334.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[resource]
+script = ExtResource("1_sr13p")
+QuestionType = 2
+QuestionOptions = [SubResource("Resource_6gjj2"), SubResource("Resource_7qum4")]
+QuestionText = "What is the main idea of the passage?
+
+[b]Passage: [/b][i]\"Birds build nests to protect their eggs. Different birds use various materials like twigs, leaves, and feathers to make their nests.\"[/i]"

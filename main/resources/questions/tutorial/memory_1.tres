@@ -1,0 +1,34 @@
+[gd_resource type="Resource" script_class="TutorialQuestion" load_steps=7 format=3 uid="uid://bbjem16p8p3p0"]
+
+[ext_resource type="Script" uid="uid://bsfccr7xbxnsq" path="res://main/scripts/TutorialOption.cs" id="1_vuwlj"]
+[ext_resource type="Script" uid="uid://b1jo4upfpxbc5" path="res://main/scripts/TutorialQuestion.cs" id="2_ytjtk"]
+
+[sub_resource type="Resource" id="Resource_vuwlj"]
+script = ExtResource("1_vuwlj")
+OptionText = "Excellent"
+Points = 500.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_ytjtk"]
+script = ExtResource("1_vuwlj")
+OptionText = "Above Average"
+Points = 375.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_srufn"]
+script = ExtResource("1_vuwlj")
+OptionText = "Average"
+Points = 250.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[sub_resource type="Resource" id="Resource_yvkhk"]
+script = ExtResource("1_vuwlj")
+OptionText = "Below Average"
+Points = 125.0
+metadata/_custom_type_script = "uid://clxr5bdh303ac"
+
+[resource]
+script = ExtResource("2_ytjtk")
+QuestionType = 4
+QuestionOptions = [SubResource("Resource_vuwlj"), SubResource("Resource_ytjtk"), SubResource("Resource_srufn"), SubResource("Resource_yvkhk")]
+QuestionText = "How well can you remember names?"

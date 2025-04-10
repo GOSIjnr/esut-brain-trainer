@@ -6,7 +6,7 @@ public partial class CrashHandlerScene : CanvasLayer
 
 	public override void _EnterTree()
 	{
-		_closeButton = GetNode<Button>("%Button");
+		_closeButton = GetNode<Button>("%Quit");
 		_closeButton.Pressed += OnCloseButtonPressed;
 	}
 

@@ -50,6 +50,7 @@ public partial class Core : Node
 
 	private void ConfigureEngine()
 	{
+		//consider moving this later on to a new class for settings
 		float refreshRate = DisplayServer.ScreenGetRefreshRate();
 		refreshRate = (refreshRate < 0.0f) ? 60.0f : refreshRate;
 		Engine.MaxFps = Mathf.FloorToInt(refreshRate);

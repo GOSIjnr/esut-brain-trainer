@@ -1,52 +1,81 @@
-[gd_scene load_steps=3 format=3 uid="uid://dl4etp5kyo01l"]
+[gd_scene load_steps=5 format=3 uid="uid://dl4etp5kyo01l"]
 
 [ext_resource type="Script" uid="uid://b76d4oq3s5ogk" path="res://common/scenes/crash_handler/scripts/CrashHandlerScene.cs" id="1_8cmpw"]
+[ext_resource type="Shader" uid="uid://c26n2oig860x2" path="res://common/shaders/canvas_blur.tres" id="2_iwxpx"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wl6i"]
-bg_color = Color(0, 0, 0, 0.509804)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nxb3a"]
+shader = ExtResource("2_iwxpx")
+shader_parameter/BlurAmount = 1.0
+shader_parameter/TintColor = Color(0, 0, 0, 1)
+shader_parameter/MixPercentage = 0.3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nxb3a"]
+bg_color = Color(0.98, 0.98, 0.98, 1)
+corner_radius_top_left = 50
+corner_radius_top_right = 50
 
 [node name="CrashHandlerScene" type="CanvasLayer"]
 process_mode = 3
 script = ExtResource("1_8cmpw")
 
 [node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_nxb3a")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_styles/panel = SubResource("StyleBoxFlat_6wl6i")
+theme_type_variation = &"PanelNormal"
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-
-[node name="Control" type="Control" parent="MarginContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="MarginContainer/Control"]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-text = "An Unexpected Error Occured"
-horizontal_alignment = 1
-vertical_alignment = 1
-
-[node name="Button" type="Button" parent="MarginContainer/Control"]
-unique_name_in_owner = true
-custom_minimum_size = Vector2(0, 50)
-layout_mode = 1
+[node name="Panel2" type="Panel" parent="."]
 anchors_preset = 12
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_top = -195.0
+offset_top = -684.0
 grow_horizontal = 2
 grow_vertical = 0
-text = "Close Game"
+size_flags_vertical = 3
+theme_override_styles/panel = SubResource("StyleBoxFlat_nxb3a")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"MarginContainerNormal"
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel2/MarginContainer"]
+layout_mode = 2
+vertical = true
+
+[node name="Label" type="Label" parent="Panel2/MarginContainer/BoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"LabelNormal"
+text = "An Unexpected Error Occured"
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 3
+
+[node name="BoxContainer" type="BoxContainer" parent="Panel2/MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"BoxContainerNormalSpaced"
+
+[node name="SendLog" type="Button" parent="Panel2/MarginContainer/BoxContainer/BoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"ButtonToggle"
+text = "SEND LOG"
+
+[node name="Quit" type="Button" parent="Panel2/MarginContainer/BoxContainer/BoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_type_variation = &"ButtonNormal"
+text = "QUIT"

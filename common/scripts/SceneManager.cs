@@ -64,6 +64,12 @@ public partial class SceneManager : Node
 
 	public void SwitchScene(string sceneId, string loadingScreenId = "")
 	{
+		if (string.IsNullOrEmpty(sceneId))
+		{
+			Logger.Log("Scene ID is null or empty. Cannot switch scenes.", Logger.LogLevel.Error);
+			return;
+		}
+
 		if (!_scenePaths.TryGetValue(sceneId, out string targetScenePath))
 		{
 			Logger.Log($"Scene '{sceneId}' not found. Available scenes: {string.Join(", ", _scenePaths.Keys)}.", Logger.LogLevel.Warning);

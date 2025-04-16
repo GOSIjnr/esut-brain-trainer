@@ -2,9 +2,9 @@
 
 [ext_resource type="Script" uid="uid://d2xutp4fuv4i" path="res://welcome_page/WelcomePage.cs" id="1_3uhn3"]
 
-[node name="WelcomePage" type="CanvasLayer"]
+[node name="WelcomePage" type="CanvasLayer" node_paths=PackedStringArray("_contentPages")]
 script = ExtResource("1_3uhn3")
-_nextPageID = "Test"
+_contentPages = [null, null, null, null, null]
 metadata/_custom_type_script = "uid://3hjbq1dpqu22"
 
 [node name="Panel" type="Panel" parent="."]

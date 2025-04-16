@@ -30,11 +30,11 @@ public partial class StartUp : CanvasLayer
 
 		if (saveManager.userData.IsTutorialDone)
 		{
-			Core.Instance.SceneManager.SwitchScene("MainMenu");
+			Core.Instance.SceneManager.SwitchScene("MainMenu", "None");
 		}
 		else
 		{
-			Core.Instance.SceneManager.SwitchScene("WelcomePage");
+			Core.Instance.SceneManager.SwitchScene("WelcomePage", "None");
 		}
 	}
 }

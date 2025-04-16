@@ -71,7 +71,7 @@ public partial class SceneManager : Node
 		}
 
 		SetCurrentLoadingScreen(loadingScreenId);
-		_ = LoadSceneAsync(targetScenePath);
+		_ = LoadSceneAsync(sceneId, targetScenePath);
 	}
 
 	private void SetCurrentLoadingScreen(string loadingScreenId)
@@ -120,9 +120,9 @@ public partial class SceneManager : Node
 		_currentLoadingScreen.AttachToSceneManager(this);
 	}
 
-	private async Task LoadSceneAsync(string scenePath)
+	private async Task LoadSceneAsync(string sceneId, string scenePath)
 	{
-		Logger.Log($"Starting async load for scene at '{scenePath}'.", Logger.LogLevel.Debug);
+		Logger.Log($"Starting async load for scene at {sceneId} ({scenePath}).", Logger.LogLevel.Debug);
 		EmitSignalSceneLoadingStarted();
 
 		_loadCancellationTokenSource?.Cancel();
@@ -133,7 +133,7 @@ public partial class SceneManager : Node
 
 		if (loadRequest != Error.Ok)
 		{
-			Logger.Log($"Failed to start threaded load for '{scenePath}'.", Logger.LogLevel.Debug);
+			Logger.Log($"Failed to start threaded load for {sceneId} ({scenePath}).", Logger.LogLevel.Debug);
 			return;
 		}
 
@@ -146,7 +146,7 @@ public partial class SceneManager : Node
 
 			if (token.IsCancellationRequested)
 			{
-				Logger.Log($"Load for '{scenePath}' was cancelled.", Logger.LogLevel.Debug);
+				Logger.Log($"Load for {sceneId} ({scenePath}) was cancelled.", Logger.LogLevel.Debug);
 				return;
 			}
 
@@ -156,22 +156,22 @@ public partial class SceneManager : Node
 
 		if (ResourceLoader.LoadThreadedGetStatus(scenePath) != ResourceLoader.ThreadLoadStatus.Loaded)
 		{
-			Logger.Log($"Scene load for '{scenePath}' did not complete successfully.", Logger.LogLevel.Error);
+			Logger.Log($"Scene load for {sceneId} ({scenePath}) did not complete successfully.", Logger.LogLevel.Error);
 		}
 
 		EmitSignalSceneLoadingProgressUpdated((float)_loadProgressArray[0]);
-		Logger.Log($"Scene at '{scenePath}' loaded. Changing scene.", Logger.LogLevel.Debug);
+		Logger.Log($"Scene at {sceneId} ({scenePath}) loaded. Changing scene.....", Logger.LogLevel.Debug);
 
 		var loadedResource = ResourceLoader.LoadThreadedGet(scenePath);
 
 		if (loadedResource is not PackedScene newPackedScene)
 		{
-			Logger.Log($"Loaded resource at '{scenePath}' is not a valid PackedScene. Aborting.", Logger.LogLevel.Fatal);
+			Logger.Log($"Loaded resource at {sceneId} ({scenePath}) is not a valid PackedScene. Aborting!.", Logger.LogLevel.Fatal);
 			return;
 		}
 
 		GetTree().ChangeSceneToPacked(newPackedScene);
-		Logger.Log($"Active scene changed to resource at '{scenePath}'.", Logger.LogLevel.Debug);
+		Logger.Log($"Active scene changed to resource at {sceneId} ({scenePath}).", Logger.LogLevel.Debug);
 		EmitSignalSceneLoadingCompleted();
 	}
 

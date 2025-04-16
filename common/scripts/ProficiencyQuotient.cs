@@ -2,7 +2,7 @@ using Godot;
 using GOSIjnr;
 using Godot.Collections;
 
-public partial class ProficiencyQuotient : Resource, IDataSerializer<Dictionary<string, Variant>>
+public partial class ProficiencyQuotient : RefCounted, IDataSerializer<Dictionary<string, Variant>>
 {
 	[Export] public bool isRecommendedByUser;
 	[Export] public float startingPoints = 10;

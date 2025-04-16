@@ -2,7 +2,7 @@ using Godot;
 using GOSIjnr;
 using Godot.Collections;
 
-public partial class UserData : Resource, IDataSerializer<Dictionary<string, Variant>>
+public partial class UserData : RefCounted, IDataSerializer<Dictionary<string, Variant>>
 {
 	[Export] public string UserName { get; set; } = "User";
 	[Export] public bool IsTutorialDone { get; set; }

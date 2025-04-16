@@ -4,6 +4,8 @@ public abstract partial class LoadingScreen : CanvasLayer
 {
 	private SceneManager _activeSceneManager;
 
+	[Signal] public delegate void OnUnloadRequestedEventHandler(LoadingScreen loadingScreen);
+
 	public override void _ExitTree()
 	{
 		if (_activeSceneManager != null)

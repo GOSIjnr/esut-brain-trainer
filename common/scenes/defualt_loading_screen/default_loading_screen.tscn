@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://day7d8wu2rdi0"]
+
+[ext_resource type="Script" uid="uid://ddas5hy5oddie" path="res://common/scenes/defualt_loading_screen/scripts/DefaultLoadingScreen.cs" id="1_683l7"]
+
+[node name="DefaultLoadingScreen" type="CanvasLayer"]
+script = ExtResource("1_683l7")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2

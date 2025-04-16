@@ -11,6 +11,6 @@ public static class SceneRegistry
 
 	public static readonly Dictionary<string, string> LoadingSceneResourcePaths = new()
 	{
-		{ "None", "uid://b5bxiic22ucri" },
+		{ "None", "uid://day7d8wu2rdi0" },
 	};
 }

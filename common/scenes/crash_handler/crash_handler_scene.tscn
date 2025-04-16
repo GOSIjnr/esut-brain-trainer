@@ -54,11 +54,10 @@ vertical = true
 [node name="Label" type="Label" parent="Panel2/MarginContainer/BoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_type_variation = &"LabelNormal"
+theme_type_variation = &"LabelBold"
 text = "An Unexpected Error Occured"
 horizontal_alignment = 1
 vertical_alignment = 1
-text_overrun_behavior = 3
 
 [node name="BoxContainer" type="BoxContainer" parent="Panel2/MarginContainer/BoxContainer"]
 layout_mode = 2

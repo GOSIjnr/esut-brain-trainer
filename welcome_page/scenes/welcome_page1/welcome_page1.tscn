@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://dk7bltl870pkq"]
+
+[ext_resource type="Script" uid="uid://dm8r3plt5086c" path="res://welcome_page/scenes/welcome_page1/WelcomePage1.cs" id="1_pw4y0"]
+[ext_resource type="Texture2D" uid="uid://c3e7vpjpa1hor" path="res://welcome_page/scenes/welcome_page1/textures/esut_logo.png" id="2_pw4y0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_pw4y0"]
+
+[node name="WelcomePage1" type="CanvasLayer"]
+script = ExtResource("1_pw4y0")
+metadata/_custom_type_script = "uid://dlnpy0tgmi06x"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"MarginContainerNormal"
+
+[node name="BoxContainer" type="BoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"BoxContainerSmallSpaced"
+alignment = 1
+vertical = true
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+texture = ExtResource("2_pw4y0")
+stretch_mode = 5
+
+[node name="HSeparator" type="HSeparator" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 40
+theme_override_styles/separator = SubResource("StyleBoxEmpty_pw4y0")
+
+[node name="Label" type="Label" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelBold"
+theme_override_font_sizes/font_size = 36
+text = "LABEL_APP_NAME"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/BoxContainer"]
+layout_mode = 2
+theme_type_variation = &"LabelLight"
+theme_override_font_sizes/font_size = 24
+text = "LABEL_APP_DESCRIPTION"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"ButtonNormal"
+text = "BUTTON_GET_STARTED"

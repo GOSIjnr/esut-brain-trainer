@@ -12,9 +12,9 @@ public partial class ContentScroller : CanvasLayer
 
 	public override void _EnterTree()
 	{
-		// Remove null pages and log the behavior
+		// Remove null and duplicate pages and log the behavior
 		int initialCount = _contentPages.Count;
-		_contentPages = [.. _contentPages.Where(page => page != null)];
+		_contentPages = [.. _contentPages.Where(page => page != null).Distinct()];
 		int removedCount = initialCount - _contentPages.Count;
 
 		if (removedCount > 0)

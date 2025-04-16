@@ -115,7 +115,6 @@ public partial class SceneManager : Node
 
 	private void UpdateCurrentLoadingScreen(LoadingScreen newScreen)
 	{
-		_currentLoadingScreen?.QueueFree();
 		_currentLoadingScreen = newScreen;
 		AttachCurrentLoadingScreen();
 	}
@@ -124,6 +123,18 @@ public partial class SceneManager : Node
 	{
 		GetTree().Root.CallDeferred(MethodName.AddChild, _currentLoadingScreen);
 		_currentLoadingScreen.AttachToSceneManager(this);
+
+		_currentLoadingScreen.OnUnloadRequested += OnLoadingScreenRequestUnload;
+	}
+
+	private void OnLoadingScreenRequestUnload(LoadingScreen loadingScreen)
+	{
+		if (_currentLoadingScreen == loadingScreen)
+		{
+			_currentLoadingScreen.OnUnloadRequested -= OnLoadingScreenRequestUnload;
+			_currentLoadingScreen.QueueFree();
+			_currentLoadingScreen = null;
+		}
 	}
 
 	private async Task LoadSceneAsync(string sceneId, string scenePath)

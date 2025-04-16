@@ -6,7 +6,7 @@
 [ext_resource type="Script" uid="uid://cxwe0gehqyao1" path="res://common/scripts/EventBus.cs" id="3_8f36b"]
 [ext_resource type="Script" uid="uid://c5la252cbhp8j" path="res://common/scripts/SceneManager.cs" id="4_vxbv5"]
 [ext_resource type="Script" uid="uid://dgrm71yf643cc" path="res://common/scenes/toast/scripts/ToastManager.cs" id="5_sj4ve"]
-[ext_resource type="PackedScene" uid="uid://b5bxiic22ucri" path="res://common/scenes/defualt_loading_screen/DefualtLoadingScreen.tscn" id="6_8cgh0"]
+[ext_resource type="PackedScene" uid="uid://day7d8wu2rdi0" path="res://common/scenes/defualt_loading_screen/default_loading_screen.tscn" id="6_4x8p1"]
 [ext_resource type="PackedScene" uid="uid://37kjmr5xsoum" path="res://common/scenes/toast/toast_scene.tscn" id="8_kcsr7"]
 [ext_resource type="Script" uid="uid://1ra4ww02h1ck" path="res://common/scripts/SaveManager.cs" id="9_4x8p1"]
 [ext_resource type="Script" uid="uid://dkow13046bto8" path="res://common/scripts/AppData.cs" id="10_a0el1"]
@@ -30,7 +30,7 @@ metadata/_custom_type_script = "uid://cxwe0gehqyao1"
 [node name="SceneManager" type="Node" parent="."]
 unique_name_in_owner = true
 script = ExtResource("4_vxbv5")
-_defaultLoadingPackedScene = ExtResource("6_8cgh0")
+_defaultLoadingPackedScene = ExtResource("6_4x8p1")
 metadata/_custom_type_script = "uid://c5la252cbhp8j"
 
 [node name="ToastManager" type="Node" parent="."]

@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="IntroPage" load_steps=3 format=3 uid="uid://u1dx20pfc27l"]
+
+[ext_resource type="Texture2D" uid="uid://dvey8carbo0d6" path="res://main/scenes/welcome_page/scenes/welcome_page2/textures/benefit.svg" id="1_0m1yp"]
+[ext_resource type="Script" path="res://welcome_page2/scripts/IntroPage.cs" id="1_pw8fy"]
+
+
+
+[resource]
+script = ExtResource("1_pw8fy")
+IntroTexture = ExtResource("1_0m1yp")
+IntroTitle = "See the benefits"
+IntroBody = "Improve your productivity, earning power and self-confidence with games"
+metadata/_custom_type_script = "uid://c7r8ek5cwhnnd"

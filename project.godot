@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="ESUT Brain trainer"
+config/name="ESUT Brain Trainer"
 config/version="1.0.0"
 run/main_scene="uid://bnqtkei33osav"
 config/features=PackedStringArray("4.4", "C#", "GL Compatibility")

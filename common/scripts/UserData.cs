@@ -1,5 +1,6 @@
 using Godot;
 using GOSIjnr;
+using System.Linq;
 using Godot.Collections;
 
 public partial class UserData : RefCounted, IDataSerializer<Dictionary<string, Variant>>
@@ -8,27 +9,33 @@ public partial class UserData : RefCounted, IDataSerializer<Dictionary<string, V
 	[Export] public bool IsTutorialDone { get; set; }
 	[Export] public int Workouts { get; set; }
 	[Export] public Dictionary<string, float> HighScores { get; set; } = [];
-	[Export] public ProficiencyQuotient Writing { get; set; } = new();
-	[Export] public ProficiencyQuotient Speaking { get; set; } = new();
-	[Export] public ProficiencyQuotient Reading { get; set; } = new();
-	[Export] public ProficiencyQuotient Maths { get; set; } = new();
-	[Export] public ProficiencyQuotient Memory { get; set; } = new();
-	[Export] public ProficiencyQuotient Average { get; set; } = new();
+	[Export]
+	public Dictionary<string, ProficiencyQuotient> SubjectProficiencies { get; set; } = new()
+	{
+		{ AppData.Subjects.Writing.ToString() , new ProficiencyQuotient() },
+		{ AppData.Subjects.Speaking.ToString(), new ProficiencyQuotient() },
+		{ AppData.Subjects.Reading.ToString(), new ProficiencyQuotient() },
+		{ AppData.Subjects.Maths.ToString(), new ProficiencyQuotient() },
+		{ AppData.Subjects.Memory.ToString(), new ProficiencyQuotient() },
+		{ AppData.Subjects.Average.ToString(), new ProficiencyQuotient() },
+	};
 
 	public Dictionary<string, Variant> SerializeObject()
 	{
-		return new Dictionary<string, Variant>
+		var subjectData = new Dictionary<string, Variant>();
+
+		foreach (var subject in SubjectProficiencies)
+		{
+			subjectData.Add(subject.Key, subject.Value.SerializeObject());
+		}
+
+		return new()
 		{
 			{ "UserName", UserName },
 			{ "IsTutorialDone", IsTutorialDone },
 			{ "Workouts", Workouts },
 			{ "HighScores", HighScores },
-			{ "Writing", Writing.SerializeObject() },
-			{ "Speaking", Speaking.SerializeObject() },
-			{ "Reading", Reading.SerializeObject() },
-			{ "Maths", Maths.SerializeObject() },
-			{ "Memory", Memory.SerializeObject() },
-			{ "Average", Average.SerializeObject() },
+			{ "Proficiencies", subjectData },
 		};
 	}
 
@@ -38,11 +45,28 @@ public partial class UserData : RefCounted, IDataSerializer<Dictionary<string, V
 		IsTutorialDone = data.GetValueOrDefault("IsTutorialDone", () => false);
 		Workouts = data.GetValueOrDefault("Workouts", () => 0);
 		HighScores = data.GetValueOrDefault("HighScores", () => new Dictionary<string, float>());
-		Writing.DeserializeObject(data.GetValueOrDefault("Writing", () => new Dictionary<string, Variant>()));
-		Speaking.DeserializeObject(data.GetValueOrDefault("Speaking", () => new Dictionary<string, Variant>()));
-		Reading.DeserializeObject(data.GetValueOrDefault("Reading", () => new Dictionary<string, Variant>()));
-		Maths.DeserializeObject(data.GetValueOrDefault("Maths", () => new Dictionary<string, Variant>()));
-		Memory.DeserializeObject(data.GetValueOrDefault("Memory", () => new Dictionary<string, Variant>()));
-		Average.DeserializeObject(data.GetValueOrDefault("Average", () => new Dictionary<string, Variant>()));
+
+		if (data.TryGetValue("Proficiencies", out var proficienciesData) && proficienciesData.Obj is Dictionary proficiencyData)
+		{
+			foreach (string key in proficiencyData.Keys.Select(v => (string)v))
+			{
+				if (SubjectProficiencies.TryGetValue(key, out ProficiencyQuotient value))
+				{
+					try
+					{
+						var userProficiencyMap = proficiencyData[key].As<Dictionary<string, Variant>>();
+						SubjectProficiencies[key].DeserializeObject(userProficiencyMap);
+					}
+					catch (System.InvalidCastException e)
+					{
+						GD.PrintErr($"Proficiency data for '{key}' is not a Dictionary<string, Variant>: {e.Message}");
+					}
+					catch (System.Exception e)
+					{
+						GD.PrintErr($"Unexpected error while processing proficiency '{key}': {e.Message}");
+					}
+				}
+			}
+		}
 	}
 }

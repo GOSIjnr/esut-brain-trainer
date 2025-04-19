@@ -11,7 +11,7 @@ public partial class StartUp : CanvasLayer
 		{
 			saveManager.LoadUserData();
 
-			var data = saveManager.userData;
+			var data = saveManager.UserProfileData;
 			var newScores = Utils.MergeDictionaries(data.HighScores, Core.Instance.AppData.TemplateScores);
 			data.HighScores.Clear();
 
@@ -28,7 +28,7 @@ public partial class StartUp : CanvasLayer
 			saveManager.SaveUserData();
 		}
 
-		if (saveManager.userData.IsTutorialDone)
+		if (saveManager.UserProfileData.IsTutorialDone)
 		{
 			Core.Instance.SceneManager.SwitchScene("MainMenu", "None");
 		}

@@ -9,16 +9,16 @@ public partial class DailyManager : Node
 	{
 		var saveManager = Core.Instance.SaveManager;
 
-		if (saveManager == null || saveManager.userData == null) return;
+		if (saveManager == null || saveManager.UserProfileData == null) return;
 
-		var userData = saveManager.userData;
+		var userData = saveManager.UserProfileData;
 
-		AddDailyData(userData.Writing.dailyPoints, userData.Writing.CurrentPoints);
-		AddDailyData(userData.Speaking.dailyPoints, userData.Speaking.CurrentPoints);
-		AddDailyData(userData.Reading.dailyPoints, userData.Reading.CurrentPoints);
-		AddDailyData(userData.Maths.dailyPoints, userData.Maths.CurrentPoints);
-		AddDailyData(userData.Memory.dailyPoints, userData.Memory.CurrentPoints);
-		AddDailyData(userData.Average.dailyPoints, userData.Average.CurrentPoints);
+		// AddDailyData(userData.Writing.dailyPoints, userData.Writing.CurrentPoints);
+		// AddDailyData(userData.Speaking.dailyPoints, userData.Speaking.CurrentPoints);
+		// AddDailyData(userData.Reading.dailyPoints, userData.Reading.CurrentPoints);
+		// AddDailyData(userData.Maths.dailyPoints, userData.Maths.CurrentPoints);
+		// AddDailyData(userData.Memory.dailyPoints, userData.Memory.CurrentPoints);
+		// AddDailyData(userData.Average.dailyPoints, userData.Average.CurrentPoints);
 	}
 
 	private int DateToTimestamp(string dateString)

@@ -17,4 +17,3 @@ unique_name_in_owner = true
 
 [node name="IntroController" parent="." instance=ExtResource("7_u63rh")]
 unique_name_in_owner = true
-_text = "IGN"

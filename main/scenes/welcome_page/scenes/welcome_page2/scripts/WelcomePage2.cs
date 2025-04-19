@@ -1,4 +1,5 @@
 using Godot;
+using System.Linq;
 using Godot.Collections;
 
 public partial class WelcomePage2 : ContentPage
@@ -44,6 +45,16 @@ public partial class WelcomePage2 : ContentPage
 
 	public override void _Ready()
 	{
+		int originalCount = _introPages.Count;
+
+		// Filter out nulls and duplicates
+		var filteredPages = new Array<IntroPage>(_introPages.Where(x => x != null).Distinct());
+
+		int removedCount = originalCount - filteredPages.Count;
+		Logger.Log($"{removedCount} null or duplicate pages were removed from the content pages array.", Logger.LogLevel.Warning);
+
+		_introPages = filteredPages;
+
 		_introController.UpdateUIForCurrentIndex(_currentPageIndex, _introPages.Count);
 		CurrentPageIndex = 0;
 		_introPlayer.SelectedPage = _introPages[0];

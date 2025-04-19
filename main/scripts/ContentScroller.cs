@@ -1,6 +1,6 @@
 using Godot;
-using Godot.Collections;
 using System.Linq;
+using Godot.Collections;
 
 [GlobalClass]
 public partial class ContentScroller : CanvasLayer
@@ -19,7 +19,7 @@ public partial class ContentScroller : CanvasLayer
 
 		if (removedCount > 0)
 		{
-			Logger.Log($"{removedCount} null pages were removed from the content pages array.", Logger.LogLevel.Warning);
+			Logger.Log($"{removedCount} null or duplicate pages were removed from the content pages array.", Logger.LogLevel.Warning);
 		}
 
 		foreach (var page in _contentPages)

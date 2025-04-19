@@ -1,7 +1,5 @@
 using Godot;
 
-namespace GOSIjnr;
-
 public partial class Page2Controller : MarginContainer
 {
 	private Button _previousButton;

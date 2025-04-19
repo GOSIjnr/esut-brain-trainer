@@ -1,9 +1,7 @@
 [gd_resource type="Resource" script_class="IntroPage" load_steps=3 format=3 uid="uid://dac3dbr6ml515"]
 
 [ext_resource type="Texture2D" uid="uid://itt5yvafm7wc" path="res://main/scenes/welcome_page/scenes/welcome_page2/textures/progress.svg" id="1_hglej"]
-[ext_resource type="Script" path="res://welcome_page2/scripts/IntroPage.cs" id="1_yihs5"]
-
-
+[ext_resource type="Script" uid="uid://dpgitwv5a7nu6" path="res://main/scenes/welcome_page/scenes/welcome_page2/scripts/IntroPage.cs" id="1_yihs5"]
 
 [resource]
 script = ExtResource("1_yihs5")

@@ -1,7 +1,5 @@
 using Godot;
 
-namespace GOSIjnr;
-
 public partial class WelcomePage5 : ContentPage
 {
 	private Button _nextButton;
@@ -9,17 +7,11 @@ public partial class WelcomePage5 : ContentPage
 	public override void _Ready()
 	{
 		_nextButton = GetNode<Button>("%Button");
-		_nextButton.Pressed += NextPage;
+		_nextButton.Pressed += EmitSignalOnNextPageRequested;
 	}
 
 	public override void _ExitTree()
 	{
-		_nextButton.Pressed -= NextPage;
-	}
-
-	private void NextPage()
-	{
-		EmitSignalNextPageButtonClick();
+		_nextButton.Pressed -= EmitSignalOnNextPageRequested;
 	}
 }
-

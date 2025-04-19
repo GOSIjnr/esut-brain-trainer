@@ -1,7 +1,5 @@
 using Godot;
 
-namespace GOSIjnr;
-
 public partial class WelcomePage3 : ContentPage
 {
 	private Button _nextButton;

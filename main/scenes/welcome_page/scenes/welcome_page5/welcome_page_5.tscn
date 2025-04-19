@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" uid="uid://dqqds606ynto4" path="res://main/scenes/welcome_page/scenes/welcome_page5/WelcomePage5.cs" id="1_j3q2f"]
 
-
 [node name="WelcomePage5" type="CanvasLayer"]
 script = ExtResource("1_j3q2f")
 metadata/_custom_type_script = "uid://broj3ubf2wrgu"

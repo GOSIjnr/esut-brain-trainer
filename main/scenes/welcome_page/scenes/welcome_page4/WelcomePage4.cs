@@ -1,8 +1,6 @@
 using Godot;
 using Godot.Collections;
 
-namespace GOSIjnr;
-
 public partial class WelcomePage4 : ContentPage
 {
 	private Array<Button> _toggleButtons = [];
@@ -69,18 +67,18 @@ public partial class WelcomePage4 : ContentPage
 	private void NextPage()
 	{
 		SaveSelectedOptions();
-		EmitSignalNextPageButtonClick();
+		EmitSignalOnNextPageRequested();
 	}
 
 	private void SaveSelectedOptions()
 	{
-		var userData = Core.Instance.SaveManager.userData;
+		var userData = Core.Instance.SaveManager.UserProfileData;
 
-		userData.writing.isRecommendedByUser = _toggleButtons[0].ButtonPressed;
-		userData.speaking.isRecommendedByUser = _toggleButtons[1].ButtonPressed;
-		userData.reading.isRecommendedByUser = _toggleButtons[2].ButtonPressed;
-		userData.maths.isRecommendedByUser = _toggleButtons[3].ButtonPressed;
-		userData.memory.isRecommendedByUser = _toggleButtons[4].ButtonPressed;
+		// userData.writing.isRecommendedByUser = _toggleButtons[0].ButtonPressed;
+		// userData.speaking.isRecommendedByUser = _toggleButtons[1].ButtonPressed;
+		// userData.reading.isRecommendedByUser = _toggleButtons[2].ButtonPressed;
+		// userData.maths.isRecommendedByUser = _toggleButtons[3].ButtonPressed;
+		// userData.memory.isRecommendedByUser = _toggleButtons[4].ButtonPressed;
 
 		Core.Instance.SaveManager.SaveUserData();
 	}

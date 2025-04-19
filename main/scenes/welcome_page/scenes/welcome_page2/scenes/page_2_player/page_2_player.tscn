@@ -3,8 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://d4essu7vq1s84" path="res://main/scenes/welcome_page/scenes/welcome_page2/textures/learning.svg" id="1_4xy2f"]
 [ext_resource type="Script" uid="uid://cln17g35nqtqf" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/page_2_player/Page2Player.cs" id="1_a6a18"]
 
-
-
 [node name="Page2Player" type="Control"]
 layout_mode = 3
 anchors_preset = 15

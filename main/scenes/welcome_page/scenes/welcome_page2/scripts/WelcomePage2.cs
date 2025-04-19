@@ -55,7 +55,7 @@ public partial class WelcomePage2 : ContentPage
 	{
 		if (CurrentPageIndex + 1 >= _introPages.Count)
 		{
-			EmitSignalNextPageButtonClick();
+			EmitSignalOnNextPageRequested();
 			return;
 		}
 

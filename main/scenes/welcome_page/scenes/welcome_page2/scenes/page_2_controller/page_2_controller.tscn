@@ -2,8 +2,6 @@
 
 [ext_resource type="Script" uid="uid://3g6ppmgb0fks" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/page_2_controller/Page2Controller.cs" id="1_kwngd"]
 
-
-
 [node name="Page2Controller" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0

@@ -36,10 +36,11 @@ theme_override_styles/separator = SubResource("StyleBoxEmpty_pw4y0")
 [node name="Label" type="Label" parent="MarginContainer/BoxContainer"]
 layout_mode = 2
 theme_type_variation = &"LabelBold"
-theme_override_font_sizes/font_size = 36
+theme_override_font_sizes/font_size = 44
 text = "LABEL_APP_NAME"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="Label2" type="Label" parent="MarginContainer/BoxContainer"]
 layout_mode = 2
@@ -48,6 +49,7 @@ theme_override_font_sizes/font_size = 24
 text = "LABEL_APP_DESCRIPTION"
 horizontal_alignment = 1
 vertical_alignment = 1
+uppercase = true
 
 [node name="Button" type="Button" parent="MarginContainer"]
 unique_name_in_owner = true

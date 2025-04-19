@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="IntroPage" load_steps=3 format=3 uid="uid://dac3dbr6ml515"]
+
+[ext_resource type="Texture2D" uid="uid://itt5yvafm7wc" path="res://welcome_page2/textures/progress.svg" id="1_hglej"]
+[ext_resource type="Script" uid="uid://c7r8ek5cwhnnd" path="res://welcome_page2/scripts/IntroPage.cs" id="1_yihs5"]
+
+
+
+[resource]
+script = ExtResource("1_yihs5")
+IntroTexture = ExtResource("1_hglej")
+IntroTitle = "Track your progress"
+IntroBody = "Measure your mental fitness, identify areas of growth and celebrate your accomplishments."
+metadata/_custom_type_script = "uid://c7r8ek5cwhnnd"

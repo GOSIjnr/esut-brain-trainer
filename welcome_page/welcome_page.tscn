@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://cksvyc04tad5i"]
 
-[ext_resource type="Script" uid="uid://d2xutp4fuv4i" path="res://welcome_page/WelcomePage.cs" id="1_3uhn3"]
+[ext_resource type="Script" uid="uid://d2xutp4fuv4i" path="res://welcome_page/scripts/WelcomePage.cs" id="1_3uhn3"]
 [ext_resource type="PackedScene" uid="uid://dk7bltl870pkq" path="res://welcome_page/scenes/welcome_page1/welcome_page1.tscn" id="2_0e77q"]
 
 [node name="WelcomePage" type="CanvasLayer" node_paths=PackedStringArray("_contentPages")]

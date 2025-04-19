@@ -1,0 +1,30 @@
+# LANGUAGE translation for ESUT Brain Trainer for the following files:
+# res://welcome_page/scenes/welcome_page1/welcome_page1.tscn
+#
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ESUT Brain Trainer\n"
+"POT-Creation-Date: \n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: en\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 3.6\n"
+
+#: welcome_page/scenes/welcome_page1/welcome_page1.tscn
+msgid "LABEL_APP_NAME"
+msgstr "ESUT Brain Trainer"
+
+#: welcome_page/scenes/welcome_page1/welcome_page1.tscn
+msgid "LABEL_APP_DESCRIPTION"
+msgstr "Personalized Brain Training Application"
+
+#: welcome_page/scenes/welcome_page1/welcome_page1.tscn
+msgid "BUTTON_GET_STARTED"
+msgstr "Get Started"

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://itt5yvafm7wc"
-path="res://.godot/imported/progress.svg-fd8f024815287897ceb0f5789c1d355e.ctex"
+uid="uid://c3e7vpjpa1hor"
+path="res://.godot/imported/esut_logo.png-bec2143a45ce78f8b6b4cac2872d41d1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://welcome_page2/textures/progress.svg"
-dest_files=["res://.godot/imported/progress.svg-fd8f024815287897ceb0f5789c1d355e.ctex"]
+source_file="res://main/scenes/welcome_page/scenes/welcome_page1/textures/esut_logo.png"
+dest_files=["res://.godot/imported/esut_logo.png-bec2143a45ce78f8b6b4cac2872d41d1.ctex"]
 
 [params]
 
@@ -32,6 +32,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

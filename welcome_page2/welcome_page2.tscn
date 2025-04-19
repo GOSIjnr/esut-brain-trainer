@@ -1,7 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://ow22jkrg77fl"]
-
-[ext_resource type="Script" uid="uid://dlnpy0tgmi06x" path="res://main/scripts/ContentPage.cs" id="1_w6fox"]
-
-[node name="WelcomePage2" type="CanvasLayer"]
-script = ExtResource("1_w6fox")
-metadata/_custom_type_script = "uid://dlnpy0tgmi06x"

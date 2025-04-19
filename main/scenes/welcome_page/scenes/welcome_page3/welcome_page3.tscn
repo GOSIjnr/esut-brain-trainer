@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d03un0ewg3x0p"]
 
-[ext_resource type="Script" uid="uid://cmvjyrwaaned7" path="res://welcome_page3/WelcomePage3.cs" id="1_dw7o2"]
+[ext_resource type="Script" uid="uid://cmvjyrwaaned7" path="res://main/scenes/welcome_page/scenes/welcome_page3/WelcomePage3.cs" id="1_dw7o2"]
 
 [node name="WelcomePage3" type="CanvasLayer"]
 script = ExtResource("1_dw7o2")

@@ -1,5 +1,5 @@
 # LANGUAGE translation for ESUT Brain Trainer for the following files:
-# res://welcome_page/scenes/welcome_page1/welcome_page1.tscn
+# res://common/translation/localizationKeys.tscn
 #
 # FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
 #
@@ -11,14 +11,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8-bit\n"
 
-#: welcome_page/scenes/welcome_page1/welcome_page1.tscn
+#: common/translation/localizationKeys.tscn
 msgid "LABEL_APP_NAME"
 msgstr ""
 
-#: welcome_page/scenes/welcome_page1/welcome_page1.tscn
+#: common/translation/localizationKeys.tscn
 msgid "LABEL_APP_DESCRIPTION"
 msgstr ""
 
-#: welcome_page/scenes/welcome_page1/welcome_page1.tscn
+#: common/translation/localizationKeys.tscn
 msgid "BUTTON_GET_STARTED"
+msgstr ""
+
+#: common/translation/localizationKeys.tscn
+msgid "BUTTON_NEXT"
+msgstr ""
+
+#: common/translation/localizationKeys.tscn
+msgid "BUTTON_CONTINUE"
+msgstr ""
+
+#: common/translation/localizationKeys.tscn
+msgid "BUTTON_PREVIOUS"
 msgstr ""

@@ -5,15 +5,16 @@
 [ext_resource type="Resource" uid="uid://blum7yohio5ky" path="res://main/scenes/welcome_page/scenes/welcome_page2/resources/intro_pages/en/challenge.tres" id="3_0fjt1"]
 [ext_resource type="Resource" uid="uid://u1dx20pfc27l" path="res://main/scenes/welcome_page/scenes/welcome_page2/resources/intro_pages/en/benefits.tres" id="4_qfi7e"]
 [ext_resource type="Resource" uid="uid://dac3dbr6ml515" path="res://main/scenes/welcome_page/scenes/welcome_page2/resources/intro_pages/en/progress.tres" id="5_3ci06"]
-[ext_resource type="PackedScene" uid="uid://cf5h8ucthlnks" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/page_2_player/page_2_player.tscn" id="6_13a6f"]
-[ext_resource type="PackedScene" uid="uid://chu6whdgqdjd8" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/page_2_controller/page_2_controller.tscn" id="7_u63rh"]
+[ext_resource type="PackedScene" uid="uid://cf5h8ucthlnks" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/intro_player/intro_player.tscn" id="6_13a6f"]
+[ext_resource type="PackedScene" uid="uid://chu6whdgqdjd8" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/intro_controller/intro_controller.tscn" id="7_u63rh"]
 
 [node name="WelcomePage2" type="CanvasLayer"]
 script = ExtResource("1_exi8m")
 _introPages = Array[ExtResource("2_cug5q")]([ExtResource("3_0fjt1"), ExtResource("4_qfi7e"), ExtResource("5_3ci06")])
 
-[node name="Page2Player" parent="." instance=ExtResource("6_13a6f")]
+[node name="IntroPlayer" parent="." instance=ExtResource("6_13a6f")]
 unique_name_in_owner = true
 
-[node name="Page2Controller" parent="." instance=ExtResource("7_u63rh")]
+[node name="IntroController" parent="." instance=ExtResource("7_u63rh")]
 unique_name_in_owner = true
+_text = "IGN"

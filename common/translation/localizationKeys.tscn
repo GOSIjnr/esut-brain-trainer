@@ -1,0 +1,45 @@
+[gd_scene format=3 uid="uid://dlm4hh1mmyh46"]
+
+[node name="IdKeys" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="LABEL_APP_NAME" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "LABEL_APP_NAME"
+
+[node name="LABEL_APP_DESCRIPTION" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "LABEL_APP_DESCRIPTION"
+
+[node name="BUTTON_GET_STARTED" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BUTTON_GET_STARTED"
+
+[node name="BUTTON_NEXT" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BUTTON_NEXT"
+
+[node name="BUTTON_CONTINUE" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BUTTON_CONTINUE"
+
+[node name="BUTTON_PREVIOUS" type="Label" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "BUTTON_PREVIOUS"

@@ -1,15 +1,15 @@
 [gd_scene load_steps=2 format=3 uid="uid://chu6whdgqdjd8"]
 
-[ext_resource type="Script" uid="uid://3g6ppmgb0fks" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/page_2_controller/Page2Controller.cs" id="1_kwngd"]
+[ext_resource type="Script" uid="uid://3g6ppmgb0fks" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/intro_controller/scripts/IntroController.cs" id="1_4jckf"]
 
-[node name="Page2Controller" type="MarginContainer"]
+[node name="IntroController" type="MarginContainer"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_type_variation = &"MarginContainerNormal"
-script = ExtResource("1_kwngd")
+script = ExtResource("1_4jckf")
 
 [node name="Control" type="Control" parent="."]
 layout_mode = 2
@@ -32,11 +32,11 @@ unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"ButtonNormal"
-text = "PREVIOUS"
+text = "BUTTON_PREVIOUS"
 
 [node name="Button2" type="Button" parent="Control/BoxContainer"]
 unique_name_in_owner = true
 layout_mode = 2
 size_flags_horizontal = 3
 theme_type_variation = &"ButtonNormal"
-text = "NEXT"
+text = "BUTTON_NEXT"

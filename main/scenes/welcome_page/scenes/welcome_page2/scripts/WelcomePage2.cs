@@ -1,15 +1,13 @@
 using Godot;
 using Godot.Collections;
 
-namespace GOSIjnr;
-
 public partial class WelcomePage2 : ContentPage
 {
 	[Export] private Array<IntroPage> _introPages = [];
 
 	private int _currentPageIndex;
-	private Page2Player _page2Player;
-	private Page2Controller _page2Controller;
+	private IntroPlayer _introPlayer;
+	private IntroController _introController;
 
 	public int CurrentPageIndex
 	{
@@ -29,26 +27,26 @@ public partial class WelcomePage2 : ContentPage
 
 	public override void _EnterTree()
 	{
-		_page2Player = GetNode<Page2Player>("%Page2Player");
-		_page2Controller = GetNode<Page2Controller>("%Page2Controller");
+		_introPlayer = GetNode<IntroPlayer>("%IntroPlayer");
+		_introController = GetNode<IntroController>("%IntroController");
 
-		_page2Player.AnimationPlaying += _page2Controller.DisableControl;
-		_page2Controller.PreviousButtonClicked += DisplayPreviousPage;
-		_page2Controller.NextButtonClicked += DisplayNextPage;
+		_introPlayer.AnimationPlaying += _introController.DisableControl;
+		_introController.PreviousButtonClicked += DisplayPreviousPage;
+		_introController.NextButtonClicked += DisplayNextPage;
 	}
 
 	public override void _ExitTree()
 	{
-		_page2Player.AnimationPlaying -= _page2Controller.DisableControl;
-		_page2Controller.PreviousButtonClicked -= DisplayPreviousPage;
-		_page2Controller.NextButtonClicked -= DisplayNextPage;
+		_introPlayer.AnimationPlaying -= _introController.DisableControl;
+		_introController.PreviousButtonClicked -= DisplayPreviousPage;
+		_introController.NextButtonClicked -= DisplayNextPage;
 	}
 
 	public override void _Ready()
 	{
-		_page2Controller.UpdateUIForCurrentIndex(_currentPageIndex, _introPages.Count);
+		_introController.UpdateUIForCurrentIndex(_currentPageIndex, _introPages.Count);
 		CurrentPageIndex = 0;
-		_page2Player.SelectedPage = _introPages[0];
+		_introPlayer.SelectedPage = _introPages[0];
 	}
 
 	private void DisplayNextPage()
@@ -66,19 +64,19 @@ public partial class WelcomePage2 : ContentPage
 
 	private void UpdateUI(bool isHigherIndex)
 	{
-		if (_page2Player == null || _page2Controller == null) return;
+		if (_introPlayer == null || _introController == null) return;
 
-		_page2Player.SelectedPage = _introPages[_currentPageIndex];
+		_introPlayer.SelectedPage = _introPages[_currentPageIndex];
 
 		if (isHigherIndex)
 		{
-			_ = _page2Player.NextAnimation();
+			_ = _introPlayer.NextAnimation();
 		}
 		else
 		{
-			_ = _page2Player.PreviousAnimation();
+			_ = _introPlayer.PreviousAnimation();
 		}
 
-		_page2Controller.UpdateUIForCurrentIndex(_currentPageIndex, _introPages.Count);
+		_introController.UpdateUIForCurrentIndex(_currentPageIndex, _introPages.Count);
 	}
 }

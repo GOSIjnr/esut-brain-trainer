@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=3 uid="uid://cf5h8ucthlnks"]
 
-[ext_resource type="Texture2D" uid="uid://d4essu7vq1s84" path="res://main/scenes/welcome_page/scenes/welcome_page2/textures/learning.svg" id="1_4xy2f"]
-[ext_resource type="Script" uid="uid://cln17g35nqtqf" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/page_2_player/Page2Player.cs" id="1_a6a18"]
+[ext_resource type="Script" uid="uid://cln17g35nqtqf" path="res://main/scenes/welcome_page/scenes/welcome_page2/scenes/intro_player/scripts/IntroPlayer.cs" id="1_tm47u"]
+[ext_resource type="Texture2D" uid="uid://d4essu7vq1s84" path="res://main/scenes/welcome_page/scenes/welcome_page2/textures/learning.svg" id="2_4b30j"]
 
-[node name="Page2Player" type="Control"]
+[node name="IntroPlayer" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -11,7 +11,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 3
-script = ExtResource("1_a6a18")
+script = ExtResource("1_tm47u")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -31,7 +31,7 @@ theme_override_constants/separation = 50
 unique_name_in_owner = true
 custom_minimum_size = Vector2(0, 400)
 layout_mode = 2
-texture = ExtResource("1_4xy2f")
+texture = ExtResource("2_4b30j")
 expand_mode = 1
 stretch_mode = 5
 
@@ -39,8 +39,8 @@ stretch_mode = 5
 unique_name_in_owner = true
 layout_mode = 2
 theme_type_variation = &"LabelBold"
-theme_override_font_sizes/font_size = 50
-text = "Challenge your mind"
+theme_override_font_sizes/font_size = 52
+text = "CARD_TITLE"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -50,8 +50,8 @@ custom_minimum_size = Vector2(900, 0)
 layout_mode = 2
 theme_type_variation = &"LabelNormal"
 theme_override_colors/font_color = Color(0.74902, 0.74902, 0.74902, 1)
-theme_override_font_sizes/font_size = 30
-text = "Play games to improve your vocabulary, communication, memory skills and more."
+theme_override_font_sizes/font_size = 32
+text = "CARD_BODY"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3

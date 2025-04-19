@@ -47,7 +47,7 @@ theme/custom="uid://dq4vxtwdfue5"
 [internationalization]
 
 locale/translations=PackedStringArray("res://common/translation/en.po")
-locale/translations_pot_files=PackedStringArray("res://welcome_page/scenes/welcome_page1/welcome_page1.tscn")
+locale/translations_pot_files=PackedStringArray("res://common/translation/localizationKeys.tscn")
 
 [layer_names]
 

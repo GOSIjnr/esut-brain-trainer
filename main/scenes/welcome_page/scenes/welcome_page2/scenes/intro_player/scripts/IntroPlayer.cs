@@ -1,9 +1,7 @@
 using Godot;
 using System.Threading.Tasks;
 
-namespace GOSIjnr;
-
-public partial class Page2Player : Control
+public partial class IntroPlayer : Control
 {
 	private IntroPage _selectedPage;
 
@@ -27,9 +25,9 @@ public partial class Page2Player : Control
 
 	public override void _EnterTree()
 	{
-		_introImage = GetNodeOrNull<TextureRect>("%Image");
-		_introHeading = GetNodeOrNull<Label>("%Heading");
-		_introBody = GetNodeOrNull<Label>("%Body");
+		_introImage = GetNode<TextureRect>("%Image");
+		_introHeading = GetNode<Label>("%Heading");
+		_introBody = GetNode<Label>("%Body");
 	}
 
 	public async Task NextAnimation()
@@ -43,7 +41,6 @@ public partial class Page2Player : Control
 		await PlayAnimation(0, Size[0]);
 		await PlayAnimation(-Size[0], 0);
 	}
-
 
 	private async Task PlayAnimation(float currentPosition, float targetPosition)
 	{

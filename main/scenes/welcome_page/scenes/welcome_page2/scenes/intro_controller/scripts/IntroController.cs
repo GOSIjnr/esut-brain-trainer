@@ -1,50 +1,33 @@
 using Godot;
 
-public partial class Page2Controller : MarginContainer
+public partial class IntroController : MarginContainer
 {
 	private Button _previousButton;
 	private Button _nextButton;
-
-	private bool _previousButtonState;
-	private bool _nextButtonState;
 
 	[Signal] public delegate void PreviousButtonClickedEventHandler();
 	[Signal] public delegate void NextButtonClickedEventHandler();
 
 	public override void _EnterTree()
 	{
-		_previousButton = GetNodeOrNull<Button>("%Button1");
-		_nextButton = GetNodeOrNull<Button>("%Button2");
+		_previousButton = GetNode<Button>("%Button1");
+		_nextButton = GetNode<Button>("%Button2");
 
-		if (_previousButton == null || _nextButton == null) return;
-
-		_previousButton.Pressed += PreviousPage;
-		_nextButton.Pressed += NextPage;
+		_previousButton.Pressed += EmitSignalPreviousButtonClicked;
+		_nextButton.Pressed += EmitSignalNextButtonClicked;
 	}
 
 	public override void _ExitTree()
 	{
-		_previousButton.Pressed -= PreviousPage;
-		_nextButton.Pressed -= NextPage;
-	}
-
-	public void PreviousPage()
-	{
-		EmitSignalPreviousButtonClicked();
-	}
-
-	public void NextPage()
-	{
-		EmitSignalNextButtonClicked();
+		_previousButton.Pressed -= EmitSignalPreviousButtonClicked;
+		_nextButton.Pressed -= EmitSignalNextButtonClicked;
 	}
 
 	public void UpdateUIForCurrentIndex(int currentIndex, int totalCount)
 	{
-		if (_previousButton == null || _nextButton == null) return;
-
 		_previousButton.Disabled = false;
 		_nextButton.Disabled = false;
-		_nextButton.Text = "NEXT";
+		_nextButton.Text = "BUTTON_NEXT";
 
 		if (currentIndex <= 0)
 		{
@@ -53,14 +36,12 @@ public partial class Page2Controller : MarginContainer
 
 		if (currentIndex >= totalCount - 1)
 		{
-			_nextButton.Text = "CONTINUE";
+			_nextButton.Text = "BUTTON_CONTINUE";
 		}
 	}
 
 	public void DisableControl(bool isDisable)
 	{
-		if (_previousButton == null || _nextButton == null) return;
-
 		if (isDisable)
 		{
 			_previousButton.MouseFilter = MouseFilterEnum.Ignore;

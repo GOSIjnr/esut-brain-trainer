@@ -1,0 +1,45 @@
+[gd_scene load_steps=2 format=3 uid="uid://d03un0ewg3x0p"]
+
+[ext_resource type="Script" uid="uid://cmvjyrwaaned7" path="res://welcome_page3/WelcomePage3.cs" id="1_dw7o2"]
+
+[node name="WelcomePage3" type="CanvasLayer"]
+script = ExtResource("1_dw7o2")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"MarginContainerNormal"
+
+[node name="VBoxContainer" type="BoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"BoxContainerNormalSpaced"
+theme_override_constants/separation = 100
+alignment = 1
+vertical = true
+
+[node name="Label" type="RichTextLabel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+size_flags_vertical = 6
+theme_type_variation = &"RichTextLabelNormal"
+bbcode_enabled = true
+text = "[b]First, tell us how you’d like to improve![/b]
+
+
+Before we begin, we’d love to know your goals. Are you looking to sharpen your existing skills, learn something new, or challenge yourself? Your input will help us create a learning experience that suits your needs.
+
+
+[b]Select the areas you’d like to focus on, and let’s get started![/b]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+theme_type_variation = &"ButtonNormal"
+text = "OKAY"

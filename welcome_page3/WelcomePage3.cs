@@ -1,12 +1,17 @@
 using Godot;
 
-public partial class WelcomePage1 : ContentPage
+namespace GOSIjnr;
+
+public partial class WelcomePage3 : ContentPage
 {
 	private Button _nextButton;
 
-	public override void _EnterTree()
+	public override void _Ready()
 	{
-		_nextButton = GetNode<Button>("%Button");
+		_nextButton = GetNodeOrNull<Button>("%Button");
+
+		if (_nextButton == null) return;
+
 		_nextButton.Pressed += EmitSignalOnNextPageRequested;
 	}
 

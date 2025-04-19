@@ -15,7 +15,6 @@ public partial class SceneManager : Node
 	private LoadingScreen _fallbackLoadingScreen;
 	private CancellationTokenSource _loadCancellationTokenSource;
 	private Godot.Collections.Array _loadProgressArray = [];
-	private bool _useSubThreads = true;
 
 	[Signal] public delegate void SceneLoadingStartedEventHandler();
 	[Signal] public delegate void SceneLoadingProgressUpdatedEventHandler(float progress);
@@ -146,7 +145,7 @@ public partial class SceneManager : Node
 		_loadCancellationTokenSource = new CancellationTokenSource();
 		CancellationToken token = _loadCancellationTokenSource.Token;
 
-		var loadRequest = ResourceLoader.LoadThreadedRequest(scenePath, "", _useSubThreads);
+		var loadRequest = ResourceLoader.LoadThreadedRequest(scenePath);
 
 		if (loadRequest != Error.Ok)
 		{

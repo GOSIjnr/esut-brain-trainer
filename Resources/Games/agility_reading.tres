@@ -1,9 +1,9 @@
 [gd_resource type="Resource" script_class="Games" load_steps=6 format=3 uid="uid://d4mdd82ilkfhp"]
 
-[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_mo321"]
+[ext_resource type="Script" uid="uid://dlrotkujf27ct" path="res://Scripts/Games.gd" id="1_mo321"]
 [ext_resource type="Texture2D" uid="uid://dygdhrdh38nnx" path="res://Textures/games/game_agility.webp" id="1_x2ior"]
 [ext_resource type="Texture2D" uid="uid://c6o0g4uaxr8om" path="res://Textures/games/gamefullscreen_agility.webp" id="2_rsxsd"]
-[ext_resource type="Texture2D" uid="uid://becrva5fji3cf" path="res://Icons/gi_agility.svg" id="2_xnuc2"]
+[ext_resource type="Texture2D" uid="uid://becrva5fji3cf" path="res://icons/gi_agility.svg" id="2_xnuc2"]
 [ext_resource type="PackedScene" uid="uid://bwvahd51q73el" path="res://Scenes/Games/Agility/agility_game.tscn" id="4_qc1xk"]
 
 [resource]

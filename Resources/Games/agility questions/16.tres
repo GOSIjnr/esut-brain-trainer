@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://ny476skrvr0l"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_54hbv"]
+
+[resource]
+script = ExtResource("1_54hbv")
+question = "Allured"
+options = Array[String](["Decline", "Tempt"])
+pointsDistribution = Array[int]([-200, 400])
+meaning = Array[String](["show unwillingness towards", "Dispose, incline or entice to"])

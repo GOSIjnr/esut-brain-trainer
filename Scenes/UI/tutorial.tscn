@@ -1,0 +1,432 @@
+[gd_scene load_steps=6 format=3 uid="uid://cvklhkmwyvuap"]
+
+[ext_resource type="Script" path="res://Scripts/TutorialManager.gd" id="1_hnchj"]
+[ext_resource type="Texture2D" uid="uid://qfklefydxi6s" path="res://Textures/esut_logo.png" id="3_n4m1t"]
+[ext_resource type="Texture2D" uid="uid://vjlvl752fw38" path="res://Icons/learning.svg" id="4_mo30k"]
+[ext_resource type="Texture2D" uid="uid://63b1go4ro6fk" path="res://Icons/progress.svg" id="5_2ug4w"]
+[ext_resource type="Texture2D" uid="uid://dtkuxcdfao3g2" path="res://Icons/benefit.svg" id="8_sbkqe"]
+
+[node name="Tutorial" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_hnchj")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Page 1" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 1/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="Page 1/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 350)
+layout_mode = 2
+texture = ExtResource("3_n4m1t")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label1" type="Label" parent="Page 1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 60
+text = "ESUT Brain Trainer"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Label2" type="Label" parent="Page 1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_font_sizes/font_size = 32
+text = "personalized brain training games
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="Button" type="Button" parent="Page 1/MarginContainer"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_vertical = 8
+toggle_mode = true
+text = "Get Started"
+
+[node name="Page 2" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Content" type="HBoxContainer" parent="Page 2"]
+custom_minimum_size = Vector2(3240, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 2160.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="a" type="Control" parent="Page 2/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 2/Content/a"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 2/Content/a/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="Page 2/Content/a/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("4_mo30k")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label1" type="Label" parent="Page 2/Content/a/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Challenge your mind"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Page 2/Content/a/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_font_sizes/font_size = 40
+text = "Play games to improve your vocabulary, communication, memory skills and more."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="b" type="Control" parent="Page 2/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 2/Content/b"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 2/Content/b/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="Page 2/Content/b/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("5_2ug4w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label1" type="Label" parent="Page 2/Content/b/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "Track your progress"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Page 2/Content/b/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_font_sizes/font_size = 40
+text = "Measure your mental fitness, identify areas of growth and celebrate your accomplishments."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="c" type="Control" parent="Page 2/Content"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 2/Content/c"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 2/Content/c/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+theme_override_constants/separation = 50
+
+[node name="TextureRect" type="TextureRect" parent="Page 2/Content/c/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 400)
+layout_mode = 2
+texture = ExtResource("8_sbkqe")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label1" type="Label" parent="Page 2/Content/c/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "See the benefits"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="Page 2/Content/c/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_font_sizes/font_size = 40
+text = "Improve your productivity, earning power and self-confidence with games"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 2"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UI" type="Control" parent="Page 2/MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Page 2/MarginContainer/UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -210.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Button1" type="Button" parent="Page 2/MarginContainer/UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+disabled = true
+text = "Previous"
+
+[node name="Button2" type="Button" parent="Page 2/MarginContainer/UI/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Next"
+
+[node name="Page 3" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 3"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -206.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 3/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label1" type="Label" parent="Page 3/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+text = "First, tell us how you'd like to improve"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Page 3/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 210)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+text = "Continue"
+
+[node name="Page 4" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 4"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 4/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_constants/separation = 100
+
+[node name="Label" type="Label" parent="Page 4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 50
+text = "How do you want to improve?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="Page 4/MarginContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+columns = 2
+
+[node name="WritingCB" type="Button" parent="Page 4/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_type_variation = &"Button_Bubble"
+theme_override_font_sizes/font_size = 40
+toggle_mode = true
+action_mode = 0
+text = "Writing"
+
+[node name="SpeakingCB" type="Button" parent="Page 4/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_type_variation = &"Button_Bubble"
+theme_override_font_sizes/font_size = 40
+toggle_mode = true
+action_mode = 0
+text = "Speaking"
+
+[node name="ReadingCB" type="Button" parent="Page 4/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_type_variation = &"Button_Bubble"
+theme_override_font_sizes/font_size = 40
+toggle_mode = true
+action_mode = 0
+text = "Reading"
+
+[node name="MathsCB" type="Button" parent="Page 4/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_type_variation = &"Button_Bubble"
+theme_override_font_sizes/font_size = 40
+toggle_mode = true
+action_mode = 0
+text = "Maths"
+
+[node name="MemoryCB" type="Button" parent="Page 4/MarginContainer/VBoxContainer/GridContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_type_variation = &"Button_Bubble"
+theme_override_font_sizes/font_size = 40
+toggle_mode = true
+action_mode = 0
+text = "Memory"
+
+[node name="Button" type="Button" parent="Page 4/MarginContainer"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Done"
+
+[node name="Page 5" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Page 5"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -206.0
+offset_bottom = 206.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Page 5/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 80
+
+[node name="Label1" type="Label" parent="Page 5/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(360, 0)
+layout_mode = 2
+text = "Now, take this quick test to personalise your skill level."
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="Button" type="Button" parent="Page 5/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(350, 210)
+layout_mode = 2
+theme_override_font_sizes/font_size = 48
+toggle_mode = true
+text = "Continue"
+
+[connection signal="pressed" from="Page 1/MarginContainer/Button" to="." method="_on_page1NextButton_pressed"]
+[connection signal="pressed" from="Page 2/MarginContainer/UI/HBoxContainer/Button1" to="." method="_on_buttonPrevious_pressed"]
+[connection signal="pressed" from="Page 2/MarginContainer/UI/HBoxContainer/Button2" to="." method="_on_buttonNext_pressed"]
+[connection signal="pressed" from="Page 3/MarginContainer/VBoxContainer/Button" to="." method="_on_Page3NextButton_pressed"]
+[connection signal="pressed" from="Page 4/MarginContainer/Button" to="." method="_on_Page4NextButton_pressed"]
+[connection signal="pressed" from="Page 5/MarginContainer/VBoxContainer/Button" to="." method="_on_Page5NextButton_pressed"]

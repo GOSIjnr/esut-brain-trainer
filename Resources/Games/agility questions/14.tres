@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://d02np2vkbvrhv"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_utxsv"]
+
+[resource]
+script = ExtResource("1_utxsv")
+question = "Entrench"
+options = Array[String](["Establish", "Halt"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["set up orlay the groundwork for", "cause to stop"])

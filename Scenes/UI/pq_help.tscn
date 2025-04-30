@@ -1,0 +1,79 @@
+[gd_scene load_steps=5 format=3 uid="uid://dox081sf2n4hr"]
+
+[ext_resource type="Script" path="res://Scripts/pq_helpManager.gd" id="2_klm1c"]
+[ext_resource type="Shader" path="res://Shader/canvas blur.gdshader" id="2_ygqjs"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_x51iu"]
+shader = ExtResource("2_ygqjs")
+shader_parameter/amount = 1.0
+shader_parameter/mix_percentage = 0.8
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gmpu2"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[node name="PQhelp" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_klm1c")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_x51iu")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_gmpu2")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_right = 75
+
+[node name="Control" type="Control" parent="Panel/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/MarginContainer/Control"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -543.0
+offset_bottom = 543.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/bold_font_size = 80
+bbcode_enabled = true
+text = "[b]Proficiency Quotients[/b]
+
+Proficiency Quotients tracks your performance in Writing, Speaking, Reading, Math and Memory.
+
+PQ ranges from 0-5000 and is based on game performance, consistent training and game variety.
+
+Proficiency Levels correspond to your PQ: Novice [0-1249], Intermediate [1250-2499], Advanced[2500-3749], Expert[3750-4249], Elite [4250-4749] and Master [4750-5000]
+
+
+
+[center]Tap to close[/center]"
+fit_content = true
+scroll_active = false
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]

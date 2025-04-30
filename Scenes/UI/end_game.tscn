@@ -1,0 +1,130 @@
+[gd_scene load_steps=8 format=3 uid="uid://ftmpyl1oknx4"]
+
+[ext_resource type="Texture2D" uid="uid://bfkji6c7wanu8" path="res://Textures/hex.svg" id="2_bixfl"]
+[ext_resource type="Shader" path="res://Shader/canvas blur.gdshader" id="2_cn0jr"]
+[ext_resource type="Script" path="res://Scripts/end_gameManager.gd" id="2_gnalk"]
+[ext_resource type="Texture2D" uid="uid://bgxaympyjpim2" path="res://Icons/game_fill.svg" id="3_sfps2"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_g8ngy"]
+shader = ExtResource("2_cn0jr")
+shader_parameter/amount = 1.0
+shader_parameter/mix_percentage = 0.3
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6wvs7"]
+bg_color = Color(0, 0, 0, 0.470588)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_yon14"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+
+[node name="EndGame" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("2_gnalk")
+
+[node name="Panel" type="Panel" parent="."]
+material = SubResource("ShaderMaterial_g8ngy")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6wvs7")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Icon Background" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.677083, 0.677083, 1)
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_bixfl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Game Icon" type="TextureRect" parent="Panel/MarginContainer/VBoxContainer/Icon Background"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("3_sfps2")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Score" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 100
+text = "9435"
+horizontal_alignment = 1
+
+[node name="Remarks" type="Label" parent="Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Bold"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "good job. highscore!"
+horizontal_alignment = 1
+uppercase = true
+
+[node name="Panel" type="Panel" parent="Panel/MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 350)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_yon14")
+
+[node name="MarginContainer" type="MarginContainer" parent="Panel/MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel/MarginContainer/VBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+mouse_filter = 2
+
+[node name="Proficiency" type="Label" parent="Panel/MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_font_sizes/font_size = 35
+text = "250 Speaking Proficiency Gained"
+horizontal_alignment = 1
+
+[node name="Continue" type="Label" parent="Panel/MarginContainer/VBoxContainer/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"Label_Mid"
+text = "tap to continue"
+horizontal_alignment = 1
+vertical_alignment = 2
+uppercase = true
+
+[connection signal="gui_input" from="Panel" to="." method="_on_panel_gui_input"]

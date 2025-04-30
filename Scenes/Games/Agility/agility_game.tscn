@@ -1,0 +1,587 @@
+[gd_scene load_steps=39 format=3 uid="uid://bwvahd51q73el"]
+
+[ext_resource type="Script" path="res://Scripts/agility_gameManager.gd" id="1_vmouq"]
+[ext_resource type="Script" path="res://Scripts/gameUI_agility.gd" id="2_r1aq5"]
+[ext_resource type="PackedScene" uid="uid://d0w6q28dhx6x" path="res://Scenes/Games/Agility/player.tscn" id="3_lq7a2"]
+[ext_resource type="PackedScene" uid="uid://chp4wwk2cjoi7" path="res://Scenes/UI/game_ScoreBoard.tscn" id="4_s1fnj"]
+[ext_resource type="Script" path="res://Scripts/correction_Manager(agility_game).gd" id="5_0ccnp"]
+[ext_resource type="Shader" path="res://Shader/canvas blur.gdshader" id="6_parkb"]
+[ext_resource type="PackedScene" uid="uid://ftmpyl1oknx4" path="res://Scenes/UI/end_game.tscn" id="6_qcref"]
+[ext_resource type="PackedScene" uid="uid://rsqoe2er6mtg" path="res://Scenes/UI/pause_ui.tscn" id="8_nmlnk"]
+[ext_resource type="Script" path="res://Scripts/instruction_Manager.gd" id="8_witrv"]
+[ext_resource type="AudioStream" uid="uid://bbq8h3y4pl3up" path="res://Sound/correct_answer.wav" id="9_2e4p7"]
+[ext_resource type="Texture2D" uid="uid://b7li5kocgortx" path="res://Textures/star.svg" id="9_xrkjq"]
+[ext_resource type="AudioStream" uid="uid://bvw0jl2qpl3bq" path="res://Sound/incorrect_answer.wav" id="10_eddvo"]
+[ext_resource type="Texture2D" uid="uid://dmfj6brf5ipl5" path="res://Textures/bullet.svg" id="12_dofwq"]
+[ext_resource type="PackedScene" uid="uid://dnk2cpccrkewp" path="res://Scenes/Games/Agility/death_zone.tscn" id="14_j28rp"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ii85l"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg5px"]
+bg_color = Color(0, 0, 0, 0.470588)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_j4lqq"]
+
+[sub_resource type="Animation" id="Animation_dt0r3"]
+resource_name = "anim_IntroButtons"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/MarginContainer/VBoxContainer/option1:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.307, 1),
+"update": 0,
+"values": [Vector2(0, 250), Vector2(700, 250)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/MarginContainer/VBoxContainer/option2:custom_minimum_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(0.307, 1),
+"update": 0,
+"values": [Vector2(0, 250), Vector2(700, 250)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/MarginContainer/VBoxContainer/option1:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/MarginContainer/VBoxContainer/option2:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_ow2kg"]
+resource_name = "Option1Clicked"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/MarginContainer/VBoxContainer/option2:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.307, 1),
+"update": 0,
+"values": [Vector2(700, 250), Vector2(700, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/MarginContainer/VBoxContainer/option2:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.35, 0.5),
+"transitions": PackedFloat32Array(0.307, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_lc0lj"]
+resource_name = "Option2Clicked"
+length = 0.5
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/MarginContainer/VBoxContainer/option1:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.307, 1),
+"update": 0,
+"values": [Vector2(700, 250), Vector2(700, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/MarginContainer/VBoxContainer/option1:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.35, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_c0tls"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("UI/MarginContainer/VBoxContainer/option1:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(700, 250)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("UI/MarginContainer/VBoxContainer/option2:custom_minimum_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(700, 250)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("UI/MarginContainer/VBoxContainer/option2:modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("UI/MarginContainer/VBoxContainer/option1:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_puubi"]
+_data = {
+"Intro": SubResource("Animation_dt0r3"),
+"Option1Clicked": SubResource("Animation_ow2kg"),
+"Option2Clicked": SubResource("Animation_lc0lj"),
+"RESET": SubResource("Animation_c0tls")
+}
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7h8g4"]
+bg_color = Color(0, 0, 0, 0.470588)
+border_width_top = 5
+border_width_bottom = 5
+
+[sub_resource type="Animation" id="Animation_57h0s"]
+resource_name = "Panel_Close"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correction Box:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.307, 1),
+"update": 0,
+"values": [Vector2(0, 800), Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_eqp4o"]
+resource_name = "Panel_Open"
+length = 0.5
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correction Box:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(0.307, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 800)]
+}
+
+[sub_resource type="Animation" id="Animation_2bfc7"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Correction Box:custom_minimum_size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_id40v"]
+_data = {
+"Panel_Close": SubResource("Animation_57h0s"),
+"Panel_Open": SubResource("Animation_eqp4o"),
+"RESET": SubResource("Animation_2bfc7")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_clyqf"]
+shader = ExtResource("6_parkb")
+shader_parameter/amount = 1.0
+shader_parameter/mix_percentage = 0.9
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_idr3w"]
+bg_color = Color(1, 1, 1, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 12
+
+[sub_resource type="Gradient" id="Gradient_ku73m"]
+interpolation_mode = 2
+colors = PackedColorArray(0.0256937, 0.333333, 0.249299, 1, 0.489589, 0.703125, 0.592927, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_agisb"]
+gradient = SubResource("Gradient_ku73m")
+fill_from = Vector2(0.524217, 1)
+fill_to = Vector2(0.541311, 0)
+
+[sub_resource type="Gradient" id="Gradient_lxwvq"]
+offsets = PackedFloat32Array(0, 0.5, 1)
+colors = PackedColorArray(1, 1, 1, 0, 1, 1, 1, 1, 1, 1, 1, 0)
+
+[sub_resource type="Gradient" id="Gradient_ixrk3"]
+colors = PackedColorArray(1, 1, 1, 0.392157, 1, 1, 1, 1)
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_s63oq"]
+distance = -1024.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_mcx64"]
+normal = Vector2(0, 1)
+distance = -1024.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_0lssj"]
+normal = Vector2(1, 0)
+distance = -500.0
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_3we5k"]
+normal = Vector2(-1, 0)
+distance = -500.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_degsf"]
+size = Vector2(2000, 100)
+
+[node name="GameManager" type="Node"]
+script = ExtResource("1_vmouq")
+
+[node name="User Interface" type="Node" parent="."]
+
+[node name="GameUI" type="CanvasLayer" parent="User Interface" node_paths=PackedStringArray("player")]
+unique_name_in_owner = true
+layer = 2
+script = ExtResource("2_r1aq5")
+questionSize = 15
+player = NodePath("../../Level/player")
+
+[node name="Question Timer" type="Timer" parent="User Interface/GameUI"]
+unique_name_in_owner = true
+wait_time = 90.0
+one_shot = true
+autostart = true
+
+[node name="UI" type="Control" parent="User Interface/GameUI"]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="User Interface/GameUI/UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ScoreBoard" parent="User Interface/GameUI/UI/MarginContainer" instance=ExtResource("4_s1fnj")]
+unique_name_in_owner = true
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="User Interface/GameUI/UI/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 50
+alignment = 2
+
+[node name="word" type="Label" parent="User Interface/GameUI/UI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 3
+theme_type_variation = &"Label_Bold"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 80
+text = "word"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="option1" type="Button" parent="User Interface/GameUI/UI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ii85l")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mg5px")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg5px")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mg5px")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mg5px")
+text = "option 1"
+
+[node name="option2" type="Button" parent="User Interface/GameUI/UI/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(700, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+theme_override_styles/focus = SubResource("StyleBoxEmpty_j4lqq")
+theme_override_styles/disabled = SubResource("StyleBoxFlat_mg5px")
+theme_override_styles/hover = SubResource("StyleBoxFlat_mg5px")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mg5px")
+theme_override_styles/normal = SubResource("StyleBoxFlat_mg5px")
+text = "option 2"
+
+[node name="gameUI animator" type="AnimationPlayer" parent="User Interface/GameUI/UI/MarginContainer"]
+unique_name_in_owner = true
+root_node = NodePath("../../..")
+libraries = {
+"": SubResource("AnimationLibrary_puubi")
+}
+
+[node name="Correction Panel" type="Control" parent="User Interface/GameUI"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("5_0ccnp")
+
+[node name="Correction Box" type="Panel" parent="User Interface/GameUI/Correction Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7h8g4")
+
+[node name="MarginContainer" type="MarginContainer" parent="User Interface/GameUI/Correction Panel/Correction Box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Correction Text" type="RichTextLabel" parent="User Interface/GameUI/Correction Panel/Correction Box/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/italics_font_size = 40
+theme_override_font_sizes/normal_font_size = 40
+theme_override_font_sizes/bold_font_size = 45
+bbcode_enabled = true
+text = "Correction"
+fit_content = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="User Interface/GameUI/Correction Panel"]
+libraries = {
+"": SubResource("AnimationLibrary_id40v")
+}
+
+[node name="Sfx" type="Node" parent="User Interface/GameUI"]
+process_mode = 3
+
+[node name="Sfx_Right" type="AudioStreamPlayer" parent="User Interface/GameUI/Sfx"]
+unique_name_in_owner = true
+stream = ExtResource("9_2e4p7")
+volume_db = -10.0
+
+[node name="Sfx_Wrong" type="AudioStreamPlayer" parent="User Interface/GameUI/Sfx"]
+unique_name_in_owner = true
+stream = ExtResource("10_eddvo")
+volume_db = -10.0
+
+[node name="Instruction" type="Control" parent="User Interface/GameUI"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("8_witrv")
+
+[node name="Panel" type="Panel" parent="User Interface/GameUI/Instruction"]
+material = SubResource("ShaderMaterial_clyqf")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="User Interface/GameUI/Instruction/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Instructions" type="RichTextLabel" parent="User Interface/GameUI/Instruction/Panel/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+bbcode_enabled = true
+text = "dasdsdasdsadasdasdsdadsadsad"
+fit_content = true
+
+[node name="Continue" type="Button" parent="User Interface/GameUI/Instruction/Panel/MarginContainer"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_vertical = 8
+theme_type_variation = &"Button_Bubble"
+theme_override_colors/font_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_idr3w")
+text = "Continue"
+
+[node name="PauseUI" parent="User Interface" instance=ExtResource("8_nmlnk")]
+unique_name_in_owner = true
+layer = 2
+visible = false
+
+[node name="EndGame" parent="User Interface" instance=ExtResource("6_qcref")]
+unique_name_in_owner = true
+layer = 2
+visible = false
+
+[node name="Level" type="Node2D" parent="."]
+
+[node name="Background" type="Sprite2D" parent="Level"]
+scale = Vector2(200, 200)
+texture = SubResource("GradientTexture2D_agisb")
+
+[node name="Star Particle" type="CPUParticles2D" parent="Level"]
+process_mode = 3
+amount = 150
+randomness = 1.0
+fixed_fps = 30
+draw_order = 1
+texture = ExtResource("9_xrkjq")
+emission_shape = 3
+emission_rect_extents = Vector2(1500, 1500)
+gravity = Vector2(0, 90)
+scale_amount_min = 0.04
+scale_amount_max = 0.1
+color_ramp = SubResource("Gradient_lxwvq")
+
+[node name="Planet Particle" type="CPUParticles2D" parent="Level"]
+process_mode = 3
+position = Vector2(0, -1250)
+amount = 3
+lifetime = 30.0
+draw_order = 1
+texture = ExtResource("12_dofwq")
+emission_shape = 3
+emission_rect_extents = Vector2(1000, 0)
+gravity = Vector2(0, 10)
+scale_amount_min = 0.04
+scale_amount_max = 0.08
+color_initial_ramp = SubResource("Gradient_ixrk3")
+
+[node name="player" parent="Level" node_paths=PackedStringArray("backgroundParticle") instance=ExtResource("3_lq7a2")]
+scale = Vector2(0.4, 0.4)
+backgroundParticle = NodePath("../Star Particle")
+
+[node name="DeathZone" parent="Level" instance=ExtResource("14_j28rp")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Level/DeathZone"]
+position = Vector2(-3, -3)
+shape = SubResource("WorldBoundaryShape2D_s63oq")
+
+[node name="Border" type="StaticBody2D" parent="Level"]
+
+[node name="CollisionShape2D_Top" type="CollisionShape2D" parent="Level/Border"]
+shape = SubResource("WorldBoundaryShape2D_mcx64")
+
+[node name="CollisionShape2D_Left" type="CollisionShape2D" parent="Level/Border"]
+shape = SubResource("WorldBoundaryShape2D_0lssj")
+
+[node name="CollisionShape2D_Right" type="CollisionShape2D" parent="Level/Border"]
+shape = SubResource("WorldBoundaryShape2D_3we5k")
+
+[node name="CollisionShape2D_Bottom" type="CollisionShape2D" parent="Level/Border"]
+position = Vector2(0, 1500)
+shape = SubResource("RectangleShape2D_degsf")
+
+[node name="Camera" type="Camera2D" parent="Level"]
+
+[connection signal="boostSpaceShip" from="User Interface/GameUI" to="Level/player" method="_on_game_ui_boost_space_ship"]
+[connection signal="endGame" from="User Interface/GameUI" to="." method="_on_game_ui_end_game"]
+[connection signal="timeout" from="User Interface/GameUI/Question Timer" to="User Interface/GameUI" method="_on_question_timer_timeout"]
+[connection signal="pauseGame" from="User Interface/GameUI/UI/MarginContainer/ScoreBoard" to="." method="_on_score_board_pause_game"]
+[connection signal="pressed" from="User Interface/GameUI/UI/MarginContainer/VBoxContainer/option1" to="User Interface/GameUI" method="_on_option_1_pressed"]
+[connection signal="pressed" from="User Interface/GameUI/UI/MarginContainer/VBoxContainer/option2" to="User Interface/GameUI" method="_on_option_2_pressed"]
+[connection signal="correctionDone" from="User Interface/GameUI/Correction Panel" to="User Interface/GameUI" method="_on_correction_panel_correction_done"]
+[connection signal="instructionClosed" from="User Interface/GameUI/Instruction" to="." method="_on_instruction_instruction_closed"]
+[connection signal="pressed" from="User Interface/GameUI/Instruction/Panel/MarginContainer/Continue" to="User Interface/GameUI/Instruction" method="_on_continue_pressed"]
+[connection signal="cancelTimer" from="Level/player" to="Level/DeathZone" method="_on_player_cancel_timer"]
+[connection signal="playerOutofBound" from="Level/DeathZone" to="User Interface/GameUI" method="_on_death_zone_player_outof_bound"]

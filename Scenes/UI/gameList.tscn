@@ -1,0 +1,103 @@
+[gd_scene load_steps=8 format=3 uid="uid://b2jocvnviq6yp"]
+
+[ext_resource type="Script" path="res://Scripts/gameList.gd" id="1_6cjeq"]
+[ext_resource type="Texture2D" uid="uid://h60xsrvl2lb5" path="res://Icons/star.svg" id="3_d5gbr"]
+[ext_resource type="StyleBox" uid="uid://ivmclmvcwoko" path="res://Styles/FlatMask.tres" id="3_gpi7f"]
+[ext_resource type="Shader" path="res://Shader/texture blur.gdshader" id="5_h5jrm"]
+[ext_resource type="Texture2D" uid="uid://bv74c8ikeekce" path="res://Textures/games/game_syntax.webp" id="5_xkbsu"]
+[ext_resource type="Texture2D" uid="uid://b82c7m4il2w61" path="res://Icons/lock_fill.svg" id="6_eobuw"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_p0mra"]
+resource_local_to_scene = true
+shader = ExtResource("5_h5jrm")
+shader_parameter/mix_percentage = 0.0
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+
+[node name="gameList" type="Button"]
+clip_children = 1
+custom_minimum_size = Vector2(450, 450)
+anchors_preset = -1
+anchor_right = 0.416667
+anchor_bottom = 0.234375
+offset_right = -442.0
+offset_bottom = -442.0
+size_flags_horizontal = 0
+mouse_filter = 1
+theme_override_styles/focus = ExtResource("3_gpi7f")
+theme_override_styles/disabled = ExtResource("3_gpi7f")
+theme_override_styles/hover = ExtResource("3_gpi7f")
+theme_override_styles/pressed = ExtResource("3_gpi7f")
+theme_override_styles/normal = ExtResource("3_gpi7f")
+script = ExtResource("1_6cjeq")
+metadata/_edit_use_anchors_ = true
+
+[node name="BackGround" type="TextureRect" parent="."]
+unique_name_in_owner = true
+material = SubResource("ShaderMaterial_p0mra")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_xkbsu")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Disabled" type="TextureRect" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -80.0
+offset_top = 40.0
+offset_right = -30.0
+offset_bottom = 90.0
+grow_horizontal = 0
+texture = ExtResource("6_eobuw")
+expand_mode = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="GameIcon" type="TextureRect" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(150, 200)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("3_d5gbr")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="GameName" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Bold"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GameType" type="Label" parent="VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_colors/font_color = Color(0.9, 0.9, 0.9, 1)
+theme_override_font_sizes/font_size = 25
+text = "game type"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[connection signal="pressed" from="." to="." method="_on_pressed"]

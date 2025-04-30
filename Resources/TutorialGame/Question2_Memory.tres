@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://balfr3vf7h4vb"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_8m7se"]
+
+[resource]
+script = ExtResource("1_8m7se")
+question = "[center]Rate your ability to recall details of conversations[/center]"
+QuestionType = 4
+options = Array[String](["Excellent", "Above Average", "Average", "Below Average"])
+pointsDistribution = Array[int]([500, 375, 250, 125])

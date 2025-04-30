@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://v5pgx8y4p61e"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_bh3g8"]
+
+[resource]
+script = ExtResource("1_bh3g8")
+question = "Harzard"
+options = Array[String](["Peril", "Obstacle"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["a source of danger", "an obstruction that stands in the way"])

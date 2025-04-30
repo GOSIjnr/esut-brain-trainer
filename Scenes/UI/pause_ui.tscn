@@ -1,0 +1,89 @@
+[gd_scene load_steps=6 format=3 uid="uid://rsqoe2er6mtg"]
+
+[ext_resource type="Script" path="res://Scripts/pause_ui_Manager.gd" id="1_ymayg"]
+[ext_resource type="Shader" path="res://Shader/canvas blur.gdshader" id="3_tvrxa"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_td7hg"]
+shader = ExtResource("3_tvrxa")
+shader_parameter/amount = 1.0
+shader_parameter/mix_percentage = 0.7
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mdovh"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 12
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pdhp6"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 5
+corner_radius_top_left = 20
+corner_radius_top_right = 20
+corner_radius_bottom_right = 20
+corner_radius_bottom_left = 20
+corner_detail = 12
+
+[node name="PauseUI" type="CanvasLayer"]
+process_mode = 2
+script = ExtResource("1_ymayg")
+
+[node name="PauseUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="PauseUI"]
+material = SubResource("ShaderMaterial_td7hg")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PauseUI"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 100
+
+[node name="Continue" type="Button" parent="PauseUI/VBoxContainer"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_type_variation = &"Button_Bubble"
+theme_override_colors/font_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_mdovh")
+text = "Continue"
+
+[node name="Quit" type="Button" parent="PauseUI/VBoxContainer"]
+custom_minimum_size = Vector2(400, 200)
+layout_mode = 2
+theme_type_variation = &"Button_Bubble"
+theme_override_colors/font_pressed_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_styles/pressed = SubResource("StyleBoxFlat_pdhp6")
+text = "Quit"
+
+[connection signal="pressed" from="PauseUI/VBoxContainer/Continue" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="PauseUI/VBoxContainer/Quit" to="." method="_on_quit_pressed"]

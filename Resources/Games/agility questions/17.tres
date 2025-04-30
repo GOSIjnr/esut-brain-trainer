@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://br1mrcn2ssqxy"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_ssclt"]
+
+[resource]
+script = ExtResource("1_ssclt")
+question = "Ignorance"
+options = Array[String](["Unenlightened", "Ecstacy"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["the lack of knowledge", "a state of bliss"])

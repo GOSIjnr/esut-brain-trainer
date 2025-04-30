@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://noo66j8g3y73"]
+
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_4oxe0"]
+[ext_resource type="Texture2D" uid="uid://di1tsldmdi0pb" path="res://Textures/games/game_pronuciation.webp" id="1_5lhx8"]
+[ext_resource type="Texture2D" uid="uid://1lkblx8rt2bl" path="res://Icons/gi_pronunciation.svg" id="2_1a0nb"]
+[ext_resource type="Texture2D" uid="uid://dmp06vq32sbio" path="res://Textures/games/gamefullscreen_pronuciation.webp" id="2_id0xr"]
+
+[resource]
+script = ExtResource("1_4oxe0")
+gameColor = Color(0.78125, 0.127924, 0.557377, 1)
+gameName = "Pronunciation"
+gameIcon = ExtResource("2_1a0nb")
+gameBackground = ExtResource("1_5lhx8")
+gameFullBackground = ExtResource("2_id0xr")
+gameType = 1
+howToPlay = ""
+gameBenefits = ""

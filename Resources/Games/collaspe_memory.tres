@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://gpjlwmpmhgqr"]
+
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_i1eq0"]
+[ext_resource type="Texture2D" uid="uid://cbp24dq6xcdsv" path="res://Textures/games/game_collaspe.webp" id="1_rorqp"]
+[ext_resource type="Texture2D" uid="uid://cjt3mubtwylj6" path="res://Icons/gi_collaspe.svg" id="2_it8yx"]
+[ext_resource type="Texture2D" uid="uid://cuubmap41gd53" path="res://Textures/games/gamefullscreen_collaspe.webp" id="2_k7my3"]
+
+[resource]
+script = ExtResource("1_i1eq0")
+gameColor = Color(0.348046, 0.496873, 0.635417, 1)
+gameName = "Collaspe"
+gameIcon = ExtResource("2_it8yx")
+gameBackground = ExtResource("1_rorqp")
+gameFullBackground = ExtResource("2_k7my3")
+gameType = 4
+howToPlay = ""
+gameBenefits = ""

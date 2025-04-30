@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://6ng0j8m3wvp"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_wae0b"]
+
+[resource]
+script = ExtResource("1_wae0b")
+question = "Crooked"
+options = Array[String](["Bent", "Straight"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["having a curve or bend in", "free from curves or angles"])

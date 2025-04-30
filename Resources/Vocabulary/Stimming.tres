@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://clqr111rfp40m"]
+
+[ext_resource type="Script" path="res://Scripts/Vocabulary.gd" id="1_nrf06"]
+
+[resource]
+script = ExtResource("1_nrf06")
+word = "Stimming"
+meaning = "Reapeating of body movement as a way of calming or self-stimulating"

@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://2u3k2kro3y3u"]
+
+[ext_resource type="Script" path="res://Scripts/Vocabulary.gd" id="1_pt3ga"]
+
+[resource]
+script = ExtResource("1_pt3ga")
+word = "Covet"
+meaning = "Wish, long, or crave for (something, especially the property of another person)"

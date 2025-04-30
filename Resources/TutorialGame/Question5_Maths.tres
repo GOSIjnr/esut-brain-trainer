@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://vjo66ynsfxvo"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_gm1xg"]
+
+[resource]
+script = ExtResource("1_gm1xg")
+question = "[center]What is the value of the expression 5²?[/center]"
+QuestionType = 3
+options = Array[String](["10", "15", "20", "25"])
+pointsDistribution = Array[int]([0, 0, 0, 200])

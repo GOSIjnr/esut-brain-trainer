@@ -1,0 +1,258 @@
+[gd_scene load_steps=12 format=3 uid="uid://ccm0hc1unni1b"]
+
+[ext_resource type="Script" path="res://Scripts/Content1Manager.gd" id="1_0fbkm"]
+[ext_resource type="StyleBox" uid="uid://ivmclmvcwoko" path="res://Styles/FlatMask.tres" id="2_pd7mu"]
+[ext_resource type="Texture2D" uid="uid://rwap0figpeoj" path="res://Textures/workout.webp" id="3_8bfkt"]
+[ext_resource type="Texture2D" uid="uid://h60xsrvl2lb5" path="res://Icons/star.svg" id="4_v8gtq"]
+[ext_resource type="FontFile" uid="uid://clqun30xsy32b" path="res://Fonts/Roboto-Light.ttf" id="5_fplc7"]
+[ext_resource type="Script" path="res://Scripts/VocabularyManager.gd" id="6_da7lt"]
+[ext_resource type="Texture2D" uid="uid://dnu5pf0kflnxc" path="res://Textures/crossword.webp" id="7_j0ole"]
+
+[sub_resource type="Gradient" id="Gradient_8hb12"]
+interpolation_mode = 2
+colors = PackedColorArray(0.208333, 0, 0.0194766, 0.505882, 0.21, 0, 0.021, 0)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_hdyre"]
+gradient = SubResource("Gradient_8hb12")
+use_hdr = true
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_5jm0b"]
+interpolation_mode = 2
+colors = PackedColorArray(0.254059, 0.940986, 0.98, 0.207843, 0.195288, 0.17946, 1, 0.443137)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_rkmvc"]
+gradient = SubResource("Gradient_5jm0b")
+use_hdr = true
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[node name="Content1" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0fbkm")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Label_Bold"
+theme_override_font_sizes/font_size = 70
+text = "Home"
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer1" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer1"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_font_sizes/font_size = 30
+text = "Featured"
+vertical_alignment = 1
+uppercase = true
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2"]
+self_modulate = Color(0.697917, 0.3529, 0.318135, 1)
+clip_children = 2
+custom_minimum_size = Vector2(0, 650)
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_pd7mu")
+
+[node name="BackGround" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel"]
+modulate = Color(1, 0.757, 0.73, 1)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_8bfkt")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Gradient" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_hdyre")
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 15
+alignment = 2
+
+[node name="TextureRect" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer"]
+clip_children = 2
+custom_minimum_size = Vector2(250, 250)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+texture = ExtResource("4_v8gtq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("5_fplc7")
+text = "Recommended"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_colors/font_color = Color(0.901042, 0.901042, 0.901042, 1)
+theme_override_font_sizes/font_size = 35
+text = "Personalised for you"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RecommendedButton" type="Button" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_type_variation = &"Button_Accent"
+theme_override_colors/font_hover_color = Color(0.698039, 0.352941, 0.317647, 1)
+theme_override_colors/font_focus_color = Color(0.698039, 0.352941, 0.317647, 1)
+theme_override_colors/font_color = Color(0.698039, 0.352941, 0.317647, 1)
+text = "Start"
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 0
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer3"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_font_sizes/font_size = 30
+text = "Did you know the meaning?"
+vertical_alignment = 1
+uppercase = true
+
+[node name="MarginContainer4" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 450)
+layout_mode = 2
+script = ExtResource("6_da7lt")
+
+[node name="Timer" type="Timer" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4"]
+wait_time = 7.0
+autostart = true
+
+[node name="Panel" type="Panel" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4"]
+self_modulate = Color(0.238941, 0.61407, 1, 1)
+clip_children = 2
+layout_mode = 2
+theme_override_styles/panel = ExtResource("2_pd7mu")
+
+[node name="BackGround" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("7_j0ole")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="Gradient" type="TextureRect" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_rkmvc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Panel/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Panel/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 10
+alignment = 1
+
+[node name="Word" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Thin"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 55
+text = "Word"
+vertical_alignment = 1
+
+[node name="Meaning" type="Label" parent="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Panel/VBoxContainer/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(880, 0)
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 40
+text = "Meaning"
+vertical_alignment = 1
+autowrap_mode = 3
+
+[connection signal="pressed" from="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer2/Panel/MarginContainer/VBoxContainer/RecommendedButton" to="." method="_on_recommended_button_pressed"]
+[connection signal="timeout" from="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4/Timer" to="VBoxContainer/ScrollContainer/VBoxContainer/MarginContainer4" method="_on_timer_timeout"]

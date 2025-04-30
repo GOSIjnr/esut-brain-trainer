@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://m7prwj418ywk"]
+
+[ext_resource type="Texture2D" uid="uid://cqpgkep1cd3pw" path="res://Textures/games/game_wordPart.webp" id="1_ba0gq"]
+[ext_resource type="Texture2D" uid="uid://dxpepwrpwcnju" path="res://Icons/gi_wordPart.svg" id="1_cstjf"]
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_mdrxc"]
+[ext_resource type="Texture2D" uid="uid://bwxdu8sva7fyo" path="res://Textures/games/gamefullscreen_wordPart.webp" id="2_jhsfo"]
+
+[resource]
+script = ExtResource("1_mdrxc")
+gameColor = Color(0.386082, 0.0932416, 0.869792, 1)
+gameName = "Word Part"
+gameIcon = ExtResource("1_cstjf")
+gameBackground = ExtResource("1_ba0gq")
+gameFullBackground = ExtResource("2_jhsfo")
+gameType = 2
+howToPlay = ""
+gameBenefits = ""

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://cw3c8y6ld8xx3"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_wykhp"]
+
+[resource]
+script = ExtResource("1_wykhp")
+question = "[center]7 + 8  = [img=60]res://Textures/Blank_Box.svg[/img][/center]"
+QuestionType = 3
+options = Array[String](["12", "14", "15", "16"])
+pointsDistribution = Array[int]([0, 0, 200, 0])

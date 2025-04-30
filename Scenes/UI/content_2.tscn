@@ -1,0 +1,213 @@
+[gd_scene load_steps=8 format=3 uid="uid://1r2ei0lkfp2i"]
+
+[ext_resource type="Script" path="res://Scripts/Content2Manager.gd" id="1_kwsmp"]
+[ext_resource type="Texture2D" uid="uid://b4e1hglsdoy46" path="res://Icons/help_fill.svg" id="2_rwo0n"]
+[ext_resource type="PackedScene" uid="uid://dox081sf2n4hr" path="res://Scenes/UI/pq_help.tscn" id="3_tbi4o"]
+[ext_resource type="PackedScene" uid="uid://ccybtrwej0f24" path="res://Scenes/UI/EPQ.tscn" id="3_w4uok"]
+[ext_resource type="PackedScene" uid="uid://bs1dnvgdjci53" path="res://Scenes/UI/analytics.tscn" id="6_22811"]
+[ext_resource type="ButtonGroup" uid="uid://b8f3j1h5yv60t" path="res://Styles/AnalyticsGroup.tres" id="6_sytp5"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6myek"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+
+[node name="Content2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_kwsmp")
+help = ExtResource("3_tbi4o")
+AnalyticGroup = ExtResource("6_sytp5")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_type_variation = &"Label_Bold"
+theme_override_font_sizes/font_size = 70
+text = "PQ"
+
+[node name="Help" type="TextureRect" parent="VBoxContainer/Panel/MarginContainer/HBoxContainer"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+custom_minimum_size = Vector2(70, 70)
+layout_mode = 2
+texture = ExtResource("2_rwo0n")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="Control" type="VBoxContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="MarginContainer1" type="MarginContainer" parent="VBoxContainer/ScrollContainer/Control"]
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_constants/margin_left = 75
+theme_override_constants/margin_top = 100
+theme_override_constants/margin_right = 75
+theme_override_constants/margin_bottom = 200
+
+[node name="EPQ Holder" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/Control/MarginContainer1"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+theme_override_constants/separation = 50
+
+[node name="EPQ1" parent="VBoxContainer/ScrollContainer/Control/MarginContainer1/EPQ Holder" instance=ExtResource("3_w4uok")]
+layout_mode = 2
+
+[node name="EPQ2" parent="VBoxContainer/ScrollContainer/Control/MarginContainer1/EPQ Holder" instance=ExtResource("3_w4uok")]
+layout_mode = 2
+barType = 1
+
+[node name="EPQ3" parent="VBoxContainer/ScrollContainer/Control/MarginContainer1/EPQ Holder" instance=ExtResource("3_w4uok")]
+layout_mode = 2
+barType = 2
+
+[node name="EPQ4" parent="VBoxContainer/ScrollContainer/Control/MarginContainer1/EPQ Holder" instance=ExtResource("3_w4uok")]
+layout_mode = 2
+barType = 3
+
+[node name="EPQ5" parent="VBoxContainer/ScrollContainer/Control/MarginContainer1/EPQ Holder" instance=ExtResource("3_w4uok")]
+layout_mode = 2
+barType = 4
+
+[node name="EPQ6" parent="VBoxContainer/ScrollContainer/Control/MarginContainer1/EPQ Holder" instance=ExtResource("3_w4uok")]
+layout_mode = 2
+barType = 5
+
+[node name="Panel" type="Panel" parent="VBoxContainer/ScrollContainer/Control"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+mouse_filter = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6myek")
+
+[node name="Label" type="Label" parent="VBoxContainer/ScrollContainer/Control/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_type_variation = &"Label_Thin"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 70
+text = "Analytics"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer/ScrollContainer/Control"]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2"]
+layout_mode = 2
+theme_override_constants/separation = 100
+
+[node name="Filter" type="HBoxContainer" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 30
+alignment = 1
+
+[node name="Writing" type="Button" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer/Filter"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_ToggleV2"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("6_sytp5")
+text = "W"
+
+[node name="Speaking" type="Button" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer/Filter"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_ToggleV2"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("6_sytp5")
+text = "S"
+
+[node name="Reading" type="Button" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer/Filter"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_ToggleV2"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("6_sytp5")
+text = "R"
+
+[node name="Maths" type="Button" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer/Filter"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_ToggleV2"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("6_sytp5")
+text = "M"
+
+[node name="Memory" type="Button" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer/Filter"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_ToggleV2"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("6_sytp5")
+text = "M"
+
+[node name="Average" type="Button" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer/Filter"]
+custom_minimum_size = Vector2(100, 100)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_ToggleV2"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("6_sytp5")
+text = "A
+"
+
+[node name="Analytics" parent="VBoxContainer/ScrollContainer/Control/MarginContainer2/VBoxContainer" instance=ExtResource("6_22811")]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 1330)
+layout_mode = 2
+
+[connection signal="gui_input" from="VBoxContainer/Panel/MarginContainer/HBoxContainer/Help" to="." method="_on_help_gui_input"]

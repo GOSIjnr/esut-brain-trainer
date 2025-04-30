@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://icxphwuhgk5l"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_4xfys"]
+
+[resource]
+script = ExtResource("1_4xfys")
+question = "Ruin"
+options = Array[String](["Wreck", "Build"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["smash or break forcefully", "create something from abstract"])

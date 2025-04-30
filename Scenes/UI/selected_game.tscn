@@ -1,0 +1,238 @@
+[gd_scene load_steps=12 format=3 uid="uid://c636q8i344dnj"]
+
+[ext_resource type="Texture2D" uid="uid://cegrvwt7fh2aa" path="res://Textures/profileBackground.webp" id="1_ijuhk"]
+[ext_resource type="Script" path="res://Scripts/selected_game.gd" id="1_r5gyq"]
+[ext_resource type="Texture2D" uid="uid://pwwd8pm7vkg7" path="res://Icons/close_fill.svg" id="4_lcjat"]
+[ext_resource type="Texture2D" uid="uid://bgxaympyjpim2" path="res://Icons/game_fill.svg" id="4_qu73w"]
+[ext_resource type="Texture2D" uid="uid://b4e1hglsdoy46" path="res://Icons/help_fill.svg" id="4_rgdjn"]
+[ext_resource type="Texture2D" uid="uid://bfkji6c7wanu8" path="res://Textures/hex.svg" id="6_bpnnc"]
+[ext_resource type="FontFile" uid="uid://b4vjcxs6xj5nl" path="res://Fonts/Roboto-Thin.ttf" id="8_ctqr2"]
+[ext_resource type="Shader" path="res://Shader/canvas blur.gdshader" id="9_sbg13"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6av0l"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+border_width_bottom = 2
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5dqtd"]
+shader = ExtResource("9_sbg13")
+shader_parameter/amount = 1.0
+shader_parameter/mix_percentage = 0.7
+shader_parameter/tint_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qp864"]
+bg_color = Color(0, 0, 0, 0.784314)
+
+[node name="SelectedGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_r5gyq")
+
+[node name="Background" type="TextureRect" parent="."]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_ijuhk")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 80)
+layout_mode = 2
+
+[node name="CloseButton" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = ExtResource("4_lcjat")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="HelpButton" type="TextureRect" parent="MarginContainer/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(80, 0)
+layout_mode = 2
+texture = ExtResource("4_rgdjn")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control1" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="hex" type="TextureRect" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+self_modulate = Color(1, 0.332082, 0.312184, 1)
+custom_minimum_size = Vector2(0, 300)
+layout_mode = 2
+texture = ExtResource("6_bpnnc")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="game_icon" type="TextureRect" parent="MarginContainer/VBoxContainer/hex"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_top = -125.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_qu73w")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Control3" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="game_name" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 60
+text = "Game Name"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="game_type" type="Label" parent="MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 40
+text = "Game Type"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control4" type="Control" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Panel" type="Panel" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 250)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6av0l")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -60.0
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="HighScore" type="Label" parent="MarginContainer/VBoxContainer/Panel/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("8_ctqr2")
+theme_override_font_sizes/font_size = 100
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/VBoxContainer/Panel/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_colors/font_color = Color(0.8, 0.8, 0.8, 1)
+theme_override_font_sizes/font_size = 35
+text = "HighScore"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Control" type="Control" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+
+[node name="Benefits" type="RichTextLabel" parent="MarginContainer/VBoxContainer/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("8_ctqr2")
+theme_override_font_sizes/normal_font_size = 45
+theme_override_font_sizes/bold_font_size = 30
+bbcode_enabled = true
+text = "[color=#cccccc][b]BENEFITS:[/b][/color]"
+fit_content = true
+scroll_active = false
+
+[node name="startGame" type="Button" parent="MarginContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+size_flags_vertical = 8
+text = "Play"
+icon_alignment = 1
+expand_icon = true
+
+[node name="Help" type="Panel" parent="."]
+unique_name_in_owner = true
+visible = false
+material = SubResource("ShaderMaterial_5dqtd")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qp864")
+
+[node name="MarginContainer" type="MarginContainer" parent="Help"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HelpText" type="RichTextLabel" parent="Help/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 4
+mouse_filter = 2
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_fonts/normal_font = ExtResource("8_ctqr2")
+bbcode_enabled = true
+text = "[b]INSTRUCTIONS[/b]"
+fit_content = true
+scroll_active = false
+
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/CloseButton" to="." method="_on_close_button_gui_input"]
+[connection signal="gui_input" from="MarginContainer/VBoxContainer/HBoxContainer/HelpButton" to="." method="_on_help_button_gui_input"]
+[connection signal="pressed" from="MarginContainer/startGame" to="." method="_on_start_game_pressed"]
+[connection signal="gui_input" from="Help" to="." method="_on_help_gui_input"]

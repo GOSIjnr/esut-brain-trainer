@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://e28ugfg2jsit"]
+
+[ext_resource type="Script" path="res://Scripts/Vocabulary.gd" id="1_7c7xj"]
+
+[resource]
+script = ExtResource("1_7c7xj")
+word = "Bane"
+meaning = "Something causing misery or death"

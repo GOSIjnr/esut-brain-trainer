@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://dq3bmqo58y2jn"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_1wju4"]
+
+[resource]
+script = ExtResource("1_1wju4")
+question = "[center]Which sentence uses punctuation correctly?[/center]"
+QuestionType = 0
+options = Array[String](["She said \"I will be there soon\".", "She said, \"I will be there soon.\""])
+pointsDistribution = Array[int]([0, 333])

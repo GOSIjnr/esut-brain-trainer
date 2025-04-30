@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://cfws88aj2mmy1"]
+
+[ext_resource type="Script" path="res://Scripts/Vocabulary.gd" id="1_ecdu6"]
+
+[resource]
+script = ExtResource("1_ecdu6")
+word = "Methodology"
+meaning = "The branch of philosophy that analyses the principles and procedures of inquiry in a particular discipline"

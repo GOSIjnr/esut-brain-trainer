@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://dsk7i56bgjhyf"]
+
+[ext_resource type="Texture2D" uid="uid://41tdc7md8aax" path="res://Icons/gi_syntax.svg" id="1_7uf23"]
+[ext_resource type="Texture2D" uid="uid://bv74c8ikeekce" path="res://Textures/games/game_syntax.webp" id="1_ivgpy"]
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_kvda6"]
+[ext_resource type="Texture2D" uid="uid://cb84mxvy7eca6" path="res://Textures/games/gamefullscreen_syntax.webp" id="2_t6x7u"]
+
+[resource]
+script = ExtResource("1_kvda6")
+gameColor = Color(0.885417, 0.505728, 0.175778, 1)
+gameName = "Syntax"
+gameIcon = ExtResource("1_7uf23")
+gameBackground = ExtResource("1_ivgpy")
+gameFullBackground = ExtResource("2_t6x7u")
+gameType = 0
+howToPlay = ""
+gameBenefits = ""

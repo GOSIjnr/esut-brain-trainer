@@ -1,0 +1,144 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmtxk65luvjx5"]
+
+[ext_resource type="Script" path="res://Scripts/Content3Manager.gd" id="1_aegou"]
+[ext_resource type="ButtonGroup" uid="uid://dc61hfkgy8osu" path="res://Styles/FilterGroup.tres" id="2_yfqme"]
+[ext_resource type="PackedScene" uid="uid://c636q8i344dnj" path="res://Scenes/UI/selected_game.tscn" id="4_45n0t"]
+
+[node name="Content3" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_aegou")
+filterGroup = ExtResource("2_yfqme")
+selectedGameTab = ExtResource("4_45n0t")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="VBoxContainer/Panel/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Bold"
+theme_override_font_sizes/font_size = 70
+text = "Games"
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+custom_minimum_size = Vector2(0, 200)
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+horizontal_scroll_mode = 3
+vertical_scroll_mode = 0
+
+[node name="Filter" type="HBoxContainer" parent="VBoxContainer/MarginContainer/ScrollContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme_override_constants/separation = 25
+
+[node name="Control1" type="Control" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+layout_mode = 2
+
+[node name="Button1" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_Toggle"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_yfqme")
+text = " all "
+
+[node name="Button2" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_Toggle"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_yfqme")
+text = " writing "
+
+[node name="Button3" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_Toggle"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_yfqme")
+text = " speaking "
+
+[node name="Button4" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_Toggle"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_yfqme")
+text = " reading "
+
+[node name="Button5" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_Toggle"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_yfqme")
+text = " maths "
+
+[node name="Button6" type="Button" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+custom_minimum_size = Vector2(250, 0)
+layout_mode = 2
+mouse_filter = 1
+theme_type_variation = &"Button_Toggle"
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("2_yfqme")
+text = " memory "
+
+[node name="Control2" type="Control" parent="VBoxContainer/MarginContainer/ScrollContainer/Filter"]
+layout_mode = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+horizontal_scroll_mode = 0
+vertical_scroll_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="GameBar" type="GridContainer" parent="VBoxContainer/ScrollContainer/MarginContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 4
+columns = 2

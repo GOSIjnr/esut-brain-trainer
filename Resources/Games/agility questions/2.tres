@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://dpyyrfieuuoht"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_bjpo1"]
+
+[resource]
+script = ExtResource("1_bjpo1")
+question = "Identical"
+options = Array[String](["Exclusive", "Indistinguishable"])
+pointsDistribution = Array[int]([-200, 400])
+meaning = Array[String](["not divided or shared with others", "not capable of being distinguished or differrntaited"])

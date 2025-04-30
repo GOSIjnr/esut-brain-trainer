@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://bpca4y736dnx7"]
+
+[ext_resource type="Texture2D" uid="uid://cq0dd53ywqhc7" path="res://Textures/games/game_tipping.webp" id="1_dyd8y"]
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_e588o"]
+[ext_resource type="Texture2D" uid="uid://bbkygebk4nu6f" path="res://Icons/gi_tipping.svg" id="1_jwi8k"]
+[ext_resource type="Texture2D" uid="uid://csqvbr8hutwxp" path="res://Textures/games/gamefullscreen_tipping.webp" id="2_5udh8"]
+
+[resource]
+script = ExtResource("1_e588o")
+gameColor = Color(0.989583, 0.325927, 0.394968, 1)
+gameName = "Tipping"
+gameIcon = ExtResource("1_jwi8k")
+gameBackground = ExtResource("1_dyd8y")
+gameFullBackground = ExtResource("2_5udh8")
+gameType = 3
+howToPlay = ""
+gameBenefits = ""

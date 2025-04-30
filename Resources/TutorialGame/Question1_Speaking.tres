@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://wkocrp2rcg2u"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_m12xa"]
+
+[resource]
+script = ExtResource("1_m12xa")
+question = "[center]How clearly do you enunciate your words when speaking?[/center]
+"
+QuestionType = 1
+options = Array[String](["Very clearly", "Mostly clear", "Sometimes unclear", "Often unclear"])
+pointsDistribution = Array[int]([500, 375, 250, 125])

@@ -1,0 +1,164 @@
+[gd_scene load_steps=7 format=3 uid="uid://dadb1uugr52ds"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGameManager.gd" id="1_65v5v"]
+[ext_resource type="Texture2D" uid="uid://bxxfuokpyqtoo" path="res://Textures/progress_bar.svg" id="2_jwxh1"]
+[ext_resource type="FontFile" uid="uid://btkim3ryv071i" path="res://Fonts/Roboto-Bold.ttf" id="4_6tcam"]
+[ext_resource type="AudioStream" uid="uid://bbq8h3y4pl3up" path="res://Sound/correct_answer.wav" id="5_6yvfr"]
+[ext_resource type="AudioStream" uid="uid://bvw0jl2qpl3bq" path="res://Sound/incorrect_answer.wav" id="6_6ooc3"]
+[ext_resource type="AudioStream" uid="uid://6x4ye6h4e2ee" path="res://Sound/countdown_warning.wav" id="7_qyw45"]
+
+[node name="TutorialGame" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_65v5v")
+timerWarning = Color(0.79, 0.158, 0.2844, 1)
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer1" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Progress" type="TextureProgressBar" parent="VBoxContainer/MarginContainer1"]
+unique_name_in_owner = true
+layout_mode = 2
+nine_patch_stretch = true
+stretch_margin_left = 64
+stretch_margin_top = 15
+stretch_margin_right = 64
+stretch_margin_bottom = 15
+texture_under = ExtResource("2_jwxh1")
+texture_progress = ExtResource("2_jwxh1")
+tint_under = Color(0.8, 0.8, 0.8, 1)
+tint_progress = Color(0.443137, 0.0823529, 0, 1)
+
+[node name="MarginContainer2" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="TimerCountdown" type="Label" parent="VBoxContainer/MarginContainer2"]
+unique_name_in_owner = true
+self_modulate = Color(0, 0, 0, 1)
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("4_6tcam")
+theme_override_font_sizes/font_size = 60
+text = ":00"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_top = 100
+
+[node name="Question" type="RichTextLabel" parent="VBoxContainer/MarginContainer3" groups=["questions"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 0
+bbcode_enabled = true
+text = "[center]7 + 8  = [img=60]res://Textures/Blank_Box.svg[/img][/center]"
+fit_content = true
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -204.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_bottom = 50
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer1" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Option1" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer1" groups=["questions"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option 1"
+
+[node name="Option3" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer1" groups=["questions"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option 3"
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/separation = 20
+
+[node name="Option2" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" groups=["questions"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option 2"
+
+[node name="Option4" type="Button" parent="MarginContainer/VBoxContainer/HBoxContainer2" groups=["questions"]]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+text = "Option 4"
+
+[node name="Option5" type="Button" parent="MarginContainer/VBoxContainer" groups=["questions"]]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_colors/font_hover_pressed_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_colors/font_hover_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_colors/font_pressed_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_colors/font_focus_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_colors/font_color = Color(0.6, 0.6, 0.6, 1)
+theme_override_font_sizes/font_size = 50
+text = "Skip"
+flat = true
+
+[node name="Timers" type="Node" parent="."]
+
+[node name="QuestionTimer" type="Timer" parent="Timers"]
+unique_name_in_owner = true
+wait_time = 30.0
+one_shot = true
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Sfx_Right" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("5_6yvfr")
+
+[node name="Sfx_Wrong" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("6_6ooc3")
+
+[node name="Sfx_Tick" type="AudioStreamPlayer" parent="Audio"]
+unique_name_in_owner = true
+stream = ExtResource("7_qyw45")
+
+[connection signal="timeout" from="Timers/QuestionTimer" to="." method="_on_question_timer_timeout"]

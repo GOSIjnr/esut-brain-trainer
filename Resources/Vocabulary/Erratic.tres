@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://bimtounp5c7lb"]
+
+[ext_resource type="Script" path="res://Scripts/Vocabulary.gd" id="1_fteaw"]
+
+[resource]
+script = ExtResource("1_fteaw")
+word = "Erratic"
+meaning = "Liable to sudden unpredictable change"

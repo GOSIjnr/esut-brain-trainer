@@ -1,0 +1,288 @@
+[gd_scene load_steps=5 format=3 uid="uid://blgrcbgkw8oif"]
+
+[ext_resource type="Script" path="res://Scripts/tutorial_endManager.gd" id="2_gcetw"]
+[ext_resource type="Texture2D" uid="uid://bxxfuokpyqtoo" path="res://Textures/progress_bar.svg" id="2_uorc7"]
+[ext_resource type="PackedScene" uid="uid://ccybtrwej0f24" path="res://Scenes/UI/EPQ.tscn" id="4_026bl"]
+[ext_resource type="AudioStream" uid="uid://b5rni8uv1hfjp" path="res://Sound/whoosh.wav" id="4_124vn"]
+
+[node name="TutorialEnd" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_gcetw")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="page1" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="page1"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_bottom = 100
+
+[node name="Label" type="Label" parent="page1/MarginContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_font_sizes/font_size = 50
+text = "Thank you for participating in the test"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="page1/MarginContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="Label" type="Label" parent="page1/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_font_sizes/font_size = 30
+text = "Getting your results"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ProgressBar" type="TextureProgressBar" parent="page1/MarginContainer/VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+step = 0.01
+nine_patch_stretch = true
+stretch_margin_left = 64
+stretch_margin_top = 15
+stretch_margin_right = 64
+stretch_margin_bottom = 15
+texture_under = ExtResource("2_uorc7")
+texture_progress = ExtResource("2_uorc7")
+tint_under = Color(0.8, 0.8, 0.8, 1)
+tint_progress = Color(0.443137, 0.0823529, 0, 1)
+
+[node name="page1Timer" type="Timer" parent="page1"]
+unique_name_in_owner = true
+wait_time = 5.0
+one_shot = true
+autostart = true
+
+[node name="sfx_whoosh" type="AudioStreamPlayer" parent="page1"]
+stream = ExtResource("4_124vn")
+volume_db = 10.0
+
+[node name="page2" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer1" type="MarginContainer" parent="page2"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -135.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="page2/MarginContainer1"]
+layout_mode = 2
+
+[node name="Label1" type="Label" parent="page2/MarginContainer1/VBoxContainer"]
+layout_mode = 2
+text = "Introducing PQ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Label2" type="Label" parent="page2/MarginContainer1/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_font_sizes/font_size = 40
+text = "Proficiency Quotients"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Control" type="Control" parent="page2/MarginContainer1/VBoxContainer"]
+custom_minimum_size = Vector2(0, 100)
+layout_mode = 2
+
+[node name="Label3" type="Label" parent="page2/MarginContainer1/VBoxContainer"]
+custom_minimum_size = Vector2(900, 0)
+layout_mode = 2
+theme_type_variation = &"Label_Light"
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "You will be given a PQ ranging from 0-5000 that represents your proficirncy in each skill"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 3
+
+[node name="MarginContainer2" type="MarginContainer" parent="page2"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="page2/MarginContainer2"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+text = "Get Results"
+
+[node name="page3" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer1" type="MarginContainer" parent="page3"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -135.0
+offset_bottom = 135.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="page3/MarginContainer1"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Label" type="Label" parent="page3/MarginContainer1/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+theme_type_variation = &"Label_Bold"
+text = "Your starting PQ"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="EPQ Holder" type="VBoxContainer" parent="page3/MarginContainer1/VBoxContainer"]
+unique_name_in_owner = true
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="EPQ1" parent="page3/MarginContainer1/VBoxContainer/EPQ Holder" instance=ExtResource("4_026bl")]
+layout_mode = 2
+
+[node name="EPQ2" parent="page3/MarginContainer1/VBoxContainer/EPQ Holder" instance=ExtResource("4_026bl")]
+layout_mode = 2
+barType = 1
+
+[node name="EPQ3" parent="page3/MarginContainer1/VBoxContainer/EPQ Holder" instance=ExtResource("4_026bl")]
+layout_mode = 2
+barType = 2
+
+[node name="EPQ4" parent="page3/MarginContainer1/VBoxContainer/EPQ Holder" instance=ExtResource("4_026bl")]
+layout_mode = 2
+barType = 3
+
+[node name="EPQ5" parent="page3/MarginContainer1/VBoxContainer/EPQ Holder" instance=ExtResource("4_026bl")]
+layout_mode = 2
+barType = 4
+
+[node name="EPQ6" parent="page3/MarginContainer1/VBoxContainer/EPQ Holder" instance=ExtResource("4_026bl")]
+layout_mode = 2
+barType = 5
+
+[node name="MarginContainer2" type="MarginContainer" parent="page3"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -8.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="page3/MarginContainer2"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+text = "Finish setting up account"
+
+[node name="page4" type="Control" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="MarginContainer1" type="MarginContainer" parent="page4"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = -64.0
+offset_bottom = 64.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="page4/MarginContainer1"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="Label" type="Label" parent="page4/MarginContainer1/VBoxContainer"]
+layout_mode = 2
+theme_type_variation = &"Label_Mid"
+theme_override_font_sizes/font_size = 50
+text = "What's your Name?"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="LineEdit" type="LineEdit" parent="page4/MarginContainer1/VBoxContainer"]
+layout_mode = 2
+placeholder_text = "UserName..."
+
+[node name="MarginContainer2" type="MarginContainer" parent="page4"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -60.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="page4/MarginContainer2"]
+custom_minimum_size = Vector2(0, 210)
+layout_mode = 2
+text = "Done"
+
+[connection signal="timeout" from="page1/page1Timer" to="." method="_on_page1Timer_timeout"]
+[connection signal="pressed" from="page2/MarginContainer2/Button" to="." method="_on_page2Button_pressed"]
+[connection signal="pressed" from="page3/MarginContainer2/Button" to="." method="_on_page3Button_pressed"]
+[connection signal="text_changed" from="page4/MarginContainer1/VBoxContainer/LineEdit" to="." method="_on_line_edit_text_changed"]
+[connection signal="pressed" from="page4/MarginContainer2/Button" to="." method="_on_page4Button_pressed"]

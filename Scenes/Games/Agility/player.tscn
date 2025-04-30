@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://d0w6q28dhx6x"]
+
+[ext_resource type="Script" path="res://Scripts/player(agility).gd" id="1_oxudk"]
+[ext_resource type="Texture2D" uid="uid://2pexdb6pjfsq" path="res://Textures/ship_8.png" id="1_qykdu"]
+[ext_resource type="AudioStream" uid="uid://b5rni8uv1hfjp" path="res://Sound/whoosh.wav" id="3_r7h8f"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xkeyv"]
+size = Vector2(200, 200)
+
+[node name="player" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_oxudk")
+gravity = Vector2(0, 30)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_qykdu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2, 1)
+shape = SubResource("RectangleShape2D_xkeyv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_r7h8f")
+volume_db = 10.0

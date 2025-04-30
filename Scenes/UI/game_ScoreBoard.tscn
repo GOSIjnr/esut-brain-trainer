@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://chp4wwk2cjoi7"]
+
+[ext_resource type="Script" path="res://Scripts/game_score_board.gd" id="2_47mdv"]
+[ext_resource type="Texture2D" uid="uid://cupv3t4ityl57" path="res://Icons/pause_fill.svg" id="3_1hnuv"]
+[ext_resource type="AudioStream" uid="uid://6x4ye6h4e2ee" path="res://Sound/countdown_warning.wav" id="3_447oi"]
+
+[node name="HBoxContainer" type="HBoxContainer"]
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 60.0
+grow_horizontal = 2
+size_flags_vertical = 0
+alignment = 1
+script = ExtResource("2_47mdv")
+
+[node name="Control" type="Control" parent="."]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="Pause" type="TextureRect" parent="Control"]
+custom_minimum_size = Vector2(45, 45)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_1hnuv")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Score Text" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+theme_type_variation = &"Label_Bold"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "9990"
+vertical_alignment = 1
+
+[node name="Timer Text" type="Label" parent="."]
+unique_name_in_owner = true
+layout_mode = 2
+size_flags_vertical = 1
+theme_type_variation = &"Label_Bold"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = ":59"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_447oi")
+
+[connection signal="gui_input" from="Control/Pause" to="." method="_on_pause_gui_input"]

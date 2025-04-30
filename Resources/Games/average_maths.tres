@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://g4knya4s1b8o"]
+
+[ext_resource type="Texture2D" uid="uid://c28jp8it0nmbv" path="res://Textures/games/game_average.webp" id="1_7ibxg"]
+[ext_resource type="Texture2D" uid="uid://bj8pwx54p8bla" path="res://Icons/gi_average.svg" id="1_e2mwu"]
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_efay0"]
+[ext_resource type="Texture2D" uid="uid://bq0ngunva76i8" path="res://Textures/games/gamefullscreen_average.webp" id="2_m41px"]
+
+[resource]
+script = ExtResource("1_efay0")
+gameColor = Color(0.802083, 0.291332, 0.323268, 1)
+gameName = "Average"
+gameIcon = ExtResource("1_e2mwu")
+gameBackground = ExtResource("1_7ibxg")
+gameFullBackground = ExtResource("2_m41px")
+gameType = 3
+howToPlay = ""
+gameBenefits = ""

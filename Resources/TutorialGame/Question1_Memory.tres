@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://ce8adaxggvfns"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_v3ie0"]
+
+[resource]
+script = ExtResource("1_v3ie0")
+question = "[center]How well can you remember names[/center]"
+QuestionType = 4
+options = Array[String](["Excellent", "Above Average", "Average", "Below Average"])
+pointsDistribution = Array[int]([500, 375, 250, 125])

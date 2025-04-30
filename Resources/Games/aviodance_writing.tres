@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://qhxl4y0jh46a"]
+
+[ext_resource type="Texture2D" uid="uid://dfgdwlics0v02" path="res://Textures/games/game_aviodance.webp" id="1_1t80u"]
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_dywcu"]
+[ext_resource type="Texture2D" uid="uid://dx1h50u1f85qs" path="res://Icons/gi_aviodance.svg" id="1_yl8fj"]
+[ext_resource type="Texture2D" uid="uid://onk5tamdytao" path="res://Textures/games/gamefullscreen_aviodance.webp" id="2_0k6uk"]
+
+[resource]
+script = ExtResource("1_dywcu")
+gameColor = Color(0.582625, 0.755208, 0.470262, 1)
+gameName = "Aviodance"
+gameIcon = ExtResource("1_yl8fj")
+gameBackground = ExtResource("1_1t80u")
+gameFullBackground = ExtResource("2_0k6uk")
+gameType = 0
+howToPlay = ""
+gameBenefits = ""

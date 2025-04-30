@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://d08mmmekllysf"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_7ih42"]
+
+[resource]
+script = ExtResource("1_7ih42")
+question = "[center]How often do you use filler words (like \"um\", \"uh\", \"you know\") when speaking?[/center]"
+QuestionType = 1
+options = Array[String](["Rarely or never", "Occasionally", "Frequently", "Constantly"])
+pointsDistribution = Array[int]([500, 375, 250, 125])

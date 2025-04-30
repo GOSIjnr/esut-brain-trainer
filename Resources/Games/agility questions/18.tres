@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://qnkm3rxx370g"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_u5d47"]
+
+[resource]
+script = ExtResource("1_u5d47")
+question = "Engage"
+options = Array[String](["Speculate", "Prosecute"])
+pointsDistribution = Array[int]([-200, 400])
+meaning = Array[String](["to believe especially on uncertain or tentative grounds", "Carry out or participate in an activity"])

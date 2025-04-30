@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://36owc2og2aq"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_hx1mg"]
+
+[resource]
+script = ExtResource("1_hx1mg")
+question = "[center]Which of the following sentences is grammatically correct?[/center]"
+QuestionType = 0
+options = Array[String](["The books on the table is mine.", "The books on the table are mine"])
+pointsDistribution = Array[int]([0, 334])

@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://4drc6wglbx3e"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_ilvl3"]
+
+[resource]
+script = ExtResource("1_ilvl3")
+question = "Drab"
+options = Array[String](["Cheerful", "Dull"])
+pointsDistribution = Array[int]([-200, 400])
+meaning = Array[String](["being full of or promoting cheer", "not active or brisk"])

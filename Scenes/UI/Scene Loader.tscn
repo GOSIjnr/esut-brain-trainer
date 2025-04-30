@@ -1,0 +1,28 @@
+[gd_scene load_steps=21 format=3 uid="uid://c1ah30nu5gvow"]
+
+[ext_resource type="Resource" uid="uid://d4mdd82ilkfhp" path="res://Resources/Games/agility_reading.tres" id="1_ehxj7"]
+[ext_resource type="PackedScene" uid="uid://blpko71pew773" path="res://Scenes/UI/main_menu_ui.tscn" id="1_gj0lm"]
+[ext_resource type="PackedScene" uid="uid://ccm0hc1unni1b" path="res://Scenes/UI/content_1.tscn" id="1_go8bh"]
+[ext_resource type="PackedScene" uid="uid://c6gc5la7qyhxn" path="res://Scenes/UI/StartUp.tscn" id="1_k0oeh"]
+[ext_resource type="PackedScene" uid="uid://1r2ei0lkfp2i" path="res://Scenes/UI/content_2.tscn" id="2_538jl"]
+[ext_resource type="Resource" uid="uid://g4knya4s1b8o" path="res://Resources/Games/average_maths.tres" id="2_oiyk6"]
+[ext_resource type="PackedScene" uid="uid://cvklhkmwyvuap" path="res://Scenes/UI/tutorial.tscn" id="2_qm64l"]
+[ext_resource type="Resource" uid="uid://qhxl4y0jh46a" path="res://Resources/Games/aviodance_writing.tres" id="3_la0ww"]
+[ext_resource type="PackedScene" uid="uid://37kjmr5xsoum" path="res://Scenes/UI/toast.tscn" id="3_ogiw5"]
+[ext_resource type="PackedScene" uid="uid://bmtxk65luvjx5" path="res://Scenes/UI/content_3.tscn" id="3_sau7d"]
+[ext_resource type="PackedScene" uid="uid://beeej6pkhpe6e" path="res://Scenes/UI/content_4.tscn" id="4_0gtem"]
+[ext_resource type="Resource" uid="uid://gpjlwmpmhgqr" path="res://Resources/Games/collaspe_memory.tres" id="4_4ohtx"]
+[ext_resource type="PackedScene" uid="uid://blgrcbgkw8oif" path="res://Scenes/UI/tutorial_end.tscn" id="4_pito4"]
+[ext_resource type="Resource" uid="uid://d00ygjip2011l" path="res://Resources/Games/memory_speaking.tres" id="5_frj2c"]
+[ext_resource type="PackedScene" uid="uid://dadb1uugr52ds" path="res://Scenes/Games/tutorial_game.tscn" id="5_sv0o2"]
+[ext_resource type="Resource" uid="uid://m7prwj418ywk" path="res://Resources/Games/word part_reading.tres" id="6_52o8y"]
+[ext_resource type="Resource" uid="uid://noo66j8g3y73" path="res://Resources/Games/pronunciation_speaking.tres" id="12_vfseg"]
+[ext_resource type="Resource" uid="uid://c21wgn7qk0smh" path="res://Resources/Games/sound match_memory.tres" id="13_8con0"]
+[ext_resource type="Resource" uid="uid://dsk7i56bgjhyf" path="res://Resources/Games/syntax_writing.tres" id="15_hmyn1"]
+[ext_resource type="Resource" uid="uid://bpca4y736dnx7" path="res://Resources/Games/tipping_maths.tres" id="16_27cjr"]
+
+[node name="Scene Loader" type="ResourcePreloader"]
+process_thread_group = 2
+process_thread_group_order = 0
+process_thread_messages = 0
+resources = [PackedStringArray("[game] agility_reading", "[game] average_maths", "[game] aviodance_writing", "[game] collaspe_memory", "[game] memory_speaking", "[game] pronunciation_speaking", "[game] sound match_memory", "[game] syntax_writing", "[game] tipping_maths", "[game] word part_reading", "content_1", "content_2", "content_3", "content_4", "main_menu", "start_up", "toast", "tutorial_end", "tutorial_game", "tutorial_start"), [ExtResource("1_ehxj7"), ExtResource("2_oiyk6"), ExtResource("3_la0ww"), ExtResource("4_4ohtx"), ExtResource("5_frj2c"), ExtResource("12_vfseg"), ExtResource("13_8con0"), ExtResource("15_hmyn1"), ExtResource("16_27cjr"), ExtResource("6_52o8y"), ExtResource("1_go8bh"), ExtResource("2_538jl"), ExtResource("3_sau7d"), ExtResource("4_0gtem"), ExtResource("1_gj0lm"), ExtResource("1_k0oeh"), ExtResource("3_ogiw5"), ExtResource("4_pito4"), ExtResource("5_sv0o2"), ExtResource("2_qm64l")]]

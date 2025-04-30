@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://bwpm4kuuctaaa"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_tmk38"]
+
+[resource]
+script = ExtResource("1_tmk38")
+question = "[center]81 / 9 = [img=60]res://Textures/Blank_Box.svg[/img][/center]"
+QuestionType = 3
+options = Array[String](["7", "8", "9", "10"])
+pointsDistribution = Array[int]([0, 0, 200, 0])

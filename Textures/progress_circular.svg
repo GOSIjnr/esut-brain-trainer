@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="800"
+   height="800"
+   viewBox="0 0 211.66666 211.66667"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="progress_circular.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.44631737"
+     inkscape:cx="284.55088"
+     inkscape:cy="597.10873"
+     inkscape:window-width="1366"
+     inkscape:window-height="697"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="matrix(-2.9090912,0,0,2.8222224,33.866668,-7.96102)">
+    <path
+       d="M -24.738539,2.8208337 A 36.380203,37.499996 0 0 1 11.641666,40.320831 36.380203,37.499996 0 0 1 0.98606743,66.837248 L -5.5184929,60.132476 A 27.285156,28.124998 0 0 0 2.5466148,40.320831 27.285156,28.124998 0 0 0 -24.738539,12.195833 a 27.285156,28.124998 0 0 0 -27.285153,28.124998 27.285156,28.124998 0 0 0 8.001158,19.877563 l -6.440611,6.638854 A 36.380203,37.499996 0 0 1 -61.118743,40.320831 36.380203,37.499996 0 0 1 -24.738539,2.8208337 Z"
+       style="font-variation-settings:'wght' 300;fill:#ffffff;stroke-width:0.0924846"
+       id="path1" />
+  </g>
+</svg>

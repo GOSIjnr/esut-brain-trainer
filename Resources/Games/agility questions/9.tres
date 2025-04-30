@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://csshtpwl3tm8h"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_1ojkr"]
+
+[resource]
+script = ExtResource("1_1ojkr")
+question = "Imperative"
+options = Array[String](["Paramount", "Voluntary"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["of greatest importance", "of your own free will or design"])

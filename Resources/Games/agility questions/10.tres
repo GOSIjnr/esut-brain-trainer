@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://du2b84hstl8rl"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_cqhne"]
+
+[resource]
+script = ExtResource("1_cqhne")
+question = "Flourish"
+options = Array[String](["Prosper", "Wither"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["making steady progress", "lose freshness, vigour or vitality"])

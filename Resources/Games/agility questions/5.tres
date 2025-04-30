@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://b6q3r4q1k8s6o"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_ux5i2"]
+
+[resource]
+script = ExtResource("1_ux5i2")
+question = "Antonym"
+options = Array[String](["Opposite Words", "Simile"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["a word that expresses a meaing opposed to the meaning of another word", "a figure of speech that expresses a resemblance between things of different kinds"])

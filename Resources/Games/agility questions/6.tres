@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://m3vakdyp5ayc"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_jjgbe"]
+
+[resource]
+script = ExtResource("1_jjgbe")
+question = "Thoughtful"
+options = Array[String](["Reflective", "Insensitive"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["deeply or seriously thoughtful", "deficient in human sensibility"])

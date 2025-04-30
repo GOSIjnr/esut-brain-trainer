@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://c4jmaochdfxv7"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_gidpp"]
+
+[resource]
+script = ExtResource("1_gidpp")
+question = "Resounding"
+options = Array[String](["Ringing", "Quiet"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["the giving of a ring as a token of engagement", "free of noise or uproar"])

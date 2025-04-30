@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://dh10arp6ia2sx"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_yrkhr"]
+
+[resource]
+script = ExtResource("1_yrkhr")
+question = "[center]If a rectangle has a length of 10 units and a width of 4 units, what is its area?[/center]"
+QuestionType = 3
+options = Array[String](["14 square units", "28 square units", "30 square units", "40 square units"])
+pointsDistribution = Array[int]([0, 0, 0, 200])

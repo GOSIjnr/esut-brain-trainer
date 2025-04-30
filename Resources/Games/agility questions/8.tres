@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://breuhf8ka2mlw"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_sg4qb"]
+
+[resource]
+script = ExtResource("1_sg4qb")
+question = "Tawdry"
+options = Array[String](["Tasteless", "Tasteful"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["lacking flavour", "having, showing or conforming to good taste"])

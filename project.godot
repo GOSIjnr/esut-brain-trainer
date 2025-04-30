@@ -11,8 +11,15 @@ config_version=5
 [application]
 
 config/name="ESUT Brain Trainer"
+run/main_scene="uid://c6gc5la7qyhxn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
+
+[autoload]
+
+SaveManager="*res://Scripts/SaveManager.gd"
+Global="*res://Scripts/Global.gd"
+SceneLoader="*res://Scenes/UI/Scene Loader.tscn"
 
 [dotnet]
 

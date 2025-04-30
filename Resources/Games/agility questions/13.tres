@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://ch2ophtadplc3"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_a2ybi"]
+
+[resource]
+script = ExtResource("1_a2ybi")
+question = "Spacious"
+options = Array[String](["Cramped", "Roomy"])
+pointsDistribution = Array[int]([-200, 400])
+meaning = Array[String](["constricted in size", "having ample space"])

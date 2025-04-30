@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://c21wgn7qk0smh"]
+
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_65axs"]
+[ext_resource type="Texture2D" uid="uid://63xt67hbvjig" path="res://Textures/games/game_soundMatch.webp" id="1_at8m0"]
+[ext_resource type="Texture2D" uid="uid://cvvj6r8xndgym" path="res://Icons/gi_soundMatch.svg" id="1_ducmc"]
+[ext_resource type="Texture2D" uid="uid://86l3pm6f67j4" path="res://Textures/games/gamefullscreen_soundMatch.webp" id="2_8uq3f"]
+
+[resource]
+script = ExtResource("1_65axs")
+gameColor = Color(0.597736, 1, 0.415737, 1)
+gameName = "Sound Match"
+gameIcon = ExtResource("1_ducmc")
+gameBackground = ExtResource("1_at8m0")
+gameFullBackground = ExtResource("2_8uq3f")
+gameType = 4
+howToPlay = ""
+gameBenefits = ""

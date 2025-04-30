@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://deixj2hmyjp3h"]
+
+[ext_resource type="Script" path="res://Scripts/Vocabulary.gd" id="1_jbywg"]
+
+[resource]
+script = ExtResource("1_jbywg")
+word = "Culling"
+meaning = "Remove something that has been rejected"

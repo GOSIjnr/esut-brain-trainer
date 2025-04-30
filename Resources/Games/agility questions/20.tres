@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="agiltyQuestion" load_steps=2 format=3 uid="uid://ch34l42ie56sr"]
+
+[ext_resource type="Script" path="res://Scripts/agility_game.gd" id="1_3rkvg"]
+
+[resource]
+script = ExtResource("1_3rkvg")
+question = "Endanger"
+options = Array[String](["Threaten", "Curb"])
+pointsDistribution = Array[int]([400, -200])
+meaning = Array[String](["pose a threat to", "the act of restraining power or action"])

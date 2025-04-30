@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://bjrcesxthinwc"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_ve6oh"]
+
+[resource]
+script = ExtResource("1_ve6oh")
+question = "[center]What is the best title for the passage?[/center]
+
+[b]Passage: [/b][i]\"The Amazon rainforest is home to a diverse range of species. Many plants and animals found there are not found anywhere else in the world.\"[/i]"
+QuestionType = 2
+options = Array[String](["Deserts of the World", "The Amazon Rainforest"])
+pointsDistribution = Array[int]([0, 333])

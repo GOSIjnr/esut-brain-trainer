@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="tutorialGame" load_steps=2 format=3 uid="uid://b4mfxe7rahahc"]
+
+[ext_resource type="Script" path="res://Scripts/tutorialGame.gd" id="1_n3gh1"]
+
+[resource]
+script = ExtResource("1_n3gh1")
+question = "[center]What can be inferred about bees from the passage?[/center]
+
+[b]Passage: [/b][i]\"Bees are important pollinators. They help in the reproduction of many plants by transferring pollen from one flower to another.\"[/i]"
+QuestionType = 2
+options = Array[String](["Bees help in plant reproduction.", "Bees are harmful to plants."])
+pointsDistribution = Array[int]([333, 0])

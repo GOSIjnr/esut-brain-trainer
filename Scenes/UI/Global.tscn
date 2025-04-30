@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://dtmekynsvi5dg"]
+
+[ext_resource type="Script" path="res://Scripts/Global.gd" id="1_s17vq"]
+
+[node name="Global" type="Node"]
+script = ExtResource("1_s17vq")
+PQColor = Array[Color]([Color(0.168627, 0.760784, 0.662745, 1), Color(0.937255, 0.141176, 0.188235, 1), Color(0.92549, 0.101961, 0.380392, 1), Color(0.611765, 0.160784, 0.658824, 1), Color(0.905882, 0.572549, 0.12549, 1), Color(0.411765, 0.603922, 0.984314, 1)])

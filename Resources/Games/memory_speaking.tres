@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://d00ygjip2011l"]
+
+[ext_resource type="Texture2D" uid="uid://cs8uqq2txrj6g" path="res://Icons/gi_memory.svg" id="1_ak1k1"]
+[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_rdhch"]
+[ext_resource type="Texture2D" uid="uid://40ru4e4q3h0x" path="res://Textures/games/game_memory.webp" id="1_suqnc"]
+[ext_resource type="Texture2D" uid="uid://wn4pwy2j4iws" path="res://Textures/games/gamefullscreen_memory.webp" id="2_dd5tq"]
+
+[resource]
+script = ExtResource("1_rdhch")
+gameColor = Color(0.538814, 0.318018, 0.744792, 1)
+gameName = "Memory"
+gameIcon = ExtResource("1_ak1k1")
+gameBackground = ExtResource("1_suqnc")
+gameFullBackground = ExtResource("2_dd5tq")
+gameType = 1
+howToPlay = ""
+gameBenefits = ""

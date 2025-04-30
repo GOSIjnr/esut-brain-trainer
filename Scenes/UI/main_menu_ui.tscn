@@ -1,0 +1,185 @@
+[gd_scene load_steps=15 format=3 uid="uid://blpko71pew773"]
+
+[ext_resource type="Script" path="res://Scripts/main_menu_uiManager.gd" id="2_0ruyx"]
+[ext_resource type="Script" path="res://Scripts/TabManager.gd" id="2_dinno"]
+[ext_resource type="Script" path="res://Scripts/daily_manager.gd" id="2_kwfdr"]
+[ext_resource type="ButtonGroup" uid="uid://d07incokcfi6e" path="res://Styles/TabGroup.tres" id="3_x07ne"]
+[ext_resource type="FontFile" uid="uid://btkim3ryv071i" path="res://Fonts/Roboto-Bold.ttf" id="5_e7ir8"]
+[ext_resource type="Texture2D" uid="uid://clwogmojh2qrb" path="res://Icons/home.svg" id="19_qb3mx"]
+[ext_resource type="Texture2D" uid="uid://behagj3rqlykd" path="res://Icons/home_fill.svg" id="20_u35pa"]
+[ext_resource type="Texture2D" uid="uid://bmo35qmnc10ds" path="res://Icons/chart.svg" id="21_p3dvl"]
+[ext_resource type="Texture2D" uid="uid://dum6dvoesrpd8" path="res://Icons/chart_fill.svg" id="22_e0mht"]
+[ext_resource type="Texture2D" uid="uid://cmjwmeinpxg0q" path="res://Icons/game.svg" id="23_crxfu"]
+[ext_resource type="Texture2D" uid="uid://bgxaympyjpim2" path="res://Icons/game_fill.svg" id="24_4vb3p"]
+[ext_resource type="Texture2D" uid="uid://cwj4yaltxmng" path="res://Icons/user.svg" id="25_w2cdg"]
+[ext_resource type="Texture2D" uid="uid://8ufa7hmthdak" path="res://Icons/user_fill.svg" id="26_eag25"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xsmkv"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+border_width_top = 2
+
+[node name="Main Menu UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("2_0ruyx")
+
+[node name="Daily Manager" type="Node" parent="."]
+script = ExtResource("2_kwfdr")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Contents" type="Control" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 500)
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Tabs" type="Panel" parent="VBoxContainer"]
+unique_name_in_owner = true
+custom_minimum_size = Vector2(0, 150)
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_xsmkv")
+script = ExtResource("2_dinno")
+TabGroup = ExtResource("3_x07ne")
+TabColor_Selected = Color(0.443137, 0.0823529, 0, 1)
+TabColor_Deselected = Color(0.6, 0.6, 0.6, 1)
+boldFont = ExtResource("5_e7ir8")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/Tabs"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 0
+theme_override_constants/margin_bottom = 20
+
+[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/Tabs/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+alignment = 1
+
+[node name="VBoxContainer1" type="VBoxContainer" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_x07ne")
+texture_normal = ExtResource("19_qb3mx")
+texture_disabled = ExtResource("20_u35pa")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer1"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 0
+theme_type_variation = &"Label_Light"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Home"
+horizontal_alignment = 1
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_x07ne")
+texture_normal = ExtResource("21_p3dvl")
+texture_disabled = ExtResource("22_e0mht")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 0
+theme_type_variation = &"Label_Light"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Performance"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_x07ne")
+texture_normal = ExtResource("23_crxfu")
+texture_disabled = ExtResource("24_4vb3p")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 0
+theme_type_variation = &"Label_Light"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Games"
+horizontal_alignment = 1
+
+[node name="VBoxContainer4" type="VBoxContainer" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer"]
+modulate = Color(0.8, 0.8, 0.8, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 3
+toggle_mode = true
+action_mode = 0
+button_group = ExtResource("3_x07ne")
+texture_normal = ExtResource("25_w2cdg")
+texture_disabled = ExtResource("26_eag25")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Label" type="Label" parent="VBoxContainer/Tabs/MarginContainer/HBoxContainer/VBoxContainer4"]
+layout_mode = 2
+size_flags_vertical = 8
+mouse_filter = 0
+theme_type_variation = &"Label_Light"
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "Profile"
+horizontal_alignment = 1

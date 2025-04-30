@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Vocabulary" load_steps=2 format=3 uid="uid://ciybiquthawld"]
+
+[ext_resource type="Script" path="res://Scripts/Vocabulary.gd" id="1_s8yja"]
+
+[resource]
+script = ExtResource("1_s8yja")
+word = "Dissertation"
+meaning = "A treatise advancing a new point of view resulting from research"

@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://c6gc5la7qyhxn"]
 
-[ext_resource type="Script" path="res://Scripts/Redirect.gd" id="2_uhcw1"]
+[ext_resource type="Script" uid="uid://ce16wpmxt0xa0" path="res://Scripts/Redirect.gd" id="2_uhcw1"]
 
 [node name="StartUp" type="Panel"]
 anchors_preset = 15

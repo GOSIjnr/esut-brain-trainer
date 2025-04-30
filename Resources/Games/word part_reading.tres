@@ -1,8 +1,8 @@
 [gd_resource type="Resource" script_class="Games" load_steps=5 format=3 uid="uid://m7prwj418ywk"]
 
 [ext_resource type="Texture2D" uid="uid://cqpgkep1cd3pw" path="res://Textures/games/game_wordPart.webp" id="1_ba0gq"]
-[ext_resource type="Texture2D" uid="uid://dxpepwrpwcnju" path="res://Icons/gi_wordPart.svg" id="1_cstjf"]
-[ext_resource type="Script" path="res://Scripts/Games.gd" id="1_mdrxc"]
+[ext_resource type="Texture2D" uid="uid://dxpepwrpwcnju" path="res://icons/gi_wordPart.svg" id="1_cstjf"]
+[ext_resource type="Script" uid="uid://dlrotkujf27ct" path="res://Scripts/Games.gd" id="1_mdrxc"]
 [ext_resource type="Texture2D" uid="uid://bwxdu8sva7fyo" path="res://Textures/games/gamefullscreen_wordPart.webp" id="2_jhsfo"]
 
 [resource]

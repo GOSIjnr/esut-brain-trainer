@@ -13,7 +13,9 @@ config_version=5
 config/name="ESUT Brain Trainer"
 run/main_scene="uid://c6gc5la7qyhxn"
 config/features=PackedStringArray("4.4", "GL Compatibility")
-config/icon="res://icon.svg"
+boot_splash/bg_color=Color(0.0392157, 0.0392157, 0.0392157, 1)
+boot_splash/fullsize=false
+config/icon="uid://dgu22b5e6fmfv"
 
 [autoload]
 
@@ -45,3 +47,4 @@ pointing/emulate_touch_from_mouse=true
 
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
+textures/vram_compression/import_etc2_astc=true

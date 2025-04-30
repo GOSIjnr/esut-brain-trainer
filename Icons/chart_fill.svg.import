@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dum6dvoesrpd8"
-path="res://.godot/imported/chart_fill.svg-32a969befa86f02543bd8a04f4de4324.ctex"
+path="res://.godot/imported/chart_fill.svg-ce2bb8ac4c19a81478c90292679284f9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/chart_fill.svg"
-dest_files=["res://.godot/imported/chart_fill.svg-32a969befa86f02543bd8a04f4de4324.ctex"]
+source_file="res://icons/chart_fill.svg"
+dest_files=["res://.godot/imported/chart_fill.svg-ce2bb8ac4c19a81478c90292679284f9.ctex"]
 
 [params]
 

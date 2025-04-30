@@ -1,11 +1,11 @@
 [gd_scene load_steps=11 format=3 uid="uid://beeej6pkhpe6e"]
 
-[ext_resource type="Script" path="res://Scripts/Content4Manager.gd" id="1_0ftqu"]
+[ext_resource type="Script" uid="uid://b626kqpng6dly" path="res://Scripts/Content4Manager.gd" id="1_0ftqu"]
 [ext_resource type="PackedScene" uid="uid://bt5sit6uvmj8v" path="res://Scenes/UI/delete_account.tscn" id="2_0ebx4"]
 [ext_resource type="Texture2D" uid="uid://cegrvwt7fh2aa" path="res://Textures/profileBackground.webp" id="2_0rrsy"]
-[ext_resource type="Texture2D" uid="uid://d0ifgj1klxf7e" path="res://Icons/workout.svg" id="3_j5igh"]
-[ext_resource type="FontFile" uid="uid://c7ffk3w7me6je" path="res://Fonts/Roboto-Medium.ttf" id="4_1av45"]
-[ext_resource type="FontFile" uid="uid://btkim3ryv071i" path="res://Fonts/Roboto-Bold.ttf" id="5_mhlr8"]
+[ext_resource type="Texture2D" uid="uid://d0ifgj1klxf7e" path="res://icons/workout.svg" id="3_j5igh"]
+[ext_resource type="FontFile" uid="uid://c7ffk3w7me6je" path="res://fonts/Roboto-Medium.ttf" id="4_1av45"]
+[ext_resource type="FontFile" uid="uid://btkim3ryv071i" path="res://fonts/Roboto-Bold.ttf" id="5_mhlr8"]
 [ext_resource type="Theme" uid="uid://dq4vxtwdfue5" path="res://Themes/LightMode.tres" id="6_mafie"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xm40b"]
@@ -239,7 +239,7 @@ theme_override_colors/font_pressed_color = Color(0.67, 0.0871, 0.0871, 1)
 theme_override_styles/pressed = SubResource("StyleBoxFlat_yvt6n")
 text = "Delete Account"
 
-[connection signal="toggled" from="VBoxContainer/Panel/Control/ScrollContainer/VBoxContainer/MarginContainer2/GridContainer/WritingCB" to="." method="_on_check_button_2_toggled"]
+[connection signal="toggled" from="VBoxContainer/Panel/Control/ScrollContainer/VBoxContainer/MarginContainer2/GridContainer/WritingCB" to="." method="_on_writing_cb_toggled"]
 [connection signal="toggled" from="VBoxContainer/Panel/Control/ScrollContainer/VBoxContainer/MarginContainer2/GridContainer/SpeakingCB" to="." method="_on_check_button_2_toggled"]
 [connection signal="toggled" from="VBoxContainer/Panel/Control/ScrollContainer/VBoxContainer/MarginContainer2/GridContainer/ReadingCB" to="." method="_on_check_button_3_toggled"]
 [connection signal="toggled" from="VBoxContainer/Panel/Control/ScrollContainer/VBoxContainer/MarginContainer2/GridContainer/MathsCB" to="." method="_on_check_button_4_toggled"]

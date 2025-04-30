@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://cjt3mubtwylj6"
-path="res://.godot/imported/gi_collaspe.svg-fd51b0ec2e1aef55181a5b05d2063aee.ctex"
+path="res://.godot/imported/gi_collaspe.svg-9e265da14cfd8fb31a4715d510f51dd8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/gi_collaspe.svg"
-dest_files=["res://.godot/imported/gi_collaspe.svg-fd51b0ec2e1aef55181a5b05d2063aee.ctex"]
+source_file="res://icons/gi_collaspe.svg"
+dest_files=["res://.godot/imported/gi_collaspe.svg-9e265da14cfd8fb31a4715d510f51dd8.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://1lkblx8rt2bl"
-path="res://.godot/imported/gi_pronunciation.svg-621c7bc75d98e5eb91e4aeccbcf7dd54.ctex"
+path="res://.godot/imported/gi_pronunciation.svg-05d2742bbd00180b5f52d437fa787a09.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Icons/gi_pronunciation.svg"
-dest_files=["res://.godot/imported/gi_pronunciation.svg-621c7bc75d98e5eb91e4aeccbcf7dd54.ctex"]
+source_file="res://icons/gi_pronunciation.svg"
+dest_files=["res://.godot/imported/gi_pronunciation.svg-05d2742bbd00180b5f52d437fa787a09.ctex"]
 
 [params]
 
